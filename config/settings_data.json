@@ -159,7 +159,6 @@
           "1524768779513": {
             "type": "logo",
             "settings": {
-              "logo": "shopify:\/\/shop_images\/logotipo_horizontal_black-01_6a44b3bf-5960-46e7-ad79-10988f188ba9.png",
               "logo-inverted": "shopify:\/\/shop_images\/Logo_Silverskin_2x_52961998-425f-4ecc-ace7-238fe957e331.png",
               "desktop_logo_width": 200,
               "mobile_logo_width": 140
@@ -207,7 +206,7 @@
             "type": "menu",
             "settings": {
               "show_footer_title": false,
-              "menu": "terms",
+              "menu": "",
               "container_width": 15
             }
           },
@@ -432,7 +431,6 @@
               "link_text_2": "",
               "color_accent": "#ffffff",
               "text_align": "vertical-center horizontal-left",
-              "image": "shopify:\/\/shop_images\/01-Homepage-Hero-Banner-PRIMO.jpg",
               "focal_point": "80% 50%"
             }
           },
@@ -485,7 +483,6 @@
               "link_text_2": "",
               "color_accent": "#ffffff",
               "text_align": "vertical-center horizontal-left",
-              "image": "shopify:\/\/shop_images\/01-HeroBanner_23abd022-a87e-4b3a-8c1d-ff940ee3f84e.jpg",
               "focal_point": "80% 50%"
             }
           },
@@ -1116,7 +1113,6 @@
           "8ee640c5-d009-4f4e-bd6c-d9604ea7ee40": {
             "type": "slide",
             "settings": {
-              "slide_image": "shopify:\/\/shop_images\/test-02.png",
               "slide_cit": "“Una vera seconda pelle, perfettamente sintonizzata con il corpo e i suoi movimenti, anche i più esasperati, per ottenere condizioni di comfort totali durante le attività più intense [...] Una vera sorpresa!”",
               "slide_subtitle": "Alfredo Tradati - Giornalista, ex allenatore e coach di sciatori della nazionale"
             }
@@ -1124,7 +1120,6 @@
           "9d301094-02b9-49b1-9e2d-8d8a0880e844": {
             "type": "slide",
             "settings": {
-              "slide_image": "shopify:\/\/shop_images\/test-03.png",
               "slide_cit": "“Negli anni di carriera ho capito che lo strato a contatto con la pelle è il più importante. Con Silverskin ho risolto”",
               "slide_subtitle": "Daniele Ratto – Ciclista - Professionista dal 2010 al 2016, vincitore di tappa alla Vuelta a España"
             }
@@ -1157,7 +1152,6 @@
               "cta_text2": "",
               "cta_text2_color": "",
               "cta_link2": "",
-              "image": "shopify:\/\/shop_images\/hp-snow-banner_2x_e88451ea-6e88-4c43-8012-a36a7dcc20ae.jpg",
               "video_url": "",
               "width": "100",
               "height": 800,
