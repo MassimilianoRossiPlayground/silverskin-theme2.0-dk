@@ -1,0 +1,270 @@
+{% layout none %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<body>
+<div class="layout-select-location">
+
+  <div class="select-location">
+    <div class="select-location__content">
+
+      {% if request.locale.iso_code == "it" %}
+        {% assign loc = "" %}
+      {% else %}
+        {% assign loc = request.locale.iso_code %}
+      {% endif %}
+        <a id="logo-url" href="{{ shop.url }}/{{ loc }}">
+        <img class="select-location__content__logo" alt="Silverskin Staging" src="https://cdn.shopify.com/s/files/1/0285/3706/1424/files/Logo_Silverskin_Black_2x_fb8f61ac-110c-43cd-a199-1e9347bfed11.png?v=1666017856">
+      </a>
+
+
+      {% if localization.available_countries.size > 1 %}
+        <localization-form>
+          {% form 'localization' %}
+            <div class="disclosure">
+              <button type="button" class="disclosure__button" aria-expanded="false" aria-controls="CountryList">
+                {{ localization.country.name }} ({{ localization.country.currency.iso_code }} {{ localization.country.currency.symbol }})
+      
+                <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-caret" viewBox="0 0 10 6">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor">
+                </svg>
+              </button>
+      
+              <ul id="CountryList" role="list" class="disclosure__list" hidden>
+                {% for country in localization.available_countries %}
+                  <li class="disclosure__item" tabindex="-1">
+                    <a href="#"{% if country.iso_code == localization.country.iso_code %} aria-current="true"{% endif %} data-value="{{ country.iso_code }}">
+                      {{ country.name }} ({{ country.currency.iso_code }} {{ country.currency.symbol }})
+                    </a>
+                  </li>
+                {% endfor %}
+              </ul>
+      
+              <input type="hidden" name="country_code" value="{{ localization.country.iso_code }}">
+            </div>
+          {% endform %}
+        </localization-form>
+      {% endif %}
+
+
+
+      {% if localization.available_languages.size > 1 %}
+        <localization-form>
+          {% form 'localization' %}
+            <div class="disclosure">
+              <button type="button" class="disclosure__button" aria-expanded="false" aria-controls="LanguageList">
+                {{ localization.language.endonym_name | capitalize }}
+      
+                <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-caret" viewBox="0 0 10 6">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor">
+                </svg>
+              </button>
+      
+              <ul id="LanguageList" role="list" class="disclosure__list" hidden>
+                {% for language in localization.available_languages %}
+                  <li class="disclosure__item" tabindex="-1">
+                    <a href="#"{% if language.iso_code == localization.language.iso_code %} aria-current="true"{% endif %} hreflang="{{ language.iso_code }}" lang="{{ language.iso_code }}" data-value="{{ language.iso_code }}">
+                      {{ language.endonym_name | capitalize }}
+                    </a>
+                  </li>
+                {% endfor %}
+              </ul>
+      
+              <input type="hidden" name="language_code" value="{{ localization.language.iso_code }}">
+            </div>
+          {% endform %}
+        </localization-form>
+      {% endif %}
+      
+
+      <button class="submit-button">SUBMIT</button>
+
+    </div>
+  </div>
+
+</div>
+</body>
+
+{% style %}
+
+@font-face {
+  font-display: swap;
+  font-family: "barlow";
+  src: url("{{ 'Barlow-Regular.woff2' | asset_url }}") format("woff2"),
+       url("{{ 'Barlow-Regular.woff' | asset_url }}") format("woff");
+}
+@font-face {
+  font-display: swap;
+  font-family: "barlow-bold";
+  src: url("{{ 'Barlow-Bold.woff2' | asset_url }}") format("woff2"),
+       url("{{ 'Barlow-Bold.woff' | asset_url }}") format("woff");
+}
+@font-face {
+  font-display: swap;
+  font-family: "barlow-semibold";
+  src: url("{{ 'Barlow-SemiBold.woff2' | asset_url }}") format("woff2"),
+       url("{{ 'Barlow-SemiBold.woff' | asset_url }}") format("woff");
+}
+.select-location {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-20px);
+}
+.select-location__content {
+    max-width: 1410px;
+    margin: 0 auto;
+}
+img.select-location__content__logo {
+    margin: 30px auto;
+    display: block;
+}
+.disclosure {
+    position: relative;
+    margin: 0 auto;
+    display: block;
+    max-width: 400px;
+}
+.disclosure .disclosure__button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 400px;
+    height: 30px;
+    border: 1px solid #000;
+    background: #fff;
+    font-family: "barlow-semibold";
+}
+.disclosure .disclosure__button svg {
+    width: 20px;
+}
+.disclosure__button[aria-expanded="false"] svg {
+  transform: rotate(0deg);
+  transition-duration: 0.3s;
+}
+.disclosure__button[aria-expanded="true"] svg {
+  transform: rotate(180deg);
+  transition-duration: 0.3s;
+}
+button.submit-button {
+    margin: 0 auto;
+    display: block;
+    border: 1px solid #000;
+    background: #000;
+    color: #fff;
+    width: 100%;
+    max-width: 400px;
+    padding: 10px 0;
+    cursor: pointer;
+}
+.disclosure__list {
+    position: absolute;
+    top: 13px;
+    left: 0;
+    background: #fff;
+    border: 1px solid #000;
+    z-index: 2;
+    width: calc(100% - 2px);
+    padding: 0;
+    list-style: none;
+    color: #000;
+    max-height: 500px;
+    overflow-y: auto;
+}
+li.disclosure__item {
+    padding: 10px;
+}
+li.disclosure__item a {
+    color: #000;
+    font-size: 14px;
+    text-decoration: none;
+    font-family: "barlow-semibold";
+}
+/* width */
+ul.disclosure__list::-webkit-scrollbar {
+  width: 10px;
+}
+/* Track */
+ul.disclosure__list::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+/* Handle */
+ul.disclosure__list::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+/* Handle on hover */
+ul.disclosure__list::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+@media screen and (max-width: 768px) {
+  img.select-location__content__logo {
+    width: 80%;
+  }
+}
+
+{% endstyle %}
+
+
+<script>
+
+class LocalizationForm extends HTMLElement {
+  constructor() {
+    super();
+    this.elements = {
+      input: this.querySelector('input[name="language_code"], input[name="country_code"]'),
+      button: this.querySelector('button'),
+      panel: this.querySelector('ul'),
+    };
+    this.elements.button.addEventListener('click', this.openSelector.bind(this));
+    this.elements.button.addEventListener('focusout', this.closeSelector.bind(this));
+    this.addEventListener('keyup', this.onContainerKeyUp.bind(this));
+
+    this.querySelectorAll('a').forEach(item => item.addEventListener('click', this.onItemClick.bind(this)));
+
+    document.querySelector('.submit-button').addEventListener('click', this.submitForm.bind(this));
+  }
+
+  hidePanel() {
+    this.elements.button.setAttribute('aria-expanded', 'false');
+    this.elements.panel.setAttribute('hidden', true);
+  }
+
+  onContainerKeyUp(event) {
+    if (event.code.toUpperCase() !== 'ESCAPE') return;
+
+    this.hidePanel();
+    this.elements.button.focus();
+  }
+
+  onItemClick(event) {
+    event.preventDefault();
+    this.elements.input.value = event.currentTarget.dataset.value;
+    const form = this.querySelector('form');
+    if (form) form.submit();
+  }
+  
+  submitForm(event) {
+    const form = this.querySelector('form');
+    if (form) form.submit();
+    document.getElementById('logo-url').click();
+  }
+
+  openSelector() {
+    this.elements.button.focus();
+    this.elements.panel.toggleAttribute('hidden');
+    this.elements.button.setAttribute('aria-expanded', (this.elements.button.getAttribute('aria-expanded') === 'false').toString());
+  }
+
+  closeSelector(event) {
+    const shouldClose = event.relatedTarget && event.relatedTarget.nodeName === 'BUTTON';
+    if (event.relatedTarget === null || shouldClose) {
+      this.hidePanel();
+    }
+  }
+}
+
+customElements.define('localization-form', LocalizationForm);
+
+
+</script>

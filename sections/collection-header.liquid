@@ -1,0 +1,175 @@
+{%- assign disable_sticky_header = false -%}
+
+{% if section.settings.enable %}
+  {% if section.settings.collection_image_enable and collection.image %}
+    <div
+      id="CollectionHeaderSection"
+      data-section-id="{{ section.id }}"
+      data-section-type="collection-header"
+      {% if section.settings.parallax %}data-parallax="true"{% endif %}>
+
+      <div class="collection-hero">
+        {% if section.settings.parallax %}
+          <div class="parallax-container">
+            <div
+              class="parallax-image collection-hero__image lazyload"
+              data-bgset="{% include 'bgset', image: collection.image %}"
+              data-sizes="auto">
+            </div>
+          </div>
+        {% else %}
+
+          {%- assign uomo_stay_fresh = collection.metafields.custom.uomo_stay_fresh | img_url: 'master' -%}
+          {%- assign uomo_stay_warm = collection.metafields.custom.uomo_stay_warm | img_url: 'master' -%}
+          {%- assign uomo_stay_x_warm = collection.metafields.custom.uomo_stay_x_warm | img_url: 'master' -%}
+          {%- assign uomo_accessori = collection.metafields.custom.uomo_accessori | img_url: 'master' -%}
+          {%- assign donna_stay_fresh = collection.metafields.custom.donna_stay_fresh | img_url: 'master' -%}
+          {%- assign donna_stay_warm = collection.metafields.custom.donna_stay_warm | img_url: 'master' -%}
+          {%- assign donna_stay_x_warm = collection.metafields.custom.donna_stay_x_warm | img_url: 'master' -%}
+          {%- assign donna_accessori = collection.metafields.custom.donna_accessori | img_url: 'master' -%}
+
+          {% if current_tags contains "Uomo" %}
+
+            {% if current_tags contains "Stay Fresh" %}
+                  {% if uomo_stay_fresh contains "no-image" %}
+                    {%- assign img_url = collection.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+                  {% else %}
+                    {%- assign img_url = uomo_stay_fresh -%}
+                  {% endif %}
+            {% elsif current_tags contains "Stay Warm" %}
+                  {% if uomo_stay_warm contains "no-image" %}
+                    {%- assign img_url = collection.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+                  {% else %}
+                    {%- assign img_url = uomo_stay_warm -%}
+                  {% endif %}
+            {% elsif current_tags contains "Stay X-Warm" %}
+                  {% if uomo_stay_x_warm contains "no-image" %}
+                    {%- assign img_url = collection.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+                  {% else %}
+                    {%- assign img_url = uomo_stay_x_warm -%}
+                  {% endif %}
+            {% elsif current_tags contains "Accessori" %}
+                  {% if uomo_accessori contains "no-image" %}
+                    {%- assign img_url = collection.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+                  {% else %}
+                    {%- assign img_url = uomo_accessori -%}
+                  {% endif %}
+            {% else %}
+              {%- assign img_url = collection.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+            {% endif %}
+
+          {% elsif current_tags contains "Donna"%}
+
+            {% if current_tags contains "Stay Fresh" %}
+                  {% if donna_stay_fresh contains "no-image" %}
+                    {%- assign img_url = collection.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+                  {% else %}
+                    {%- assign img_url = donna_stay_fresh -%}
+                  {% endif %}
+            {% elsif current_tags contains "Stay Warm" %}
+                  {% if donna_stay_warm contains "no-image" %}
+                    {%- assign img_url = collection.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+                  {% else %}
+                    {%- assign img_url = donna_stay_warm -%}
+                  {% endif %}
+            {% elsif current_tags contains "Stay X-Warm" %}
+                  {% if donna_stay_x_warm contains "no-image" %}
+                    {%- assign img_url = collection.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+                  {% else %}
+                    {%- assign img_url = donna_stay_x_warm -%}
+                  {% endif %}
+            {% elsif current_tags contains "Accessori" %}
+                  {% if donna_accessori contains "no-image" %}
+                    {%- assign img_url = collection.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+                  {% else %}
+                    {%- assign img_url = donna_accessori -%}
+                  {% endif %}
+            {% else %}
+              {%- assign img_url = collection.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+            {% endif %}
+
+          {% else %}
+            {%- assign img_url = collection.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+          {% endif %}
+
+<span style="display:none">{{current_tags}}</span>
+          <img class="collection-hero__image image-fit lazyload"
+            src=""
+            data-src="{{ img_url }}"
+            data-aspectratio="{{ collection.image.aspect_ratio }}"
+            data-sizes="auto"
+            data-parent-fit="cover"
+            alt="{{ collection.image.alt | escape }}">
+          <noscript>
+            <img class="collection-hero__image image-fit"
+              src="{{ collection.image | img_url: '1400x' }}"
+              alt="{{ collection.image.alt | escape }}">
+          </noscript>
+        {% endif %}
+
+        <div class="collection-hero__content">
+          <div class="page-width">
+            <header class="section-header section-header--hero">
+              <div class="section-header__shadow">
+                {%- include 'breadcrumbs' -%}
+                <h1 class="section-header__title">
+                  {{ collection.title }}
+                </h1>
+              </div>
+            </header>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% else %}
+    {%- assign disable_sticky_header = true -%}
+    <div class="page-width page-content page-content--top">
+      <header class="section-header section-header--flush">
+        {%- include 'breadcrumbs' -%}
+        <h1 class="section-header__title">
+          {{ collection.title }}
+        </h1>
+      </header>
+    </div>
+  {% endif %}
+{% else %}
+  {%- assign disable_sticky_header = true -%}
+{% endif %}
+
+{%- if disable_sticky_header -%}
+  {% comment %}
+    Div to trigger theme.CollectionHeader JS
+  {% endcomment %}
+  <div
+    id="CollectionHeaderSection"
+    data-section-id="{{ section.id }}"
+    data-section-type="collection-header">
+  </div>
+{%- endif -%}
+
+
+{% schema %}
+  {
+    "name": "Collection header",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "enable",
+        "label": "Enable header",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "collection_image_enable",
+        "label": "Show collection image",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "parallax",
+        "label": "Parallax image",
+        "default": true
+      }
+    ]
+  }
+{% endschema %}

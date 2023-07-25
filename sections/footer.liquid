@@ -1,0 +1,371 @@
+<div id="shopify-section-footer-promotions" class="shopify-section index-section--footer">
+  <div class="footer__top">
+    <div class="footer__top__col">
+      {{ 'reso-icona@2x.png' | asset_url | img_tag: 'reso silverskin'}}
+      {% comment %}
+        <svg class="footer__top__col__icon">
+        <use xlink:href="#return_icon"></use>
+        </svg>
+      {% endcomment %}
+      <h4 class="footer__top__col__title">
+        <ly-as-41883>30 GIORNI PER RESO E CAMBIO</ly-as-41883>
+      </h4>
+    </div>
+    <div class="footer__top__col">
+      {{ 'pagamenti-sicuri-icona@2x.png' | asset_url | img_tag: 'pagamenti silverskin'}}
+      {% comment %}
+        <svg class="footer__top__col__icon">
+        <use xlink:href="#secure_icon"></use>
+        </svg>
+      {% endcomment %}
+      <h4 class="footer__top__col__title">
+        <ly-as-41884>PAGAMENTI SICURI</ly-as-41884>
+      </h4>
+    </div>
+    <div class="footer__top__col">
+      {{ 'testato-icona@2x.png' | asset_url | img_tag: 'testato silverskin'}}
+      {% comment %}
+        <svg class="footer__top__col__icon">
+        <use xlink:href="#athlete_icons"></use>
+        </svg>
+      {% endcomment %}
+      <h4 class="footer__top__col__title">
+        <ly-as-41885>TESTATO DAGLI ATLETI</ly-as-41885>
+      </h4>
+    </div>
+    <div class="footer__top__col">
+      {{ 'customer-care-icona@2x.png' | asset_url | img_tag: 'customer care silverskin'}}
+      {% comment %}
+        <svg class="footer__top__col__icon">
+        <use xlink:href="#customer_care_icon"></use>
+        </svg>
+      {% endcomment %}
+      <h4 class="footer__top__col__title">
+        <ly-as-41886>CUSTOMER CARE</ly-as-41886>
+      </h4>
+    </div>
+  </div>
+</div>
+
+
+
+<footer class="site-footer">
+  <div class="page-width">
+
+
+
+    <div class="grid">
+      {%- assign row_width = 0 -%}
+      {% for block in section.blocks %}
+        {%- assign row_width = row_width | plus: block.settings.container_width -%}
+        {% if row_width > 100 %}
+          <div class="footer__clear small--hide"></div>
+          {%- assign row_width = row_width | minus: 100 -%}
+        {% endif %}
+
+        <div {{ block.shopify_attributes }} class="grid__item footer__item--{{ block.id }}" data-type="{{ block.type }}">
+          {% style %}
+            @media only screen and (min-width: 769px) and(max-width: 959px) {
+              .footer__item--{{ block.id }}{
+                width: 50%;
+                padding-top: 40px;
+              }
+              .footer__item--{{ block.id }}:nth-child(2n + 1) {
+                clear: left;
+              }
+            }
+            @media only screen and (min-width: 960px) {
+              .footer__item--{{ block.id }}{
+                width: {{ block.settings.container_width }}%;
+              }
+
+            }
+          {% endstyle %}
+
+          {% case block.type %}
+            {% when 'logo_social' %}
+              {% include 'footer-logo', block: block %}
+            {% when 'custom' %}
+              {% include 'footer-custom-text', block: block %}
+            {% when 'newsletter' %}
+              {% include 'footer-newsletter', block: block %}
+
+            {% when 'menu' %}
+              {% include 'footer-menu', block: block %}
+          {% endcase %}
+        </div>
+      {% endfor %}
+      {% for block in section.blocks %}
+        {% if block.type == 'logo' %}
+          <div class="grid__item medium-up--hide">
+            {% include 'footer-logo', block: block %}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    {% if section.settings.show_payment_icons %}
+      <div class="recensioni-box">
+        <div class="recensioni-box__content">
+
+          {% if localization.language.iso_code == 'it' %}
+            {%- assign languageWidget = "it-IT" -%}
+          {% endif %}
+          {% if localization.language.iso_code == 'de' %}
+            {%- assign languageWidget = "de-DE" -%}
+          {% endif %}
+          {% if localization.language.iso_code == 'en' %}
+            {%- assign languageWidget = "en-GB" -%}
+          {% endif %}
+          <!-- TrustBox widget - Mini -->
+          <div class="trustpilot-widget" data-locale="{{languageWidget}}" data-template-id="53aa8807dec7e10d38f59f32" data-businessunit-id="5de514fbf25ac90001046fb1" data-style-height="120px" data-style-width="100%" data-theme="dark">
+            <a href="https://it.trustpilot.com/review/www.silverskin.it" target="_blank" rel="noopener">Trustpilot</a>
+          </div>
+
+          <!-- End TrustBox widget -->
+
+        </div>
+      </div>
+      {% unless shop.enabled_payment_types == empty %}
+        <ul class="inline-list payment-icons">
+          {% for type in shop.enabled_payment_types %}
+            <li class="icon--payment">
+              {{ type | payment_type_svg_tag: class:'icon icon--full-color' }}
+            </li>
+          {% endfor %}
+        </ul>
+      {% endunless %}
+    {% endif %}
+
+    {% if section.settings.show_copyright %}
+      <p class="footer__small-text">
+        &copy;
+        {{ 'now' | date: '%Y' }}
+        {{ shop.name }}
+        {% if section.settings.copyright_text != blank %}
+          {{ section.settings.copyright_text }}
+        {% endif %}
+      </p>
+    {% endif %}
+    {% comment %}
+      <p class="footer__small-text">{{ powered_by_link }}</p>
+    {% endcomment %}
+
+
+    <p class="footer__small-text">
+      <a href="https://www.playground.it" target="_blank">CREDITS</a>
+    </p>
+
+  </div>
+
+</footer>
+
+<script>
+  // SVG
+
+/**
+ * Load SVG symbols asynchronously
+ */
+  var ajax = new XMLHttpRequest;
+  ajax.open("GET", document.getElementById("spriteSvg").getAttribute("data-svg"), !0),
+  ajax.send(),
+  ajax.onload = function(e) {
+    var t = document.createElement("div");
+    t.innerHTML = ajax.responseText,
+    t.style.display = "none",
+    document.body.insertBefore(t, document.body.childNodes[0])
+  };
+</script>
+
+{% schema %}
+  {
+    "name": "Footer",
+    "max_blocks": 12,
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "show_payment_icons",
+        "label": "Show payment icons",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "show_copyright",
+        "label": "Show copyright"
+      },
+      {
+        "type": "text",
+        "id": "copyright_text",
+        "label": "Additional copyright text"
+      },
+      {
+        "type": "text",
+        "id": "first_top_f",
+        "label": "Top Footer Text col1"
+      }, {
+        "type": "text",
+        "id": "second_top_f",
+        "label": "Top Footer Text col2"
+      }, {
+        "type": "text",
+        "id": "third_top_f",
+        "label": "Top Footer Text col3"
+      }, {
+        "type": "text",
+        "id": "fourth_top_f",
+        "label": "Top Footer Text col4"
+      }, {
+        "type": "text",
+        "id": "privacy_neswletter",
+        "label": "Privacy text"
+      }, {
+        "type": "text",
+        "id": "button_placeholder",
+        "label": "Placeholder Newsletter"
+      }, {
+        "type": "text",
+        "id": "button_newsletter",
+        "label": "Button Newsletter"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "logo_social",
+        "name": "Logo",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "logo",
+            "label": "Logo image"
+          }, {
+            "type": "range",
+            "id": "desktop_logo_height",
+            "label": "Logo height",
+            "default": 50,
+            "min": 20,
+            "max": 120,
+            "unit": "px"
+          }, {
+            "type": "range",
+            "id": "container_width",
+            "label": "Column width",
+            "default": 25,
+            "min": 15,
+            "max": 95,
+            "unit": "%"
+          }
+        ]
+      }, {
+        "type": "menu",
+        "name": "Navigation",
+        "settings": [
+          {
+            "type": "checkbox",
+            "id": "show_footer_title",
+            "label": "Show heading"
+          }, {
+            "type": "link_list",
+            "id": "menu",
+            "label": "Choose a menu",
+            "default": "footer",
+            "info": "This menu won't show dropdown items"
+          }, {
+            "type": "range",
+            "id": "container_width",
+            "label": "Column width",
+            "default": 25,
+            "min": 15,
+            "max": 95,
+            "unit": "%"
+          }
+        ]
+      }, {
+        "type": "newsletter",
+        "name": "Newsletter and social",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "checkbox",
+            "id": "show_footer_title",
+            "label": "Show heading",
+            "default": true
+          },
+          {
+            "type": "paragraph",
+            "content": "Any customers who sign up will have an account created for them in Shopify. [View customers](/admin/customers)."
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Heading",
+            "default": "Sign up and save"
+          },
+          {
+            "type": "richtext",
+            "id": "text",
+            "label": "Text",
+            "info": "Optional",
+            "default": "<p>Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.</p>"
+          }, {
+            "type": "range",
+            "id": "container_width",
+            "label": "Column width",
+            "default": 25,
+            "min": 15,
+            "max": 95,
+            "unit": "%"
+          }
+        ]
+      }, {
+        "type": "custom",
+        "name": "Custom text",
+        "settings": [
+          {
+            "type": "checkbox",
+            "id": "show_footer_title",
+            "label": "Show heading",
+            "default": true
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Heading",
+            "default": "Custom text"
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "richtext",
+            "id": "text",
+            "label": "Text",
+            "default": "<p>Add your own custom text here.</p>"
+          }, {
+            "type": "range",
+            "id": "container_width",
+            "label": "Column width",
+            "default": 25,
+            "min": 15,
+            "max": 95,
+            "unit": "%"
+          }
+        ]
+      }
+    ],
+    "default": {
+      "settings": {},
+      "blocks": [
+        {
+          "type": "menu",
+          "settings": {}
+        }, {
+          "type": "logo_social",
+          "settings": {}
+        }
+      ]
+    }
+  }
+{% endschema %}

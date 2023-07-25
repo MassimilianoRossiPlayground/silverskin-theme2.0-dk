@@ -1,0 +1,42 @@
+{
+  "wrapper": "div#div_id.div_class[attribute-one=value]",
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "settings": {
+        "image_position": "left",
+        "image_size": "medium",
+        "thumbnail_position": "beside",
+        "thumbnail_arrows": false,
+        "description_style": "default",
+        "social_enable": true
+      }
+    },
+    "gallery": {
+      "type": "product-gallery",
+      "settings": {
+      }
+    },
+    "recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "show_product_recommendations": true,
+        "product_recommendations_heading": "PRODOTTI CORRELATI",
+        "related_count": 5
+      }
+    },
+    "viewed": {
+      "type": "recently-viewed",
+      "settings": {
+        "show_section": true,
+        "recent_count": 5
+      }
+    }
+  },
+  "order": [
+    "main",
+    "gallery",
+    "recommendations",
+    "viewed"
+  ]
+}

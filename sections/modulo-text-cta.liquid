@@ -1,0 +1,90 @@
+<link rel="stylesheet" href="{{ 'modulo-text-cta.css' | asset_url }}" type="text/css">
+
+<div class="text-cta">
+
+  <div class="text-cta__content">
+    
+    <h2>{{ section.settings.title }}</h2>
+    <h5>{{ section.settings.sub_title }}</h5>
+    <div class="text-cta__text">{{ section.settings.text }}</div>
+  
+  </div>
+
+  {% if section.settings.cta_link != blank %}
+    <a class="text-cta__link" href="{{ section.settings.cta_link }}">{{ section.settings.cta_text }}</a>
+  {% else %}
+    <a class="text-cta__link js-scroll-down" data-anchor="#{{ section.settings.cta_link_anchor }}">{{ section.settings.cta_text }} <i class="far fa-arrow-alt-circle-down"></i></a>
+  {% endif %}
+
+</div>
+
+{% schema %}
+  {
+    "name": "Text with CTA",
+    "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "sub_title",
+          "label": "Sub title"
+        },
+        {
+            "type": "richtext",
+            "id": "text",
+            "label": "Text"
+        },
+        {
+            "type": "text",
+            "id": "cta_text",
+            "label": "CTA Text"
+        },
+        {
+            "type": "text",
+            "id": "cta_link_anchor",
+            "label": "CTA Anchor Link"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Text with CTA"
+        }
+    ]
+  }
+{% endschema %}
+
+
+{% javascript %}
+
+(function(document) {
+
+let selectors = {
+    sectionCtaText: '.text-cta'
+};
+
+
+let sectionCtaText = document.querySelector(selectors.sectionCtaText)
+
+window.addEventListener("load", (event) => {
+    
+      let sectionCtaText_height = sectionCtaText.offsetTop + sectionCtaText.offsetHeight
+      let scrollDown = sectionCtaText.querySelector('.js-scroll-down')
+
+      scrollDown.addEventListener("click", function(){
+          let anchor = scrollDown.getAttribute("data-anchor")
+
+          let offset = document.querySelector(anchor).offsetTop
+
+          window.scrollTo({ left: 0, top: offset, behavior: "smooth" });
+      })
+
+})
+
+
+})(document);
+
+
+{% endjavascript %}

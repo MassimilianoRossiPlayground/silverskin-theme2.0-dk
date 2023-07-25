@@ -1,0 +1,424 @@
+<div class="main-template-{{ product.handle }}">
+  {% include 'product-template'
+   , description_style: section.settings.description_style,
+   image_position: section.settings.image_position,
+   image_container_width: section.settings.image_size,
+   section_id: product.id,
+   social: section.settings.social_enable,
+   thumbnail_position: section.settings.thumbnail_position,
+   thumbnail_arrows: section.settings.thumbnail_arrows %}
+
+  {% if settings.enable_product_reviews and settings.reviews_layout == 'full' %}
+    <hr id="Reviews-{{ product.id }}" class="hr--clear">
+    <div class="index-section product-reviews product-reviews--full">
+      <div class="page-width">
+        <div id="shopify-product-reviews" data-id="{{product.id}}">{{ product.metafields.spr.reviews }}</div>
+      </div>
+    </div>
+  {% endif %}
+
+  <script>
+    $(".header-wrapper .header-item.header-item--icons").addClass("is-light")
+  </script>
+
+
+  {% for c in product.collections %}
+
+    {% if c.handle == "stay-fresh-collection" %}
+
+      {% assign title_banner = "STAY FRESH" %}
+      {% assign collection_banner = c.handle %}
+
+      {% assign secondary_handle_banner_1 = "stay-warm-collection" %}
+      {% assign secondary_handle_banner_2 = "stay-x-warm-collection" %}
+
+      {% assign secondary_title_banner_1 = "STAY WARM" %}
+      {% assign secondary_title_banner_2 = "STAY X-WARM" %}
+
+      {% assign secondary_link_banner_1 = "/collections/stay-warm-collection" %}
+      {% assign secondary_link_banner_2 = "/collections/stay-x-warm-collection" %}
+
+      {% assign secondary_img_banner_1 = "https://cdn.shopify.com/s/files/1/0285/3706/1424/files/hp-banner-fresh-small-desk.jpg?v=1610553665" %}
+      {% assign secondary_img_banner_2 = "https://cdn.shopify.com/s/files/1/0285/3706/1424/files/hp-banner-x-warm-desk.jpg?v=1610553697" %}
+
+      {% assign background_banner = "https://cdn.shopify.com/s/files/1/0285/3706/1424/files/pdp-banner-fresh-desk_1dd5cb2b-4d6e-4916-9103-cf7f3c81280d.jpg?v=1610546347" %}
+
+    {% elsif c.handle == "stay-warm-collection" %}
+
+      {% assign title_banner = "STAY WARM" %}
+      {% assign collection_banner = c.handle %}
+
+      {% assign secondary_handle_banner_1 = "stay-fresh-collection" %}
+      {% assign secondary_handle_banner_2 = "stay-x-warm-collection" %}
+
+      {% assign secondary_title_banner_1 = "STAY FRESH" %}
+      {% assign secondary_title_banner_2 = "STAY X-WARM" %}
+
+      {% assign secondary_link_banner_1 = "/collections/stay-fresh-collection" %}
+      {% assign secondary_link_banner_2 = "/collections/stay-x-warm-collection" %}
+
+      {% assign secondary_img_banner_1 = "https://cdn.shopify.com/s/files/1/0285/3706/1424/files/stayfresh_2x_a2e2624a-473a-4222-88b1-ba8a6dc6d935.jpg?v=1620392461" %}
+      {% assign secondary_img_banner_2 = "https://cdn.shopify.com/s/files/1/0285/3706/1424/files/hp-banner-x-warm-desk.jpg?v=1610553697" %}
+
+      {% assign background_banner = "https://cdn.shopify.com/s/files/1/0285/3706/1424/files/pdp-banner-warm-desk.jpg?v=1617984602" %}
+
+
+    {% elsif c.handle == "stay-x-warm-collection" %}
+
+      {% assign title_banner = "STAY X-WARM" %}
+      {% assign collection_banner = c.handle %}
+
+      {% assign secondary_handle_banner_1 = "stay-fresh-collection" %}
+      {% assign secondary_handle_banner_2 = "stay-warm-collection" %}
+
+      {% assign secondary_title_banner_1 = "STAY FRESH" %}
+      {% assign secondary_title_banner_2 = "STAY WARM" %}
+
+      {% assign secondary_link_banner_1 = "/collections/stay-fresh-collection" %}
+      {% assign secondary_link_banner_2 = "/collections/stay-warm-collection" %}
+
+      {% assign secondary_img_banner_1 = "https://cdn.shopify.com/s/files/1/0285/3706/1424/files/stayfresh_2x_a2e2624a-473a-4222-88b1-ba8a6dc6d935.jpg?v=1620392461" %}
+      {% assign secondary_img_banner_2 = "https://cdn.shopify.com/s/files/1/0285/3706/1424/files/hp-banner-fresh-small-desk.jpg?v=1610553665" %}
+
+      {% assign background_banner = "https://cdn.shopify.com/s/files/1/0285/3706/1424/files/pdp-banner-x-warm-desk.jpg?v=1617984603" %}
+
+    {% else %}
+
+
+  {% else %}
+
+    {% endif %}
+
+  {% endfor %}
+
+  {% assign nessuna_collezione_corrisponente = false %}
+
+  {% if product.tags contains "Mascherine" %}
+    {% assign nessuna_collezione_corrisponente = true %}
+  {% endif %}
+
+  {% if nessuna_collezione_corrisponente == true %}
+    <style>
+      .secondary-banner,
+      .title-secondary-banner,
+      .pdp-banner {
+        display: none;
+      }
+    </style>
+  {% endif %}
+
+  <style>
+    .pdp-banner {
+      background-image: url("{{background_banner}}");
+    }
+  </style>
+
+
+
+  {% for module in product.metafields.custom.modules.value %}
+
+    {% if module.system.type == "pdp_gallery" %}
+      <div class="pdp-gallery  only-deskflex">
+
+        {% assign image_number = 1 %}
+        {% for image_m in module.image.value %}
+
+          <img class="pdp-gallery-image pdp-gallery-image--{{image_number}}" src="{{ image_m | img_url: '1400x' }}">
+
+          {% assign image_number = image_number | plus: 1 %}
+        {% endfor %}
+
+      </div>
+      <div class="pdp-gallery pdp-gallery-js swiper-container only-mob">
+        <div class="swiper-wrapper">
+          {% assign image_number = 1 %}
+          {% for image_m in module.image.value %}
+            <div class="swiper-slide">
+              <img class="pdp-gallery-image pdp-gallery-image--{{image_number}}" src="{{ image_m | img_url: '1400x' }}">
+            </div>
+            {% assign image_number = image_number | plus: 1 %}
+          {% endfor %}
+          
+          </div>
+          <div class="pdp-gallery-pagination swiper-pagination"></div>
+      </div>
+
+
+
+    {% elsif module.system.type == "pdp_two_box" %}
+      <div class="pdp-two-box {% if module.image_left %}is-left{% endif %}">
+        <div class="pdp-two-box__caption">
+          <div class="pdp-two-box__caption-inner">
+            <div class="pdp-two-box__title">{{ module.title }}</div>
+            <span class="pdp-two-box__description">{{ module.description }}</span>
+          </div>
+
+        </div>
+
+        <div class="pdp-two-box__image">
+          {% case module.image.value.media_type %}
+            {% when 'image' %}
+              <img src="{{module.image.value | img_url: '1400x'}}">
+            {% when 'video' %}
+              {{ module.image.value | video_tag: image_size: '100%', autoplay: true, loop: true, muted: true, controls: false }}
+          {% endcase %}
+          {% comment %} {% if module.image.value.media_type %}
+              <img src="{{module.image.value | img_url: '1400x'}}">
+          {% else %}
+            {{ module.image.value | video_tag: image_size: '100%', autoplay: true, loop: true, muted: true, controls: false }}
+          {% endif %} {% endcomment %}
+        </div>
+
+      </div>
+
+
+    {% endif %}
+
+  {% endfor %}
+
+
+
+  <div class="pdp-banner {{collection_banner}}__banner">
+    <div class="pdp-banner__box">
+      <div class="pdp-banner__box__col">
+
+        <h2>{{ title_banner }}</h2>
+
+        <div class="custom-field__banner-description">
+          {{ collections[collection_banner].metafields.custom_fields["banner_description"] }}
+        </div>
+
+        {% assign cta_link = collections[collection_banner].metafields.custom_fields["cta_link"] %}
+        <a class="pdp-banner__cta pdp-banner__cta-desk" href="{{cta_link}}">{{ collections[collection_banner].metafields.custom_fields["cta_text"] }}</a>
+
+        {% assign cta_link_2 = collections[collection_banner].metafields.custom_fields["cta_link_2"] %}
+        <a class="pdp-banner__cta pdp-banner__cta-desk" href="{{cta_link_2}}">{{ collections[collection_banner].metafields.custom_fields["cta_text_2"] }}</a>
+
+      </div>
+      <div class="pdp-banner__box__col">
+
+        {% assign img_banner = collections[collection_banner].metafields.custom_fields["url_image"] %}
+        <img
+          data-src="{{ img_banner }}"
+          src=""
+          class="lazyload"
+          alt="silverskin banner">
+
+      </div>
+      <div class="pdp-banner__box__col">
+
+        <div class="custom-field custom-field__banner_description_secondary custom-field__type--text">
+          <div class="custom-field--value">
+            {{ collections[collection_banner].metafields.custom_fields["banner_description_secondary"] }}
+          </div>
+        </div>
+
+        <div class="hexagon__group">
+          <div class="hexagon__single">
+            {{ '10_ENHANCED_SILVER_FIBER_TECHNOLOGY_Esagono.png' | asset_url | img_tag: 'apice silverskin' }}
+            <span class="feature_text">{{ collections[collection_banner].metafields.custom_fields["banner_secondary_feature2"] }}</span>
+          </div>
+          <div class="hexagon__single">
+            {{ '9_THERMO_BUFFERING_SYSTEM_Esagono.png' | asset_url | img_tag: 'apice silverskin' }}
+            <span class="feature_text">{{ collections[collection_banner].metafields.custom_fields["banner_secondary_feature1"] }}</span>
+          </div>
+          <div class="hexagon__single">
+            {{ '11_STRUTTURA_OTTIMIZZATA_DEL_FILATO_Esagono.png' | asset_url | img_tag: 'apice silverskin' }}
+            <span class="feature_text">{{ collections[collection_banner].metafields.custom_fields["banner_secondary_feature3"] }}</span>
+          </div>
+        </div>
+        <div>
+
+          <a class="pdp-banner__cta pdp-banner__cta-mob" href="{{cta_link}}">{{ collections[collection_banner].metafields.custom_fields["cta_text"] }}</a>
+          <a class="pdp-banner__cta pdp-banner__cta-mob" href="{{cta_link_2}}">{{ collections[collection_banner].metafields.custom_fields["cta_text_2"] }}</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+  {% comment %}
+  SECONDARY BANNERS
+  {% endcomment %}<h3 class="title-secondary-banner">SCOPRI LA NOSTRA COLLEZIONE</h3>
+
+  <div class="secondary-banner">
+
+    <div
+      class="secondary-banner__box {{secondary_handle_banner_1}}__banner lazyload"
+      data-bgset="{{secondary_img_banner_1}}"
+      data-size="auto">
+
+      <h2>
+        {{ secondary_title_banner_1 }}
+      </h2>
+
+      <p>{{ collections[secondary_handle_banner_1].metafields.custom_fields["banner_description_like_second"] }}</p>
+
+      <a class="secondary-banner__cta" href="{{secondary_link_banner_1}}">SCOPRI LA COLLEZIONE</a>
+
+    </div>
+
+    <div
+      class="secondary-banner__box {{secondary_handle_banner_2}}__banner lazyload"
+      data-bgset="{{secondary_img_banner_2}}"
+      data-size="auto">
+
+      <h2>
+        {{ secondary_title_banner_2 }}
+      </h2>
+
+      <p>{{ collections[secondary_handle_banner_2].metafields.custom_fields["banner_description_like_second"] }}</p>
+
+      <a class="secondary-banner__cta" href="{{secondary_link_banner_2}}">SCOPRI LA COLLEZIONE</a>
+
+    </div>
+
+  </div>
+
+
+
+  {% comment %}
+  {% if collection %}
+  <div class="text-center page-content page-content--bottom">
+  <a href="{% if collection.handle == 'frontpage' %}/{% else %}{{ collection.url }}{% endif %}" class="btn btn--small return-link">
+  <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon--wide icon-arrow-left" viewBox="0 0 50 15"><path d="M50 5.38v4.25H15V15L0 7.5 15 0v5.38z"/></svg> {{ 'products.general.collection_return' | t: collection: collection.title }}
+  </a>
+  </div>
+  {% endif %}
+  {% endcomment %}{% for collection in product.collections %}
+    {% assign collection_list = collection_list | append: collection %}
+  {% endfor %}
+
+  <script>
+    // Override default values of shop.strings for each template.
+// Alternate product templates can change values of
+// add to cart button, sold out, and unavailable states here.
+    theme.productStrings = {
+      addToCart: {{ 'products.product.add_to_cart' | t | json }},
+      soldOut: {{ 'products.product.sold_out' | t | json }},
+      unavailable: {{ 'products.product.unavailable' | t | json }}
+    };
+
+  $(function(){
+
+    if(window.innerWidth<1024){
+      console.log("start swiper");
+      //SWIPER - gallery
+      new Swiper('.pdp-gallery-js', {
+      // Optional parameters
+        pagination: {
+          el: '.swiper-pagination',
+          type: 'bullets',
+        },
+      });
+    }
+  });
+
+
+  </script>
+</div>
+
+{% schema %}
+  {
+    "name": "Product pages",
+    "settings": [
+      {
+        "type": "select",
+        "id": "image_position",
+        "label": "Images position",
+        "default": "right",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          }, {
+            "value": "right",
+            "label": "Right"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "image_size",
+        "label": "Image size",
+        "default": "medium",
+        "options": [
+          {
+            "value": "small",
+            "label": "Small"
+          }, {
+            "value": "medium",
+            "label": "Medium"
+          }, {
+            "value": "large",
+            "label": "Large"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "thumbnail_position",
+        "label": "Thumbnail position",
+        "default": "beside",
+        "options": [
+          {
+            "value": "beside",
+            "label": "Next to image"
+          }, {
+            "value": "below",
+            "label": "Below image"
+          }
+        ]
+      },
+      {
+        "type": "checkbox",
+        "id": "thumbnail_arrows",
+        "label": "Show thumbnail arrows"
+      }, {
+        "type": "select",
+        "id": "description_style",
+        "label": "Description position",
+        "default": "default",
+        "options": [
+          {
+            "value": "default",
+            "label": "Next to images"
+          }, {
+            "value": "full",
+            "label": "Below images"
+          }
+        ]
+      }, {
+        "type": "checkbox",
+        "id": "social_enable",
+        "label": "Enable social sharing",
+        "default": true
+      }
+    ],
+    "blocks": [
+      {
+        "type": "products",
+        "name": "products group",
+        "settings": [
+          {
+            "type": "product_list",
+            "id": "product_list",
+            "label": "Product List"
+          }
+        ]
+      }, {
+        "type": "text",
+        "name": "paragraph",
+        "settings": [
+          {
+            "type": "richtext",
+            "id": "richtext",
+            "label": "Text"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,93 @@
+.technology-slider {
+    margin: 60px 0;
+}
+
+.technology-slider h4 {
+    margin: 50px 0;
+    font-family: "barlow-medium";
+}
+
+.technology-slider .swiper-slide .best-sellers-cta,
+.technology-slider .swiper-slide h4 {
+    display: none;
+}
+
+.technology-slider .swiper-slide.swiper-slide-next .best-sellers-cta,
+.technology-slider .swiper-slide.swiper-slide-next h4 {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.technology-slider .swiper-slide img {
+    height: 380px;
+    transform: translateY(100px);
+    transition-duration: 0.3s;
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+}
+
+.technology-slider .swiper-slide.swiper-slide-next img {
+    height: unset;
+    transform: translateY(1px);
+    transition-duration: 0.3s;
+    filter: blur(0);
+    -webkit-filter: blur(0);
+}
+
+.technology-slider .fas.fa-angle-right,
+.technology-slider .fas.fa-angle-left {
+    font-size: 30px;
+}
+.section-bestsellers .technology-slider .swiper-slide img {
+    max-height: 380px;
+    height: auto;
+    /* transform: translateY(10px); */
+}
+
+@media screen and (min-width: 769px) and (max-width: 1190px) {
+
+    #section-warm-collection .technology-slider .swiper-slide img,
+    #section-xwarm-collection .technology-slider .swiper-slide img,
+    #section-fresh-collection .technology-slider .swiper-slide img {
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 991px) {
+
+    .technology-slider .swiper-slide img {
+        filter: unset;
+        -webkit-filter: unset;
+        transform: unset;
+    }
+
+    .technology-slider .swiper-slide .best-sellers-cta,
+    .technology-slider .swiper-slide h4 {
+        display: flex;
+        justify-content: center;
+    }
+    .collections-slider-large .technology-slider .swiper-slide h4 {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .collections-slider-large .technology-slider {
+        margin: 20px 0 0 0;
+    }
+    .section-bestsellers .technology-slider .swiper-slide img {
+        max-height: 260px;
+    }
+    #section-bestseller-snow .technology-slider {
+        margin: 30px 0;
+    }
+
+    #section-bestseller-snow .technology-slider .swiper-slide .best-sellers-cta,
+    #section-bestseller-snow .technology-slider .swiper-slide h4 {
+        max-width: 260px;
+        margin: 15px auto;
+    }
+}

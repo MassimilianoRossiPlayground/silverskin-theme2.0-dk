@@ -1,0 +1,173 @@
+{% include 'breadcrumbs-collection' %}
+
+<div class="collection-grid__wrapper">
+  <h1 class="collection-man-title">{{ section.settings.collection_name }}</h1>
+  <hr>
+  <h2 class="collection-man-subtitle">{{ section.settings.title }}</h2>
+  <div class="grid grid--uniform">
+    {% for block in section.blocks %}
+
+      {% case block.type %}
+        {% when 'banner' %}
+          <div class="grid__item {% if block.settings.half == 'half' %}  medium-up--one-half{%endif%}">
+            {% include 'image-banner' with banner_image_url: block.settings.image, banner_title: block.settings.title, button_href: block.settings.cta_link, button_title: block.settings.cta_text %}
+          </div>
+      {% endcase %}
+
+    {% endfor %}
+
+  </div>
+</div>
+
+<h2 class="collection-man-subtitle">{{ section.settings.subtitle }}</h2>
+<div class="grid grid--uniform">
+  {% for block in section.blocks %}
+    {% case block.type %}
+      {% when 'banner_temp' %}
+      <div class="grid__item {% if block.settings.half == 'half' %}  medium-up--one-half{%endif%} ">
+        {% include 'image-collection-banner' with banner_image_url: block.settings.image, banner_class: block.settings.class, banner_title: block.settings.title, banner_subtitle: block.settings.subtitle, button_href: block.settings.cta_link, button_title: block.settings.cta_text %}
+      </div>
+    {% endcase %}
+  {% endfor %}
+</div>
+
+
+{% schema %}
+  {
+    "name": "Collection uomo",
+    "limit": 1,
+    "max_blocks": 7,
+    "settings": [
+      {
+        "type": "text",
+        "id": "collection_name",
+        "label": "Nome Collezione",
+        "default": "UOMO"
+      }, {
+        "type": "text",
+        "id": "title",
+        "label": "Titolo",
+        "default": "I NOSTRI PRODOTTI"
+      }, {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Sottotitolo",
+        "default": "LE NOSTRE COLLEZIONI"
+      }
+    ],
+    "blocks": [
+      {
+        "name": "Banner",
+        "type": "banner",
+        "settings": [
+          {
+            "id": "image",
+            "label": "Image",
+            "type": "image_picker"
+          },
+          {
+            "id": "title",
+            "label": "Title",
+            "type": "text"
+          },
+          {
+            "id": "cta_text",
+            "label": "Cta text",
+            "type": "text",
+            "default": "VEDI TUTTI"
+          },
+          {
+            "id": "cta_link",
+            "label": "Link banner",
+            "type": "text"
+          }, {
+            "type": "select",
+            "id": "half",
+            "label": "Column large",
+            "options": [
+              {
+                "value": "half",
+                "label": "Half"
+              }, {
+                "value": "full",
+                "label": "Full"
+              }
+            ],
+            "default": "half"
+          }
+        ]
+      }, {
+        "name": "Banner Temperature",
+        "type": "banner_temp",
+        "settings": [
+          {
+            "id": "image",
+            "label": "Image",
+            "type": "image_picker"
+          },
+          {
+            "id": "title",
+            "label": "Title",
+            "type": "text"
+          },
+          {
+            "id": "subtitle",
+            "label": "Subtitle",
+            "type": "text"
+          },
+          {
+            "id": "class",
+            "label": "Classe",
+            "type": "text"
+          }, {
+            "id": "cta_text",
+            "label": "Cta text",
+            "type": "text",
+            "default": "SCOPRI TUTTI I PRODOTTI"
+          }, {
+            "id": "cta_link",
+            "label": "Link banner",
+            "type": "text"
+          }, {
+            "type": "select",
+            "id": "half",
+            "label": "Column large",
+            "options": [
+              {
+                "value": "half",
+                "label": "Half"
+              }, {
+                "value": "full",
+                "label": "Full"
+              }
+            ],
+            "default": "half"
+          }
+        ]
+      }
+    ],
+    "default": {
+      "settings": {
+        "title": "Uomo"
+      },
+      "blocks": [
+        {
+          "type": "banner"
+        },
+        {
+          "type": "banner"
+        },
+        {
+          "type": "banner"
+        },
+        {
+          "type": "banner_temp"
+        }, {
+          "type": "banner_temp"
+        }, {
+          "type": "banner_temp"
+        }
+      ]
+    }
+  }
+{% endschema %}

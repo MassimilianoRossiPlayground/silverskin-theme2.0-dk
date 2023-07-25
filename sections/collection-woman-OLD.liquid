@@ -1,0 +1,88 @@
+<div class="collection-grid__wrapper">
+  <h1 class="collection-man-title">Donna</h1>
+  <hr>
+  <h2 class="collection-man-subtitle">{{ section.settings.title }}</h2>
+  <div class="grid grid--uniform">
+    <div class="grid__item medium-up--one-half">
+
+      {% include 'image-banner' with banner_image_url: section.blocks[0].settings.image, banner_title: 'MAGLIE', button_href: '/collections/maglie/Uomo', button_title: 'VEDI TUTTE' %}
+    </div>
+    <div class="grid__item medium-up--one-half">
+      {% include 'image-banner' with banner_image_url: section.blocks[1].settings.image, banner_title: 'PANTALONI', button_href: '/collections/maglie/Uomo', button_title: 'VEDI TUTTI' %}
+    </div>
+    <div class="grid__item">
+      {% include 'image-banner' with banner_image_url: section.blocks[2].settings.image, banner_title: 'ACCESSORI', button_href: '/collections/maglie/Uomo', button_title: 'VEDI TUTT I I PRODOTTI' %}
+    </div>
+  </div>
+</div>
+
+<h2 class="collection-man-subtitle">{{ section.settings.subtitle }}</h2>
+<div class="grid grid--uniform">
+  <div class="grid__item medium-up--one-half ">
+    {% include 'image-collection-banner' with banner_image_url: section.blocks[3].settings.image, banner_class: 'stay-xwarm', banner_title: 'STAY X-WARM', banner_subtitle: 'DA -20° A 20°', button_href: '/collections/stay-x-warm/Uomo+Stay-X-Warm', button_title: 'Scopri tutti i prodotti' %}
+  </div>
+  <div class="grid__item medium-up--one-half ">
+    {% include 'image-collection-banner' with banner_image_url: section.blocks[4].settings.image, banner_class: 'stay-warm', banner_title: 'STAY WARM', banner_subtitle: 'DA -20° A 20°', button_href: '/collections/stay-warm/Uomo+Stay-Warm', button_title: 'Scopri tutti i prodotti' %}
+  </div>
+  <!--<div class="grid__item medium-up--one-half">
+  {% include 'image-collection-banner' with banner_image_url: section.blocks[5].settings.image, banner_class: 'light-warm', banner_title: 'LIGHT WARM', banner_subtitle: 'DA -20° A 20°', button_href: '/collections/stay-warm/Uomo+Stay-Warm', button_title: 'Scopri tutti i prodotti' %}
+  </div>--><div class="grid__item medium-up--one-half">
+    {% include 'image-collection-banner' with banner_image_url: section.blocks[5].settings.image, banner_class: 'stay-fresh', banner_title: 'STAY FRESH', banner_subtitle: 'DA -20° A 20°', button_href: '/collections/stay-fresh/Uomo+Stay-Fresh', button_title: 'Scopri tutti i prodotti' %}
+  </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Collection uomo",
+    "limit": 1,
+    "max_blocks": 7,
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Titolo"
+      }, {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Sottotitolo"
+      }
+    ],
+    "blocks": [
+      {
+        "name": "Banner",
+        "type": "banner",
+        "settings": [
+          {
+            "id": "image",
+            "label": "Image",
+            "type": "image_picker"
+          }
+        ]
+      }
+    ],
+    "default": {
+      "settings": {
+        "title": "Collection uomo"
+      },
+      "blocks": [
+        {
+          "type": "banner"
+        },
+        {
+          "type": "banner"
+        },
+        {
+          "type": "banner"
+        },
+        {
+          "type": "banner"
+        }, {
+          "type": "banner"
+        }, {
+          "type": "banner"
+        }
+      ]
+    }
+  }
+{% endschema %}

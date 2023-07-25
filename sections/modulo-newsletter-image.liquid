@@ -1,0 +1,203 @@
+<div class="section-newsletter-image" id="{{ section.settings.id_for_anchor }}">
+    <div class="newsletter-image">
+        <div class="newsletter-image__form">
+            <div class="newsletter-image__form__content">
+                <h5>{{ section.settings.sup_title }}</h5>
+                <h2>{{ section.settings.title }}</h2>
+                <div class="newsletter-image__form__description">{{ section.settings.description }}</div>
+
+                <div class="site_newsletter">
+                    {%- assign formId = 'Contact-Newsletter' -%}
+                    {% form 'customer', id: formId, novalidate: 'novalidate' %}
+                    {%- if form.posted_successfully? -%}
+                        <p class="form-message form-message--success" tabindex="-1" data-form-status>
+                        {{ 'general.newsletter_form.newsletter_confirmation' | t }}
+                        </p>
+                    {%- endif -%}
+                    <input type="hidden" name="contact[tags]" value="newsletter">
+                    <div class="input-group input-group--newsletter {% if form.errors %} input-group--error{% endif %}">
+                
+                        <div class="input-container">
+                
+                            <input type="email"
+                            name="contact[email]"
+                            id="{{ formId }}-email"
+                            class="input-group__field newsletter__input{% if form.errors %} input--error{% endif %}"
+                            value="{{ form.email }}"
+                            placeholder="{{ section.settings.mail_placeholder }}"
+                            aria-label="{{ section.settings.mail_placeholder }}"
+                            aria-required="true"
+                            required
+                            autocorrect="off"
+                            autocapitalize="off"
+                            {% if form.errors %}
+                                aria-invalid="true"
+                                aria-describedby="{{ formId }}-email-error"
+                                data-form-status
+                            {% endif %}>
+                            <span class="input-group__btn">
+                                <button type="submit" class="btn newsletter__submit" name="commit" >
+                                    <span class="newsletter__submit-text--large">{{ section.settings.submit_text }}</span>
+                                </button>
+                            </span>
+                        </div>
+                
+                        
+                    </div>
+                    {% if form.tags == "newsletter" %}
+                        <span class="input-error-message site_newsletter-error">Email già registrata oppure invalida!</span>
+                    {% endif %}
+                    <span class="form-newsletter-error-check hide">Check your email address</span>
+                
+                    {% endform %}
+                </div>
+            </div>
+        </div>
+        <div class="newsletter-image__image">
+    
+            <img src="{{section.settings.image | img_url: 'master'}}" alt="{{ section.settings.title }}">
+
+        </div>
+    </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Newsletter Image",
+    "settings": [
+        {
+            "type": "text",
+            "id": "id_for_anchor",
+            "label": "ID for anchor"
+        },
+        {
+            "type": "text",
+            "id": "sup_title",
+            "label": "Sup Title",
+            "default": "SILVERSKIN"
+        },
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default": "10% di sconto sul tuo primo ordine!"
+        },
+        {
+            "type": "richtext",
+            "id": "description",
+            "label": "Description"
+        },
+        {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+        },
+        {
+            "type": "text",
+            "id": "mail_placeholder",
+            "label": "Mail Placeholder",
+            "default": "INSERISCI LA TUA MAIL"
+        },
+        {
+            "type": "text",
+            "id": "submit_text",
+            "label": "Submit Text",
+            "default": "ISCRIVITI"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Newsletter Image"
+        }
+    ]
+  }
+{% endschema %}
+
+
+{% style %}
+.section-newsletter-image {
+    background: #000;
+    color: #fff;
+}
+.newsletter-image {
+    display: flex;
+    flex-wrap: wrap;
+}
+.newsletter-image__form {
+    width: 60%;
+    display: flex;
+    align-items: center;
+}
+.newsletter-image__image {
+    width: 40%;
+}
+.newsletter-image__form__content {
+    padding: 100px 40px 100px 100px;
+    max-width: 690px;
+}
+input.newsletter__input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #fff;
+  opacity: 1; /* Firefox */
+}
+
+input.newsletter__input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #fff;
+}
+
+input.newsletter__input::-ms-input-placeholder { /* Microsoft Edge */
+  color: #fff;
+}
+
+input#Contact-Newsletter-email {
+    border: none;
+    border-bottom: 2px solid;
+    padding: 10px 0;
+    width: 340px;
+    margin-right: 30px;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: .3em;
+    margin-bottom: 10px;
+}
+button.btn.newsletter__submit {
+    border: 1px solid #797979;
+    min-width: 170px;
+    font-size: 12px;
+}
+.newsletter-image__form__description {
+    font-size: 20px;
+    margin: 40px 0;
+}
+.newsletter-image__image img {
+    height: 100%;
+    object-fit: cover;
+}
+
+@media screen and (max-width: 768px) {
+    .newsletter-image__form ,
+    .newsletter-image__image {
+        width: 100%;
+    }
+    .newsletter-image__form__content {
+        padding: 60px 20px;
+    }
+    input#Contact-Newsletter-email {
+        width: 100%;
+        font-size: 14px !important;
+        margin-bottom: 30px;
+    }
+    .newsletter-image__form__content h2 {
+        font-size: 32px !important;
+    }
+    .newsletter-image__form__content h5 {
+        text-align: left !important;
+    }
+    .newsletter-image {
+        flex-direction: column-reverse;
+    }
+}
+
+
+{% endstyle %}
+
+

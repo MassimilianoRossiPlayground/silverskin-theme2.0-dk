@@ -1,0 +1,66 @@
+<link rel="stylesheet" href="{{ 'modulo-two-boxes.css' | asset_url }}" type="text/css">
+<script src="{{ 'modulo-two-boxes.js' | asset_url }}" defer="defer"></script>
+
+{%- assign img_url_frame = section.settings.image_frame | img_url: 'master' -%}
+
+<div class="two-boxes">
+  <img class="two-boxes__background-top" src="https://cdn.shopify.com/s/files/1/0285/3706/1424/files/background.png?v=1635348830" alt="silverskin tech">
+
+  <div class="box-width two-boxes__content">
+    <div class="col-6 two-boxes__content__img">
+      <h4>{{ section.settings.sup_title }}</h4>  
+      <h2>{{ section.settings.title }}<h2>
+      <img src="https://cdn.shopify.com/s/files/1/0285/3706/1424/files/gradient.png?v=1623416869" alt="termic test silverskin">
+    </div>
+    <div class="col-6 two-boxes__content__text">
+      {{ section.settings.text }}
+    </div>  
+  </div>
+  <div class="box-width two-boxes__video">
+
+      <div class="termich-test-img">
+        <img src="{{img_url_frame}}" alt="termic test silverskin">
+        <i class="fas fa-play"></i>
+      </div>
+      <iframe class="termich-test-iframe hide" width="100%" height="834" src="https://www.youtube.com/embed/{{section.settings.yt_id}}?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Two Boxes",
+    "settings": [
+        {
+            "type": "text",
+            "id": "sup_title",
+            "label": "Testo alto"
+        },
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+        },
+        {
+            "type": "richtext",
+            "id": "text",
+            "label": "Text"
+        },
+        {
+            "type": "image_picker",
+            "id": "image_frame",
+            "label": "Frame video"
+        },
+        {
+            "type": "text",
+            "id": "yt_id",
+            "label": "Youtube ID Video"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Two Boxes"
+        }
+    ]
+  }
+{% endschema %}

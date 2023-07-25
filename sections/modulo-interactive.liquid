@@ -1,0 +1,113 @@
+<link rel="stylesheet" href="{{ 'modulo-interactive.css' | asset_url }}" type="text/css">
+<script src="{{ 'modulo-interactive.js' | asset_url }}" defer="defer"></script>
+
+<div class="section-interactive">
+  <img class="section-interactive__background-top" src="https://cdn.shopify.com/s/files/1/0285/3706/1424/files/background.png?v=1635348830" alt="silverskin tech">
+  <img class="section-interactive__background-bottom" src="https://cdn.shopify.com/s/files/1/0285/3706/1424/files/background.png?v=1635348830" alt="silverskin tech">
+  <img class="section-interactive__background-text" src="https://cdn.shopify.com/s/files/1/0285/3706/1424/files/tech-silverfibers.png?v=1623419804" alt="silverskin tech">
+  <img class="logo-ag" src="https://cdn.shopify.com/s/files/1/0285/3706/1424/files/tech-icon-ag_2x_7d1eea65-5c86-4695-9cb7-fe2b23bf4199.png?v=1623332862" alt="ag silverskin" width="80px">
+  <div class="text-ag">{{ section.settings.top_text }}</div>
+  <div class="interactive-banner">
+      <div class="interactive-banner__image">
+          <img class="interactive-banner__image__img"src="https://cdn.shopify.com/s/files/1/0285/3706/1424/files/tech-product_2x_f58d3652-7b46-4c0c-b8c1-83972971d271.png?v=1623332915" alt="technology silverskin">
+          <img class="interactive-banner__image__pin" src="https://cdn.shopify.com/s/files/1/0285/3706/1424/files/hotspot-closed-2x.png?v=1623333645" alt="technology silverskin" attr-close="https://cdn.shopify.com/s/files/1/0285/3706/1424/files/hotspot-closed-2x.png?v=1623333645" alt="technology silverskin" attr-open="https://cdn.shopify.com/s/files/1/0285/3706/1424/files/hotspot-opened-2x.png?v=1623333645" attr-pin="1">
+          <img class="interactive-banner__image__pin open" src="https://cdn.shopify.com/s/files/1/0285/3706/1424/files/hotspot-closed-2x.png?v=1623333645" alt="technology silverskin" attr-close="https://cdn.shopify.com/s/files/1/0285/3706/1424/files/hotspot-closed-2x.png?v=1623333645" alt="technology silverskin" attr-open="https://cdn.shopify.com/s/files/1/0285/3706/1424/files/hotspot-opened-2x.png?v=1623333645" attr-pin="2">
+          <img class="interactive-banner__image__pin" src="https://cdn.shopify.com/s/files/1/0285/3706/1424/files/hotspot-closed-2x.png?v=1623333645" alt="technology silverskin" attr-close="https://cdn.shopify.com/s/files/1/0285/3706/1424/files/hotspot-closed-2x.png?v=1623333645" alt="technology silverskin" attr-open="https://cdn.shopify.com/s/files/1/0285/3706/1424/files/hotspot-opened-2x.png?v=1623333645" attr-pin="3">
+      </div>
+      <span class="interactive-banner__line" attr-pin="1"></span>  
+      <span class="interactive-banner__line open" attr-pin="2"></span>  
+      <span class="interactive-banner__line" attr-pin="3"></span>  
+      <div class="interactive-banner__info" attr-pin="1">
+        <img src="https://cdn.shopify.com/s/files/1/0285/3706/1424/files/tech-info3_2x_ef1d6a04-ecfc-408d-b6df-9679efaea7b6.png?v=1623333399" alt="technology silverskin silver">
+        <h5>{{ section.settings.inter_1_title }}</h5>
+        {{ section.settings.inter_1_text }}
+      </div>
+      <div class="interactive-banner__info open" attr-pin="2">
+        <img src="https://cdn.shopify.com/s/files/1/0285/3706/1424/files/tech-info2_2x_a3972cd6-d830-49e8-bb86-ee37ce18ea94.png?v=1623333384" alt="technology silverskin silver">
+        <h5>{{ section.settings.inter_2_title }}</h5>
+        {{ section.settings.inter_2_text }}
+      </div>
+      <div class="interactive-banner__info" attr-pin="3">
+        <img src="https://cdn.shopify.com/s/files/1/0285/3706/1424/files/tech-info1_2x_49b10596-38f6-4b20-9fb7-d63c406acec4.png?v=1623333252" alt="technology silverskin silver">
+        <h5>{{ section.settings.inter_3_title }}</h5>
+        {{ section.settings.inter_3_text }}
+      </div>
+  </div>
+  <div class="hero-banner-cta">
+    <a class="banner-cta__link" href="{{ section.settings.cta1link }}">{{ section.settings.cta1text }}</a>
+    <a class="banner-cta__link" href="{{ section.settings.cta2link }}">{{ section.settings.cta2text }}</a>
+  </div>
+
+</div>
+
+{% schema %}
+  {
+    "name": "Interactive Techonology",
+    "settings": [
+        {
+            "type": "richtext",
+            "id": "top_text",
+            "label": "Testo alto"
+        },
+        {
+            "type": "text",
+            "id": "inter_1_title",
+            "label": "Interactive 1 Title"
+        },
+        {
+            "type": "richtext",
+            "id": "inter_1_text",
+            "label": "Interactive 1 Text"
+        },
+        {
+            "type": "text",
+            "id": "inter_2_title",
+            "label": "Interactive 2 Title"
+        },
+        {
+            "type": "richtext",
+            "id": "inter_2_text",
+            "label": "Interactive 2 Text"
+        },
+        {
+            "type": "text",
+            "id": "inter_3_title",
+            "label": "Interactive 3 Title"
+        },
+        {
+            "type": "richtext",
+            "id": "inter_3_text",
+            "label": "Interactive 3 Text"
+        },
+        {
+            "type": "text",
+            "id": "cta1text",
+            "label": "CTA 1 Text",
+            "default": "ACQUISTA UOMO"
+        },
+        {
+            "type": "text",
+            "id": "cta1link",
+            "label": "CTA 1 Link",
+            "default": "/collections/uomo"
+        },
+        {
+            "type": "text",
+            "id": "cta2text",
+            "label": "CTA 2 Text",
+            "default": "ACQUISTA DONNA"
+        },
+        {
+            "type": "text",
+            "id": "cta2link",
+            "label": "CTA 2 Link",
+            "default": "/collections/donna"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Interactive Techonology"
+        }
+    ]
+  }
+{% endschema %}

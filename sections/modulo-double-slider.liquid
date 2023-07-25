@@ -1,0 +1,157 @@
+<link rel="stylesheet" href="{{ 'modulo-double-slider.css' | asset_url }}" type="text/css">
+<script src="{{ 'modulo-double-slider.js' | asset_url }}" defer="defer"></script>
+
+<div class="container-sliders_markers">
+
+    <div class="swiper-container container-left">
+
+        {% if section.settings.title != blank or section.settings.title != blank %}
+            <div class="fixed-content">
+                {% if section.settings.title != blank %}
+                    <h2>{{ section.settings.title }}</h2>
+                {% endif %}
+                {% if section.settings.title != blank %}
+                    <div>{{ section.settings.description }}</div>
+                {% endif %}
+                <span class="line-copy"></span>
+            </div>
+        {% endif %}
+
+        <div class="swiper-wrapper">
+            
+            {% for block in section.blocks %}
+                <div class="swiper-slide">
+                    <div class="home__specs__col__content-slide__wrapper">
+
+                        <h3>{{block.settings.title}}</h3>
+
+                        <div>{{block.settings.description}}</div>
+
+                        {% if block.settings.cta1text != blank or block.settings.cta2text != blank %}
+                            <div class="home__specs__links">
+                                {% if block.settings.cta1text != blank %}
+                                    <a class="home__specs__cta home__specs__cta--black text-link" href="{{block.settings.cta1link}}">{{block.settings.cta1text}}</a>
+                                {% endif %}
+                                {% if block.settings.cta2text != blank %}
+                                    <a class="home__specs__cta text-link"  href="{{block.settings.cta2link}}">{{block.settings.cta2text}}</a>
+                                {% endif %}
+                            </div>
+                        {% endif %}
+
+                    </div>
+                </div>
+            {% endfor %}
+
+        </div>
+
+    </div>
+    <div class="swiper-pagination"></div>
+
+    <div class="swiper-container container-right">
+        <div class="swiper-wrapper">
+
+            {% for block in section.blocks %}
+
+                {%- assign img_url = block.settings.image | img_url: 'master' -%}
+
+                <div class="swiper-slide">
+                    <div class="slider-image" style="background-image: url('{{img_url}}');"></div>
+                </div>
+
+            {% endfor %}
+
+        </div>
+    </div>
+
+    <div class="slider-navigation-specs">
+        <div class="swiper-button-next">
+            <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-chevron-right" viewbox="0 0 284.49 498.98"><path d="M35 498.98a35 35 0 0 1-24.75-59.75l189.74-189.74L10.25 59.75a35.002 35.002 0 0 1 49.5-49.5l214.49 214.49a35 35 0 0 1 0 49.5L59.75 488.73A34.89 34.89 0 0 1 35 498.98z"></path></svg>
+        </div>
+        <div class="swiper-button-prev">
+            <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-chevron-left" viewbox="0 0 284.49 498.98"><path d="M249.49 0a35 35 0 0 1 24.75 59.75L84.49 249.49l189.75 189.74a35.002 35.002 0 1 1-49.5 49.5L10.25 274.24a35 35 0 0 1 0-49.5L224.74 10.25A34.89 34.89 0 0 1 249.49 0z"></path></svg>
+        </div>
+    </div>
+
+
+</div>
+
+
+{% schema %}
+  {
+    "name": "Double Slider",
+    "max_blocks": 99,
+    "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default": "POWER IS PRECIOUS"
+        },
+        {
+            "type": "richtext",
+            "id": "description",
+            "label": "Description",
+            "default": "<p>La tua forza è preziosa. Per questo integriamo <b>l'argento</b> nel nostro rivoluzionario intimo termico. Il risultato è una linea di prodotti <b>senza cuciture</b> che portano <b>comfort, traspirabilità e termoregolazione</b> a un livello superiore.</p>"
+        }
+    ],
+    "blocks": [
+      {
+        "type": "slide",
+        "name": "Slide",
+        "settings": [
+            {
+                "type": "text",
+                "id": "title",
+                "label": "Title",
+                "default": "<span class='home__specs__counter'>01.</span> TERMOREGOLAZIONE PERFETTA"
+            },
+            {
+                "type": "richtext",
+                "id": "description",
+                "label": "Description",
+                "default": "<p>L’uso dell’<b>argento</b> nella composizione del tessuto e la particolare costruzione del filato <b>mantengono costante la tua temperatura corporea</b> in ogni situazione. Il sistema di <b>Thermo Buffering™</b> permette di dissipare il calore e ridurre l’impatto dell’esterno, mantenendo la tua temperatura ideale, sempre.</p>"
+            },
+            {
+                "type": "text",
+                "id": "cta1text",
+                "label": "CTA 1 Text",
+                "default": "SCOPRI LE COLLEZIONI"
+            },
+            {
+                "type": "text",
+                "id": "cta1link",
+                "label": "CTA 1 Link",
+                "default": "/pages/collezioni"
+            },
+            {
+                "type": "text",
+                "id": "cta2text",
+                "label": "CTA 2 Text",
+                "default": "SCOPRI LA TECNOLOGIA"
+            },
+            {
+                "type": "text",
+                "id": "cta2link",
+                "label": "CTA 2 Link",
+                "default": "/pages/technology"
+            },
+            {
+                "type": "image_picker",
+                "id": "image",
+                "label": "Image"
+            }
+        ]
+      }
+    ],
+    "presets": [
+        {
+            "name": "Double Slider",
+            "blocks": [
+                {
+                "type": "slide"
+                }
+            ]
+        }
+    ]
+  }
+{% endschema %}

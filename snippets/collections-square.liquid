@@ -1,0 +1,111 @@
+{% if current_tags contains "Uomo" %}
+  {% assign uomodonna_link = "Uomo" %}
+{% else %}
+  {% assign uomodonna_link = "Donna" %}
+{% endif %}
+
+<div class="swiper-container collection-square__container">
+  <div class=" swiper-wrapper">
+
+    <a
+      class="collection-square fresh {% if current_tags contains "Stay Fresh" %}active{% endif %} swiper-slide"
+      href="/collections/stay-fresh-collection/Stay-Fresh+{{uomodonna_link}}"
+      slide="1">
+      <div class="collection-square__point"></div>
+      <div class="collection-square__title">Stay Fresh</div>
+      <div class="collection-square__temp">
+        da 10° a 40°</div>
+      <!-- <div class="collection-square__subtitle">Lorem, ipsum dolor sit amet
+      </div> -->
+    </a>
+
+    <a
+      class="collection-square warm {% if current_tags contains "Stay Warm" %}active{% endif %} swiper-slide"
+      href="/collections/stay-warm-collection/Stay-Warm+{{uomodonna_link}}"
+      slide="2">
+      <div class="collection-square__point"></div>
+      <div class="collection-square__title">Stay Warm</div>
+      <div class="collection-square__temp">
+        da -20° a 20°</div>
+      <!--<div class="collection-square__subtitle">Lorem, ipsum dolor sit amet
+      </div>-->
+    </a>
+
+    <a
+      class="collection-square xwarm {% if current_tags contains "Stay X-Warm" %}active{% endif %} swiper-slide"
+      href="/collections/stay-x-warm-collection/Stay-X-Warm+{{uomodonna_link}}"
+      slide="3">
+      <div class="collection-square__point"></div>
+      <div class="collection-square__title">Stay X-Warm</div>
+      <div class="collection-square__temp">
+        da -40° a -10°</div>
+      <!--<div class="collection-square__subtitle">Lorem, ipsum dolor sit amet
+      </div>-->
+
+    </a>
+
+    <!--<a
+    class="collection-square lightwarm {% if current_tags contains "Light Warm" %}active{% endif %} swiper-slide"
+    href="/collections/light-warm/Light-Warm"
+    slide="3">
+    <div class="collection-square__point"></div>
+    <div class="collection-square__title">Light Warm</div>
+    <div class="collection-square__temp">
+    da 0° a 20°</div>
+    <div class="collection-square__subtitle">Lorem, ipsum dolor sit amet
+    </div>
+    </a>-->
+
+  </div>
+  <div class="swiper-pagination swiper-pagination-collections-square"></div>
+</div>
+
+  <script>
+    $(".header-wrapper.header-wrapper--sticky").removeClass("is-light")
+    $(".site-header.site-header--heading-style").addClass("site-header--stuck")
+    $(".site-header.site-header--heading-style").addClass("site-header--opening")
+  </script>
+  
+<script>
+  (function(document) {
+
+// only mob
+    if (window.innerWidth > 1024) {
+      return;
+    }
+    let initialSlide = document.querySelector(".collection-square.active").getAttribute("slide")
+    initialSlide--;
+    console.log(initialSlide);
+
+    let selectors = {
+      collectionsSelectorContainer: '.collection-square__container'
+    };
+
+    let collectionsSelectorContainer = document.querySelectorAll(selectors.collectionsSelectorContainer)
+
+    window.addEventListener("load", (event) => {
+
+      collectionsSelectorContainer.forEach((collectionContainer, i) => {
+
+        collectionContainer.classList.add('collection-selector-' + i);
+
+// let productSlider = collectionContainer.querySelector('.technology-slider')
+
+        var collection_swiper = new Swiper(collectionContainer, {
+          slidesPerView: 1,
+          spaceBetween: 10,
+          loop: false,
+          initialSlide: initialSlide,
+          pagination: {
+            el: ".swiper-pagination-collections-square",
+            renderBullet: function(index, className) {
+              return '<span class="' + className + ' hexagon"></span>';
+            }
+          }
+        });
+      });
+
+    });
+
+  })(document);
+</script>

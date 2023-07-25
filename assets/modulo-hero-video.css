@@ -1,0 +1,30 @@
+.hero-video {
+    position: relative;
+}
+.hero-video .volumeWrapper{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+.hero-video .volumeControl{
+    cursor: pointer;
+    width: 50px;
+}
+.hero-video .volumeControl.active{
+    display: block!important;
+}
+.hero-video .volumeControl{
+    display: none!important;
+}
+.hero-video .hero-video__mob {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .hero-video .hero-video__mob {
+        display: block;
+    }
+    .hero-video .hero-video__desk {
+        display: none;
+    }
+}

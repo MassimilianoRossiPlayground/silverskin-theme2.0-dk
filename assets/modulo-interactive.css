@@ -1,0 +1,210 @@
+.section-interactive p {
+    font-size: 17px;
+}
+.section-interactive {
+    position: relative;
+    padding: 60px 0 120px 0;
+    color: #fff;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background: linear-gradient(180.19deg, #202020 0%, #000000 100%);
+}
+
+img.section-interactive__background-text {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 26%;
+}
+
+img.section-interactive__background-top {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    transform: rotate(180deg);
+    left: 0;
+}
+
+img.section-interactive__background-bottom {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.section-interactive img.logo-ag {
+    display: block;
+    padding: 0 0 30px 0;
+    margin: 0 auto;
+    width: 130px;
+}
+
+.section-interactive .text-ag {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.interactive-banner {
+    position: relative;
+    max-width: 1410px;
+    margin: 200px auto 100px auto;
+}
+
+.interactive-banner__info p {
+    text-align: justify;
+}
+
+.interactive-banner__info[attr-pin="1"] {
+    position: absolute;
+    top: 194px;
+    left: 10px;
+    max-width: 450px;
+    display: none;
+}
+
+.interactive-banner__info[attr-pin="1"].open {
+    display: block;
+}
+
+.interactive-banner__info[attr-pin="2"] {
+    position: absolute;
+    top: -216px;
+    right: 10px;
+    max-width: 450px;
+    display: none;
+}
+
+.interactive-banner__info[attr-pin="2"].open {
+    display: block;
+}
+
+.interactive-banner__info[attr-pin="3"] {
+    position: absolute;
+    top: -52px;
+    right: 10px;
+    max-width: 450px;
+    display: none;
+}
+
+.interactive-banner__info[attr-pin="3"].open {
+    display: block;
+}
+
+.interactive-banner__info img {
+    max-width: 260px;
+    margin-bottom: 40px;
+}
+
+.interactive-banner__image {
+    margin: 90px auto;
+    position: relative;
+    max-width: 538px;
+}
+
+img.interactive-banner__image__img {
+    max-width: 538px;
+    width: 100%;
+}
+
+img.interactive-banner__image__pin {
+    position: absolute;
+    max-width: 40px;
+    z-index: 1;
+    cursor: pointer;
+    transition-duration: 0.2s;
+}
+
+img.interactive-banner__image__pin.open {
+    max-width: 60px;
+    transform: translateY(-15%);
+    transition-duration: 0.2s;
+}
+
+img.interactive-banner__image__pin[attr-pin="1"] {
+    top: 70%;
+    left: 5%;
+}
+
+img.interactive-banner__image__pin[attr-pin="2"] {
+    top: 7%;
+    left: 54%;
+}
+
+img.interactive-banner__image__pin[attr-pin="3"] {
+    top: 31%;
+    left: 76%;
+}
+
+.interactive-banner__line {
+    border-bottom: 1px solid #a7a7a7;
+    display: none;
+    position: absolute;
+}
+
+.interactive-banner__line.open {
+    display: block;
+}
+
+.interactive-banner__line[attr-pin="1"] {
+    top: 73%;
+    width: 34%;
+}
+
+.interactive-banner__line[attr-pin="2"] {
+    top: 10%;
+    width: 46%;
+    right: 0;
+}
+
+.interactive-banner__line[attr-pin="3"] {
+    top: 34%;
+    width: 38%;
+    right: 0;
+}
+
+
+@media screen and (max-width: 1100px) {
+
+    .section-interactive {
+        padding: 40px 10px 40px 10px;
+    }
+    .section-interactive p.text-ag {
+        text-align: center;
+        max-width: 360px;
+    }
+    .section-interactive p {
+        font-size: 16px;
+    }
+    .interactive-banner__info img {
+        margin: -120px auto 30px auto;
+        display: block;
+    }
+    .interactive-banner__image {
+        margin: 30px auto 0 auto;
+    }
+    .interactive-banner__line {
+        display: none !important;
+    }
+
+    .interactive-banner__info[attr-pin="1"],
+    .interactive-banner__info[attr-pin="2"],
+    .interactive-banner__info[attr-pin="3"] {
+        position: relative;
+        margin: 0 auto;
+        top: 0;
+        left: 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .slider-navigation-specs {
+        bottom: 60px !important;
+        height: auto !important;
+        top: unset;
+    }
+    .container-sliders_markers .swiper-button-prev {
+        top: 22px;
+    }
+}

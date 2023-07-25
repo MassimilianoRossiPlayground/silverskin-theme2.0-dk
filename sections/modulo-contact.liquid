@@ -1,0 +1,207 @@
+<div class="section-contact-message">
+
+    <div class="contact-message">
+        <div class="contact-message__title">
+            <h2>{{ section.settings.title }}</h2>
+        </div>
+        <div class="contact-message__form">
+            <h5>{{ section.settings.form_title }}</h5>
+            <div class="contact-message__form__form">
+
+                {%- assign formId = 'ContactForm' -%}
+                {% form 'contact', id: formId %}
+            
+                  <input type="hidden" name="contact[tags]" value="ContactForm">
+                  <div class="form-container">
+                    <div class="col-6">
+                      <div class="form-input">
+                        <input type="text" id="{{ formId }}-name" name="contact[name]" placeholder="NAME" required>
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="form-input">
+                        <input
+                          type="email"
+                          id="{{ formId }}-email"
+                          name="contact[email]"
+                          autocorrect="off"
+                          autocapitalize="off"
+                          aria-required="true" 
+                          placeholder="EMAIL" 
+                          required
+                          >
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="form-input">
+                        <textarea rows="10" id="{{ formId }}-message" name="contact[message]" placeholder="MESSAGE" required></textarea>
+                      </div>
+                    </div>
+            
+                    {% comment %} <input type="hidden" id="hidden" name="contact[page]" value="{{ section.settings.hidden_text }}"> {% endcomment %}
+             
+                    <div class="col-12 form-send">
+                        <div class="form-input privacy">
+                            <input id="privacy" type="checkbox" name="customer[privacy]" required/>
+                            <label for="privacy" style="font-weight:normal">{{section.settings.privacy}}</label>
+                        </div>
+                        <input type="submit" class="btn" value="{{section.settings.btn_submit}}">
+                    </div>
+
+                    {%- if form.posted_successfully? -%}
+                        <p class="form-message form-message--success" data-form-status>
+                        {{ 'contact.form.post_success' | t }}
+                        </p>
+                    {%- endif -%}
+            
+                  </div>
+            
+                {% endform %}
+              </div>
+        </div>
+    </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Contact form message",
+    "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default": "SE HAI DOMANDE, CONTATTACI"
+        },
+        {
+            "type": "text",
+            "id": "form_title",
+            "label": "Form Title",
+            "default": "MESSAGGIO"
+        },
+        {
+            "type": "richtext",
+            "id": "privacy",
+            "label": "Privacy"        
+        },
+        {
+            "type": "text",
+            "id": "btn_submit",
+            "label": "Submit button",
+            "default": "INVIA"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Contact form message"
+        }
+    ]
+  }
+{% endschema %}
+
+
+{% style %}
+.contact-message {
+    padding: 100px 20px;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+.contact-message__form {
+    margin-top: 60px;
+}
+.contact-message__form h5 {
+    text-align: left !important;
+}
+.form-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+.contact-message__form .col-6 {
+    width: 50%;
+}
+.contact-message__form .col-6:first-child {
+    padding-right: 20px;
+}
+.contact-message__form .col-12 {
+    width: 100%;
+}
+.contact-message__form input,
+.contact-message__form textarea {
+    width: 100%;
+    background: #d9d9d9;
+    border: none;
+    margin-bottom: 20px;
+}
+.contact-message__form input.btn {
+    background: #000;
+    max-width: 200px;
+    max-height: 40px;
+}
+.contact-message__form .form-send {
+    display: flex;
+    justify-content: space-between;
+}
+.contact-message__form .form-input.privacy {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.contact-message__form input#privacy {
+    width: auto;
+    margin-top: 4px;
+    display:block;
+}
+.contact-message__form label {
+    max-width: 570px;
+}
+.contact-message__form label p {
+    letter-spacing: normal;
+}
+
+@media screen and (max-width: 768px) {
+    .contact-message {
+        padding: 60px 30px;
+        background: #000;
+        color: #fff;
+    }
+    .contact-message h2 {
+        font-size: 32px;
+    }
+    .contact-message__form .col-6 {
+        width: 100%;
+    }
+    .form-send {
+        flex-direction: column;
+    }
+    .contact-message__form .col-6:first-child {
+        padding-right: 0px;
+    }
+    .contact-message a {
+        color: #fff;
+    }
+    .contact-message__form input.btn {
+        border: 1px solid #fff;
+    }
+    .contact-message__form input, .contact-message__form textarea {
+        width: 100%;
+        background: transparent;
+        border: 1px solid #fff;
+        margin-bottom: 20px;
+    }
+    .contact-message__form h5 {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+    .contact-message__form {
+        margin-top: 30px;
+    }
+    .contact-message__form .form-send {
+        display: flex;
+        justify-content: space-between;
+        margin-right: 20px;
+    }
+}
+
+
+{% endstyle %}
+
+

@@ -1,0 +1,89 @@
+{{ 'modulo-hero-banner.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'modulo-hero-banner.js' | asset_url }}" defer="defer"></script>
+
+{%- assign img_url = section.settings.image | img_url: 'master' -%}
+
+{% if section.settings.transparent_header %}
+    {% assign top_margin = "-105px" %}
+    <script>
+        var headerWrapper = document.querySelector(".header-wrapper");
+        headerWrapper.classList.add("is-light");
+    </script>
+{% else %}
+    {% assign top_margin = "0px" %}
+{% endif %}
+
+<div class="section-hero-banner section-hero-banner--test" style="margin-top: {{top_margin}}">
+  {% comment %} <video width="100%" autoplay muted loop>
+    <source src="https://cdn.shopify.com/s/files/1/0285/3706/1424/files/Hero_Silver_Compressed_ca6f19d4-686d-48b3-9070-bd9219756589.mp4?v=1623418559" type="video/mp4">
+    Your browser does not support the video tag.
+  </video> {% endcomment %}
+  <div class="overlay-dark"></div>
+  <img class="hero-banner__image"src="{{ img_url }}" alt="silverskin technology" width="100%">
+  <div class="hero-banner__content">
+    <h1>{{ section.settings.herotitle }}</h1>
+    <h4>{{ section.settings.herosubtitle }}</h4>
+    <div class="hero-banner-cta">
+      <a class="banner-cta__link" href="{{ section.settings.cta1link }}">{{ section.settings.cta1text }}</a>
+      <a class="banner-cta__link" href="{{ section.settings.cta2link }}">{{ section.settings.cta2text }}</a>
+    </div>
+  </div>
+  <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-chevron-left hero-scroll-down" viewbox="0 0 284.49 498.98"><path d="M249.49 0a35 35 0 0 1 24.75 59.75L84.49 249.49l189.75 189.74a35.002 35.002 0 1 1-49.5 49.5L10.25 274.24a35 35 0 0 1 0-49.5L224.74 10.25A34.89 34.89 0 0 1 249.49 0z"></path></svg>
+</div>
+
+{% schema %}
+  {
+    "name": "Hero Banner",
+    "settings": [
+        {
+            "type": "checkbox",
+            "id": "transparent_header",
+            "label": "Transparent Header"
+        },
+        {
+            "type": "text",
+            "id": "herotitle",
+            "label": "Hero Title"
+        },
+        {
+            "type": "text",
+            "id": "herosubtitle",
+            "label": "Hero SubTitle"
+        },
+        {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+        },
+        {
+            "type": "text",
+            "id": "cta1text",
+            "label": "CTA 1 Text",
+            "default": "ACQUISTA UOMO"
+        },
+        {
+            "type": "text",
+            "id": "cta1link",
+            "label": "CTA 1 Link",
+            "default": "/collections/uomo"
+        },
+        {
+            "type": "text",
+            "id": "cta2text",
+            "label": "CTA 2 Text",
+            "default": "ACQUISTA DONNA"
+        },
+        {
+            "type": "text",
+            "id": "cta2link",
+            "label": "CTA 2 Link",
+            "default": "/collections/donna"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Hero Banner"
+        }
+    ]
+  }
+{% endschema %}

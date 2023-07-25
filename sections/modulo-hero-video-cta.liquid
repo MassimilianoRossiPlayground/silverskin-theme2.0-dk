@@ -1,0 +1,194 @@
+<link rel="stylesheet" href="{{ 'modulo-hero-video-cta.css' | asset_url }}" type="text/css">
+
+{% if section.settings.trans_header %}
+  {% assign top_margin = "-105px" %}
+  <script>
+      var headerWrapper = document.querySelector(".header-wrapper");
+      headerWrapper.classList.add("is-light");
+  </script>
+{% else %}
+  {% assign top_margin = "0px" %}
+{% endif %}
+
+{% assign video_desk = section.settings.video_desk | video_tag: image_size: 'master', autoplay: true,  loop: true, muted: true, controls: false %}
+{% assign video_mob = section.settings.video_mob | video_tag: image_size: 'master', autoplay: true,  loop: true, muted: true, controls: false %}
+{% assign image_mob = section.settings.image_mob | img_url: 'master'%}
+
+{% if section.settings.content_position == "bottom" %}
+  {% assign content_position = "top:75%;" %}
+{% else %}
+  {% assign content_position = "top:50%;" %}
+{% endif %}
+
+{% if section.settings.show_arrow_down == "no" %}
+  {% assign show_arrow_down = "display:none;" %}
+{% else %}
+  {% assign show_arrow_down = "" %}
+{% endif %}
+
+<div class="super_container" style="margin-top:{{top_margin}};">
+  <section class="hero-video-cta">
+
+    <div class="only-desk">
+      {{video_desk}}
+    </div>
+
+    <div class="only-mob">
+      {% if video_mob != blank %}
+        {{video_mob}}
+      {% elsif image_mob != blank %}
+        <img width="100%" src="{{image_mob}}" alt="silverkin">
+      {% endif %}
+    </div>
+
+      <div class="hero-video-cta__content" style="{{content_position}}">
+        {%- if section.settings.title != blank -%}
+          <h2 class="only-desk">{{ section.settings.title }}</h2>
+        {%- endif -%}
+        {%- if section.settings.mob_title != blank -%}
+          <h2 class="only-mob">{{ section.settings.mob_title }}</h2>
+        {%- endif -%}
+        {% if section.settings.sub_title != blank %}
+          <h4 class="only-desk">{{ section.settings.sub_title }}</h4>
+        {% endif %}
+        {% if section.settings.mob_sub_title != blank %}
+          <h4 class="only-mob">{{ section.settings.mob_sub_title }}</h4>
+        {% endif %}
+        <div class="hero-video-cta__link only-desk">     
+          {% if section.settings.cta_1_text != blank %}           
+            <a class="btn btn-white" href="{{section.settings.cta_1_link}}" tabindex="-1">
+              {{section.settings.cta_1_text}}
+            </a>
+          {% endif %}
+          {% if section.settings.cta_2_text != blank %}
+            <a class="btn btn-transp" href="{{section.settings.cta_2_link}}" tabindex="-1">
+              {{section.settings.cta_2_text}}
+            </a>
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="hero-video-cta__link only-mob">     
+        {% if section.settings.cta_1_text != blank %}           
+          <a class="btn btn-white" href="{{section.settings.cta_1_link}}" tabindex="-1">
+            {{section.settings.cta_1_text}}
+          </a>
+        {% endif %}
+        {% if section.settings.cta_2_text != blank %}
+          <a class="btn btn-transp" href="{{section.settings.cta_2_link}}" tabindex="-1">
+            {{section.settings.cta_2_text}}
+          </a>
+        {% endif %}
+      </div>
+
+      <i style="{{show_arrow_down}}" class="hero-video-cta-icon fas fa-chevron-down"></i>
+
+  </section>
+</div>  
+
+
+{% schema %}
+  {
+    "name": "Hero Video Cta",
+    "settings": [
+        {
+          "type": "checkbox",
+          "id": "trans_header",
+          "label": "Transparent Header",
+          "default": true
+        },
+        {
+            "type": "video",
+            "id": "video_desk",
+            "label": "Video Desk"
+        },
+        {
+          "type": "video",
+          "id": "video_mob",
+          "label": "Video Mob"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mob",
+          "label": "Image Mob"
+        },
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "sub_title",
+          "label": "Sub Title"
+        },
+        {
+          "type": "text",
+          "id": "mob_title",
+          "label": "Mobile Title"
+        },
+        {
+          "type": "text",
+          "id": "mob_sub_title",
+          "label": "Mobile Sub Title"
+        },
+        {
+          "type": "text",
+          "id": "cta_1_text",
+          "label": "CTA 1 Text"
+        },
+        {
+          "type": "text",
+          "id": "cta_1_link",
+          "label": "CTA 1 Link"
+        },
+        {
+          "type": "text",
+          "id": "cta_2_text",
+          "label": "CTA 2 Text"
+        },
+        {
+          "type": "text",
+          "id": "cta_2_link",
+          "label": "CTA 2 Link"
+        },
+        {
+          "type": "select",
+          "id": "content_position",
+          "label": "Content position",
+          "options": [
+              {
+              "value": "center",
+              "label": "Center"
+              },
+              {
+              "value": "bottom",
+              "label": "Bottom"
+              }
+          ],
+          "default": "center"
+        },
+        {
+          "type": "select",
+          "id": "show_arrow_down",
+          "label": "Show arrow down",
+          "options": [
+              {
+              "value": "yes",
+              "label": "Yes"
+              },
+              {
+              "value": "no",
+              "label": "No"
+              }
+          ],
+          "default": "yes"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Hero Video Cta"
+        }
+    ]
+  }
+{% endschema %}

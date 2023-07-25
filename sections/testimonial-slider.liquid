@@ -1,0 +1,91 @@
+<link rel="stylesheet" href="{{ 'section-slider-testimonial.scss.css' | asset_url }}" type="text/css"/>
+
+{% assign min = 1 %}
+{% assign max = 100 %}
+{% assign diff = max | minus: min %}
+{% assign randomNumber = "now" | date: "%N" | modulo: diff | plus: min %}
+
+{% comment %} START - SLIDER TESTIMONIAL {% endcomment %}
+<div class="container-fluid">
+  <section class="slider-testimonial">
+
+    <div id="slider-testimonial-list-{{randomNumber}}" class="swiper-container slider-testimonial-swiper">
+      <div class="swiper-wrapper">
+        
+        {% for block in section.blocks %} 
+          {% if block.type == 'slide' %}
+            
+            <div class="single-slide swiper-slide">
+
+              <span class="quote-icon">
+                <img src="//cdn.shopify.com/s/files/1/0285/3706/1424/t/11/assets/apice.svg?v=48606940569230692501634903377" alt="apice silverskin">
+              </span>
+
+              <p class="single-slide__slide_cit">{{ block.settings.slide_cit }}</p>
+              
+              {%- assign img_url = block.settings.slide_image | img_url: 'master' -%}
+              <img class="slide-image" src="{{ img_url }}" alt="{{ block.settings.slide_title }} ">
+
+              <p class="single-slide__slide_subtitle">{{ block.settings.slide_subtitle }}</p>
+
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+      <div class="swiper-button-next">
+        <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-chevron-right" viewBox="0 0 284.49 498.98"><path d="M35 498.98a35 35 0 0 1-24.75-59.75l189.74-189.74L10.25 59.75a35.002 35.002 0 0 1 49.5-49.5l214.49 214.49a35 35 0 0 1 0 49.5L59.75 488.73A34.89 34.89 0 0 1 35 498.98z"/></svg>
+      </div>
+      <div class="swiper-button-prev">
+        <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-chevron-left" viewBox="0 0 284.49 498.98"><path d="M249.49 0a35 35 0 0 1 24.75 59.75L84.49 249.49l189.75 189.74a35.002 35.002 0 1 1-49.5 49.5L10.25 274.24a35 35 0 0 1 0-49.5L224.74 10.25A34.89 34.89 0 0 1 249.49 0z"/></svg>
+      </div>
+    </div>
+
+
+  </section>
+</div>  
+{% comment %} END - SLIDER TESTIMONIAL {% endcomment %}
+
+<script src="{{ 'section-slider-testimonial.js' | asset_url }}" defer="defer" ></script>
+
+
+{% schema %}
+  {
+    "name": "Testimonial Slider",
+    "blocks": [
+      {
+        "type": "slide",
+        "name": "slide",
+        "limit": 50,
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "slide_image",
+            "label": "Slide image"
+          }, 
+          {
+            "type": "text",
+            "id": "slide_cit",
+            "label": "Slide cit"
+          }, 
+          {
+            "type": "text",
+            "id": "slide_subtitle",
+            "label": "Slide subtitle"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Slider testimonial",
+        "category": "Slider testimonial",
+        "blocks": [
+          {
+            "type": "slide"
+          }
+        ]
+      }
+    ]
+
+  }
+{% endschema %}

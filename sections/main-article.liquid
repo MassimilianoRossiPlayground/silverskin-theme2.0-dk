@@ -1,0 +1,54 @@
+<link
+  rel="stylesheet"
+  href="{{ 'article.scss.css' | asset_url }}"
+  type="text/css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+
+{% include 'article-template' %}
+ 
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<script src="{{ 'article.js' | asset_url }}" defer="defer"></script>
+
+{% schema %}
+{
+  "name": "Article pages",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "image_hero",
+      "label": "Use featured image as full-width hero",
+      "info": "(if article image is set)",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "blog_show_tags",
+      "label": "Show tags",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "blog_show_date",
+      "label": "Show date",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "blog_show_comments",
+      "label": "Show comment count",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "blog_show_author",
+      "label": "Show author"
+    },
+    {
+      "type": "checkbox",
+      "id": "social_sharing_blog",
+      "label": "Show social sharing buttons",
+      "default": true
+    }
+  ]
+}
+{% endschema %}

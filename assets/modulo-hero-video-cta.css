@@ -1,0 +1,105 @@
+.hero-video-cta {
+    position: relative;
+}
+
+.hero-video-cta video {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.hero-video-cta video.only-desk {
+    height: calc(100vh - 28px);
+}
+
+.hero-video-cta__img {
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.only-mob {
+    display: none;
+}
+
+.hero-video-cta__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    color: #fff;
+}
+
+.hero-video-cta__link a {
+    letter-spacing: normal;
+    min-width: 300px;
+}
+
+.hero-video-cta__content h2 {
+    font-size: 70px;
+}
+
+.hero-video-cta__content h4 {
+    font-size: 20px;
+    letter-spacing: normal;
+}
+
+.hero-video-cta__content i.fas.fa-chevron-down {
+    -webkit-animation: bounce_arrow 2s infinite;
+    -moz-animation: bounce_arrow 2s infinite;
+    -o-animation: bounce_arrow 2s infinite;
+    animation: bounce_arrow 2s infinite;
+}
+
+.hero-video-cta__content i.fas.fa-chevron-down {
+    color: #fff;
+    font-size: 40px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.hero-video-cta-icon {
+    position: absolute;
+    left: 48.5%;
+    bottom: 40px;
+    color: #fff;
+    font-size: 40px;
+    margin-top: 15px;
+    cursor: pointer;
+    -webkit-animation: bounce_arrow 2s infinite;
+    -moz-animation: bounce_arrow 2s infinite;
+    -o-animation: bounce_arrow 2s infinite;
+    animation: bounce_arrow 2s infinite;
+}
+
+
+@media screen and (max-width: 768px) {
+    .only-desk {
+        display: none;
+    }
+    .only-mob {
+        display: block;
+    }
+    section.hero-video-cta video {
+        height: 70vh;
+    }
+    .hero-video-cta__content {
+        width: 90%;
+        top: 50% !important;
+    }
+    .hero-video-cta__content h2 {
+        font-size: 40px;
+    }
+    .hero-video-cta__link {
+        position: absolute;
+        top: 75%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .hero-video-cta__link a {
+        min-width: 160px;
+    }
+
+}

@@ -1,0 +1,65 @@
+.text-cta {
+    padding: 120px 0;
+    background-image: url(https://cdn.shopify.com/s/files/1/0285/3706/1424/files/210929-silverskin-our-collections-texture-01-desk_1x_1b9f86db-52dc-4cc6-9e35-1a84dec6cc3b.png?v=1632929126) !important;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: top;
+    background: #000;
+    color: #fff;
+}
+
+.text-cta .text-cta__link {
+    background-color: #fff;
+    color: #000;
+    text-align: center;
+    margin: 30px auto;
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid #fff;
+    display: block;
+    font-family: "barlow-semibold";
+    font-size: 14px;
+    max-width: 300px;
+    letter-spacing: 0.1em;
+}
+
+.text-cta .text-cta__content {
+    padding: 5px;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+    font-size: 16px;
+    font-family: "barlow";
+}
+
+.text-cta .text-cta__content h2 {
+    font-family: "barlow-italic";
+    font-size: 52px;
+    margin-bottom: 30px;
+}
+.text-cta .text-cta__content h5 {
+    font-family: "barlow";
+    font-size: 28px;
+    margin-bottom: 30px;
+    letter-spacing: normal;
+}
+
+
+@media screen and (max-width: 768px) {
+    .text-cta .text-cta__content {
+        padding: 0 30px;
+        text-align: left;
+    }
+    .text-cta .text-cta__content h5 {
+        text-align: left !important;
+    }
+    .text-cta .text-cta__link {
+        margin: 30px;
+    }
+    .text-cta {
+        padding: 40px 0;
+    }
+    .text-cta .text-cta__content h2 {
+        font-size: 42px;
+    }
+}

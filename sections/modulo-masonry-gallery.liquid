@@ -1,0 +1,216 @@
+<div class="section-masonry-gallery">
+
+    <div class="masonry-gallery only-desk" style="height: {{section.settings.gallery_height}}px;">
+        {% for block in section.blocks %}
+
+            {% if block.settings.direction_vertical_from == "top" %}
+                {% assign direction_vertical_from = "top" %}
+            {% else %}
+                {% assign direction_vertical_from = "bottom" %}
+            {% endif %}
+
+            {% if block.settings.direction_from == "left" %}
+                {% assign direction_from = "left" %}
+                {% assign transform_direction = direction_vertical_from | append:" left" %}
+              {% else %}
+                {% assign direction_from = "right" %}
+                {% assign transform_direction = direction_vertical_from | append:" right" %}
+              {% endif %}
+
+            <img style="position: absolute; {{direction_vertical_from}}: {{ block.settings.cord_y}}px;{{direction_from}}: {{ block.settings.cord_x}}%;transform-origin: {{transform_direction}};" src="{{ block.settings.image | img_url: 'master' }}" alt="silverskin">
+        {% endfor %}
+    </div>
+
+    <div class="masonry-gallery only-mob" style="height: {{section.settings.gallery_height_mob}}px;">
+        {% for block in section.blocks %}
+
+            {% if block.settings.direction_vertical_from == "top" %}
+                {% assign direction_vertical_from = "top" %}
+            {% else %}
+                {% assign direction_vertical_from = "bottom" %}
+            {% endif %}
+
+            {% if block.settings.direction_from_mob == "left" %}
+                {% assign direction_from_mob = "left" %}
+                {% assign transform_direction_mob = direction_vertical_from | append:" left" %}
+            {% else %}
+                {% assign direction_from_mob = "right" %}
+                {% assign transform_direction_mob = direction_vertical_from | append:" right" %}
+            {% endif %}
+
+            <img style="position: absolute; {{direction_vertical_from}}: {{ block.settings.cord_y_mob}}px;{{direction_from_mob}}: {{ block.settings.cord_x_mob}}%;transform-origin: {{transform_direction_mob}}; transform: scale({{block.settings.scale_image_mobile | to_i | divided_by: 100.0}});" src="{{ block.settings.image | img_url: 'master' }}" alt="silverskin">
+        {% endfor %}
+    </div>
+
+</div>
+
+{% schema %}
+  {
+    "name": "Masonry Gallery",
+    "max_blocks": 99,
+    "settings": [
+        {
+            "type": "number",
+            "id": "gallery_height",
+            "label": "Gallery Height in px"
+        },
+        {
+            "type": "number",
+            "id": "gallery_height_mob",
+            "label": "Gallery Height Mobile in px"
+        }
+    ],
+    "blocks": [
+      {
+        "type": "image",
+        "name": "Image",
+        "settings": [
+            {
+                "type": "image_picker",
+                "id": "image",
+                "label": "Image"
+            },
+            {
+                "type": "select",
+                "id": "direction_vertical_from",
+                "label": "Direction vertical from",
+                "options": [
+                    {
+                    "value": "top",
+                    "label": "Top"
+                    },
+                    {
+                    "value": "bottom",
+                    "label": "Bottom"
+                    }
+                ],
+                "default": "top",
+                "info": "Use from bottom for last images."
+            },
+            {
+                "type": "select",
+                "id": "direction_from",
+                "label": "Direction orizontal from",
+                "options": [
+                    {
+                    "value": "left",
+                    "label": "Left"
+                    },
+                    {
+                    "value": "right",
+                    "label": "Right"
+                    }
+                ],
+                "default": "left"
+            },
+            {
+                "type": "number",
+                "id": "cord_x",
+                "label": "Coordinata X in % da 0 a 100"
+            },
+            {
+                "type": "number",
+                "id": "cord_y",
+                "label": "Coordinata Y in px"
+            },
+            {
+                "type": "select",
+                "id": "direction_from_mob",
+                "label": "Direction Mobile orizontal from",
+                "options": [
+                    {
+                    "value": "left",
+                    "label": "Left"
+                    },
+                    {
+                    "value": "right",
+                    "label": "Right"
+                    }
+                ],
+                "default": "left"
+            },
+            {
+                "type": "number",
+                "id": "cord_x_mob",
+                "label": "Coordinata Mobile X in % da 0 a 100"
+            },
+            {
+                "type": "number",
+                "id": "cord_y_mob",
+                "label": "Coordinata Mobile Y in px"
+            },
+            {
+                "type": "number",
+                "id": "scale_image_mobile",
+                "label": "Scale image mobile",
+                "default": 50
+            }
+        ]
+      }
+    ],
+    "presets": [
+        {
+            "name": "Masonry Gallery",
+            "blocks": [
+                {
+                "type": "image"
+                }
+            ]
+        }
+    ]
+  }
+{% endschema %}
+
+
+{% style %}
+.masonry-gallery {
+    position: relative;
+    width: 100%;
+    background: #d9d9d9;
+}
+@media screen and (max-width: 1920px) {
+    .masonry-gallery img {
+        transform: scale(0.8);
+    }
+}
+@media screen and (max-width: 1440px) {
+    .masonry-gallery img {
+        transform: scale(0.7);
+    }
+}
+@media screen and (max-width: 991px) {
+    .masonry-gallery img {
+        transform: scale(0.6);
+    }
+}
+
+/* @media screen and (max-width: 768px) {
+    .masonry-gallery {
+        display: flex;
+        overflow-x: scroll;
+        height: 400px !important;
+        overflow-y: hidden;
+    }
+    .masonry-gallery img {
+        position: relative !important;
+        transform: none;
+        width: 100%;
+        height: 100%;
+        top: unset !important;
+        left: unset !important;
+        right: unset !important;
+    }
+    .masonry-gallery::-webkit-scrollbar {
+        height: 4px;
+        width: 4px;
+        background: gray;
+    }
+    .masonry-gallery::-webkit-scrollbar-thumb:horizontal {
+        background: #000;
+        border-radius: 10px;
+    }
+} */
+
+{% endstyle %}
+
+

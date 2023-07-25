@@ -1,0 +1,300 @@
+{%- comment -%}ly_liquid_scripts_begin{%- endcomment -%}{%- capture ly_liquid_content -%}{%- comment -%}ly_liquid_scripts_end{%- endcomment -%}{% comment %}ly_liquid_scripts_begin{% endcomment %}{% capture ly_liquid_content %}{% comment %}ly_liquid_scripts_end{% endcomment %}<!doctype html>
+<html class="no-js" lang="{{ shop.locale }}"{%- comment -%}ly_dir_replace_for_[]_begin{%- endcomment -%}{%- assign language_code = '_' | append: request.locale.iso_code -%}{%- if '_ar_ha_he_fa_ks_ku_ps_ur_yi' contains language_code -%} dir="{% comment %}ly_dir_replace_for_[rtl]_begin{% endcomment %}{%- assign language_code = '_' | append: request.locale.iso_code -%}{%- if '_ar_ha_he_fa_ks_ku_ps_ur_yi' contains language_code -%}{%- assign dir = 'rtl' -%}{%- else -%}{%- capture dir -%}rtl{%- endcapture -%}{%- endif -%}{{- dir -}}{% comment %}ly_dir_replace_end{% endcomment %}" {%- endif -%}{%- comment -%}ly_dir_replace_end{%- endcomment -%}>
+<head>
+{% if settings.script_inside_head != blank %}
+  {{ settings.script_inside_head }}
+{% endif %}
+{% include 'kiwiSizing' %}
+{%- render 'hoculus-scp-opt' -%}
+{%- if customer -%}
+ 
+  {%- assign user_visitorLoginState = 'logged-id' -%}
+
+  {%- if customer.orders_count > 0 -%}
+    {%- assign user_visitorExistingCustomer = 'yes' -%}
+  {%- else -%}
+    {%- assign user_visitorExistingCustomer = 'no' -%}
+  {%- endif -%}
+
+  {%- if customer.accepts_marketing -%}
+    {%- assign user_visitorNewsletterSubscription = 'yes' -%}
+  {%- else -%}
+    {%- assign user_visitorNewsletterSubscription = 'no' -%}
+  {%- endif -%}
+
+{%- else -%}
+  {%- assign user_visitorLoginState = 'not-logged' -%}
+{%- endif -%}
+
+{%- include 'kiwiSizing' -%}
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="{{ settings.color_button }}">
+  <meta name="google-site-verification" content="RH3esHt2mbPLJv9iELD1malxkAVtTCu4m6TdG6ggaGg" />
+  
+  <link rel="alternate" hreflang="it"
+       href="{{ canonical_url }}" />
+  <link rel="alternate" hreflang="en"
+       href="{{ canonical_url | replace: 'https://www.silverskin.it/', 'https://www.silverskin.it/en/' }}" />
+  <link rel="alternate" hreflang="de"
+       href="{{ canonical_url | replace: 'https://www.silverskin.it/', 'https://www.silverskin.it/de/' }}" />
+  <link rel="alternate" hreflang="x-default"
+       href="{{ canonical_url }}" />
+
+  <link rel="canonical" href="{{ canonical_url | split: '?' | first }}">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="preload" href="{{ 'fontawesome-5.12.0.min.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="{{ 'fontawesome-5.12.0.min.css' | asset_url }}"></noscript>
+  {%- if settings.favicon -%}
+    <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png" />
+  {%- endif -%}
+
+  {%- include 'seo-title' -%}
+  <title>{{ seo_title }}</title>
+  
+  {% comment %} {%- if template contains 'product' -%}
+    {%- include 'product-template-variables' -%}
+  {%- endif -%} {% endcomment %}
+
+  {%- if page_description -%}
+  <meta name="description" content="{{ page_description | escape }}">
+  {%- endif -%}
+
+  {%- include 'social-meta-tags' -%}
+  
+  {%- include 'font-face' -%}
+
+  {{ 'theme.scss.css' | asset_url | stylesheet_tag }}
+
+  {%- if page.handle == "privacy" or page.handle == "condizioni-di-vendita" or page.handle == "cookie-policy" or page.handle == "metodi-di-pagamento" -%}
+    <meta name="robots" content="noindex">
+  {%- endif -%}
+
+  {%- style -%}
+    .collection-item__title {
+      font-size: {{ settings.type_collection_size | times: 0.8 }}px;
+    }
+
+    @media screen and (min-width: 769px) {
+      .collection-item__title {
+        font-size: {{ settings.type_collection_size }}px;
+      }
+    }
+  {%- endstyle -%}
+
+  <script>
+    document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+
+    window.theme = window.theme || {};
+    theme.strings = {
+      addToCart: {{ 'products.product.add_to_cart' | t | json }},
+      soldOut: {{ 'products.product.sold_out' | t | json }},
+      unavailable: {{ 'products.product.unavailable' | t | json }},
+      stockLabel: {{ 'products.product.stock_label' | t: count: '[count]' | json }},
+      willNotShipUntil: {{ 'products.product.will_not_ship_until' | t: date: '[date]' | json }},
+      willBeInStockAfter: {{ 'products.product.will_be_in_stock_after' | t: date: '[date]' | json }},
+      waitingForStock: {{ 'products.product.waiting_for_stock' | t | json }},
+      savePrice: {{ 'products.general.save_html' | t: saved_amount: '[saved_amount]' | json }},
+      cartEmpty: {{ 'cart.general.empty' | t | json }},
+      cartTermsConfirmation: {{ 'cart.general.terms_confirm' | t | json }}
+    };
+    theme.settings = {
+      dynamicVariantsEnable: true,
+      dynamicVariantType: {{ settings.variant_type | json }},
+      cartType: {{ settings.cart_type | json }},
+      currenciesEnabled: {{ settings.enable_currencies | json }},
+      nativeMultiCurrency: {{ shop.enabled_currencies.size }} > 1 ? true : false,
+      moneyFormat: {{ shop.money_format | json }},
+      saveType: {{ settings.product_save_type | json }},
+      recentlyViewedEnabled: false,
+      predictiveSearch: {{ settings.predictive_search_enabled }},
+      predictiveSearchType: {{ settings.search_type | json }},
+      inventoryThreshold: {{ settings.inventory_threshold }},
+      quickView: {{ settings.quick_shop_enable }},
+      themeName: 'Impulse',
+      themeVersion: "2.5.3"
+    };
+
+    window.hoculus = window.hoculus || {}
+    hoculus.stylesheets = [
+      
+    ]
+    hoculus.scripts = [
+      //'https://static.hotjar.com/c/hotjar-1571249.js?sv=6'
+    ]
+  </script>
+
+  {{ content_for_header }}
+
+  <script src="{{ 'jquery-3.5.1.min.js' | asset_url }}"></script>
+
+  <script src="{{ 'vendor-scripts-v5.js' | asset_url | split: '?' | first }}" defer="defer"></script>
+
+  {%- if settings.enable_currencies -%}
+    {%- unless shop.enabled_currencies.size > 1 -%}
+      <script src="/services/javascripts/currencies.js" defer="defer"></script>
+      <script src="{{ 'currencies.jquery.min.js' | asset_url | split: '?' | first }}" defer="defer"></script>
+    {%- endunless -%}
+    <link rel="stylesheet" href="{{ 'currency-flags.css' | asset_url }}">
+  {%- endif -%}
+
+  <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
+
+  {%- if request.page_type contains 'customers/' -%}
+    <script src="{{ 'shopify_common.js' | shopify_asset_url }}" defer="defer"></script>
+  {%- endif -%}
+
+  {%- comment -%} START - Custom Tool CSS {%- endcomment -%}
+
+    <link rel="preload" href="{{ 'custom-style.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="{{ 'custom-style.css' | asset_url }}"></noscript>
+    <link rel="preload" href="{{ 'swiper.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="{{ 'swiper.css' | asset_url }}"></noscript>
+    <link rel="preload" href="{{ 'custom-style__lp-stay-fresh.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="{{ 'custom-style__lp-stay-fresh.css' | asset_url }}"></noscript>
+    <link rel="preload" href="{{ 'custom-style__lp-configuratore.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="{{ 'custom-style__lp-configuratore.css' | asset_url }}"></noscript>
+  <link rel="preload" href="{{ 'custom-style__lp-activity.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="{{ 'custom-style__lp-activity.css' | asset_url }}"></noscript>
+    <link rel="preload" href="{{ 'nouislider.min.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="{{ 'nouislider.min.css' | asset_url }}"></noscript>
+
+      <link rel="preload" href="{{ 'custom-style-mob.liquid.scss' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="{{ 'custom-style-mob.liquid.scss' | asset_url }}"></noscript>
+<link rel="stylesheet" href="{{ 'modulo-double-slider.css' | asset_url }}" type="text/css">
+
+{%- comment -%} END - Custom Tool CSS {%- endcomment -%}
+
+<meta name="facebook-domain-verification" content="6d20m9zdoot8y557o0lqer21oquzk0" />
+
+{%- comment -%}Added by Heartcoding from Sale & Discount Manager{%- endcomment -%}
+  {%- if product -%}<script>const hcVariants = {{ product.variants | json }};</script>{%- endif -%}{{ shop.metafields.saletag.hc_tag_css }}
+
+{%- include 'analyzify-gtm-body' -%}
+{%- comment -%}ly_dir_styles_begin{%- endcomment -%}{%- assign language_code = '_' | append: request.locale.iso_code -%}{%- if '_ar_ha_he_fa_ks_ku_ps_ur_yi' contains language_code -%}{{- 'ly-rtl.css' | asset_url | stylesheet_tag -}}{%- endif -%}{%- comment -%}ly_dir_styles_end{%- endcomment -%}{% comment %}ly_dir_styles_begin{% endcomment %}{%- assign language_code = '_' | append: request.locale.iso_code -%}{%- if '_ar_ha_he_fa_ks_ku_ps_ur_yi' contains language_code -%}{{- 'ly-rtl.css' | asset_url | stylesheet_tag -}}{%- endif -%}{% comment %}ly_dir_styles_end{% endcomment %}
+
+</head>
+
+
+<body class="template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }} template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}--{{ handle }} {%- if settings.enable_currencies -%} currencies-enabled{%- endif -%}" data-transitions="false">
+
+{% if settings.script_after_body_open != blank %}
+  {{ settings.script_after_body_open }}
+{% endif %}
+
+<script>window.KlarnaThemeGlobals={};{%case template.name%} {%when"product"%} window.KlarnaThemeGlobals.data_purchase_amount={{product.first_available_variant.price}};window.KlarnaThemeGlobals.productVariants={{product.variants|json}};window.KlarnaThemeGlobals.documentCopy=document.cloneNode(true);{%when"cart"%} window.KlarnaThemeGlobals.data_purchase_amount={{cart.total_price}};window.KlarnaThemeGlobals.documentCopy=document.cloneNode(true);{%endcase%}</script>
+
+  <a class="in-page-link visually-hidden skip-link" href="#MainContent">{{ 'general.accessibility.skip_to_content' | t }}</a>
+
+  {%- comment -%} LOAD SVG {%- endcomment -%}
+  <div id="spriteSvg" data-svg="https://cdn.shopify.com/s/files/1/0285/3706/1424/files/svg.svg?v=1589365684"></div>
+
+  <div id="PageContainer" class="page-container">
+    <div class="transition-body">
+
+    {%- section 'header' -%}
+
+      <main class="main-content" id="MainContent" locale="{{ shop.locale }}">
+        {{ content_for_layout }}
+      </main>
+
+      {%- section 'footer-promotions' -%}
+      {%- section 'footer' -%}
+
+    </div>
+  </div>
+
+  {%- section 'newsletter-popup' -%}
+
+  {%- if settings.cart_type == 'drawer' -%}
+    {%- include 'ajax-cart-template' -%}
+  {%- endif -%}
+
+  {%- if settings.enable_currencies -%}
+    {%- include 'currency-modal' -%}
+  {%- endif -%}
+
+  {%- comment -%}
+    Custom markup for slider arrows using theme icons
+  {%- endcomment -%}
+  <div class="hide">
+    <button id="prevArrowTemplate" class="slick-prev" aria-label="{{ 'general.pagination.previous' | t }}" type="button">
+      <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-chevron-left" viewBox="0 0 284.49 498.98"><path d="M249.49 0a35 35 0 0 1 24.75 59.75L84.49 249.49l189.75 189.74a35.002 35.002 0 1 1-49.5 49.5L10.25 274.24a35 35 0 0 1 0-49.5L224.74 10.25A34.89 34.89 0 0 1 249.49 0z"/></svg>
+      <span class="icon__fallback-text">{{ 'general.pagination.previous' | t }}</span>
+    </button>
+    <button id="nextArrowTemplate" class="slick-next" aria-label="{{ 'general.pagination.next' | t }}" type="button">
+      <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-chevron-right" viewBox="0 0 284.49 498.98"><path d="M35 498.98a35 35 0 0 1-24.75-59.75l189.74-189.74L10.25 59.75a35.002 35.002 0 0 1 49.5-49.5l214.49 214.49a35 35 0 0 1 0 49.5L59.75 488.73A34.89 34.89 0 0 1 35 498.98z"/></svg>
+      <span class="icon__fallback-text">{{ 'general.pagination.next' | t }}</span>
+    </button>
+  </div>
+
+  {%- if settings.predictive_search_enabled -%}
+    {%- include 'predictive-template' -%}
+  {%- endif -%}
+
+  {%- include 'video-modal' -%}
+  {%- include 'photoswipe-template' -%}
+  {%- if template contains 'product' -%}
+    {%- include 'recently-viewed-product-template' -%}
+  {%- endif -%}
+
+  <script type="text/javascript" src="{{ 'swiper.min.js' | asset_url }}" defer="defer"></script>
+  <script type="text/javascript" src="{{ 'gsap.min.js' | asset_url }}" defer="defer"></script>
+  <script type="text/javascript" src="{{ 'ScrollTrigger.min.js' | asset_url }}" defer="defer"></script>
+  <script type="text/javascript" src="{{ 'scripts.js' | asset_url }}" defer="defer"></script>
+  <script type="text/javascript" src="{{ 'scripts__lp-stay-fresh.js' | asset_url }}" defer="defer"></script>
+  <script type="text/javascript" src="{{ 'scripts__lp-configuratore.js' | asset_url }}" defer="defer"></script>
+  <script type="text/javascript" src="{{ 'scripts__lp-activity.js' | asset_url }}" defer="defer"></script>
+  <script type="text/javascript" src="{{ 'nouislider.min.js' | asset_url }}" defer="defer"></script>
+
+  {%- comment -%} START Moduli {%- endcomment -%}
+  <script type="text/javascript" src="{{ 'modulo-slider-cards.js' | asset_url }}" defer="defer"></script>
+
+  {%- comment -%} END Moduli {%- endcomment -%}
+
+
+  {%- comment -%} END - Custom Tool JS {%- endcomment -%}
+
+<!-- WPD Start -->
+                {%- if customer.tags.size > 0 and template != 'cart' -%}
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                      let checkoutbtninterval = setInterval(function(){
+                        var x=document.querySelectorAll("input[name='checkout'], button[name='checkout'], input[name='goto_pp'], button[name='goto_pp'], input[name='goto_gc'], button[name='goto_gc'], [href$='checkout']");
+                        var WPD_RedirectToCart = function(e) {
+                          	e.stopPropagation();
+                            e.preventDefault();
+                            window.location = '/cart';
+                            };
+                            for (var i = 0; i < x.length; i++) {
+                                x[i].addEventListener('click', WPD_RedirectToCart, false);
+                            }
+},500)
+                });
+              </script>
+               {%- endif -%}
+         
+
+               {%- if customer.tags.size > 0 and template == 'cart' -%}
+                 {%- include 'wcp_cart' -%}
+               {%- endif -%}
+               <!-- WPD End -->
+  {%- include 'js-translations' -%}
+  
+<link rel="preload" as="script" href="https://consent.cookiebot.com/uc.js">
+<script id="Cookiebot" rel="preconnect" src="https://consent.cookiebot.com/uc.js" data-cbid="5b6e39bd-2ece-46dc-9463-ccfb70627bb8" data-blockingmode="auto" type="text/javascript" defer="defer"></script>
+<script type="text/javascript" src="{{ 'hoculus.js' | asset_url }}" defer="defer"></script>
+
+  {%- include 'subscribe-it-helper' -%}{%- comment -%}ly_liquid_scripts_begin{%- endcomment -%}{%- endcapture -%}{%- render 'ly-liquid-scripts' content: ly_liquid_content -%}{%- comment -%}ly_liquid_scripts_end{%- endcomment -%}{%- comment -%}ly_core_scripts_begin{%- endcomment -%}{%- render 'ly-core-scripts' -%}{%- comment -%}ly_core_scripts_end{%- endcomment -%}{%- comment -%}ly_switcher_factory_begin{%- endcomment -%}{%- render 'ly-switcher-factory' -%}{%- comment -%}ly_switcher_factory_end{%- endcomment -%}<!-- langify-v2-scripts-begin -->{% comment %}ly_liquid_scripts_begin{% endcomment %}{% endcapture %}{% render 'ly-liquid-scripts' content: ly_liquid_content %}{% comment %}ly_liquid_scripts_end{% endcomment %}{% comment %}ly_core_scripts_begin{% endcomment %}{% render 'ly-core-scripts' %}{% comment %}ly_core_scripts_end{% endcomment %}{% comment %}ly_switcher_factory_begin{% endcomment %}{% render 'ly-switcher-factory' %}{% comment %}ly_switcher_factory_end{% endcomment %}<!-- langify-v2-scripts-end -->
+
+{% if settings.script_before_body_close != blank %}
+  {{ settings.script_before_body_close }}
+{% endif %}
+
+</body>
+
+ 
+
+
+</html>

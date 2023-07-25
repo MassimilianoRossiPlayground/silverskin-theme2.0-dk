@@ -1,0 +1,57 @@
+<link rel="stylesheet" href="{{ 'modulo-icons.css' | asset_url }}" type="text/css">
+<script src="{{ 'modulo-icons.js' | asset_url }}" defer="defer"></script>
+
+<div class="listicons">
+    <div class="listicons__box">
+
+        {% for block in section.blocks %}
+
+            {%- assign img_url = block.settings.image | img_url: 'master' -%}
+
+            <div class="listicons__box__single">
+                <div class="hero__icons__wrap">
+                    <img src="{{ img_url }}" alt="silverskin">
+                    <h3>{{ block.settings.title }}</h3>
+                </div>
+            </div>
+
+        {% endfor %}
+
+    </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Icons",
+    "max_blocks": 99,
+    "blocks": [
+      {
+        "type": "icon",
+        "name": "Icon",
+        "settings": [
+            {
+                "type": "text",
+                "id": "title",
+                "label": "Title",
+                "default": "ANTIBATTERICO"
+            },
+            {
+                "type": "image_picker",
+                "id": "image",
+                "label": "Image"
+            }
+        ]
+      }
+    ],
+    "presets": [
+        {
+            "name": "Icons",
+            "blocks": [
+                {
+                "type": "icon"
+                }
+            ]
+        }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="{{ 'modulo-product-slider.css' | asset_url }}" type="text/css">
+
+<div class="activity-page__products">
+  {% for products_collection in collectionsActivitiesTemperatures %}
+    {% render 'page-activity_slider-products-item' , products_collection: products_collection %}
+  {% endfor %}
+</div>
+
+{% schema %}
+  {
+    "name": "Product Slider",
+    "settings": [
+        {
+          "type": "collection_list",
+          "id": "collections",
+          "label": "Collections"
+        }
+    ],
+    "presets": [
+        {
+            "name": "Product Slider"
+        }
+    ]
+  }
+{% endschema %}

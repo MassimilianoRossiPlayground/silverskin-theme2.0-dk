@@ -1,0 +1,112 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "39ea0bc7-54cd-4be6-86b6-f3e9f8d024ee": {
+      "type": "background-image-text",
+      "settings": {
+        "subtitle": "",
+        "title": "AMARE OLTRE LA FATICA",
+        "text": "<p><em><strong>Una storia di profonda passione, di amore viscerale, <br\/>quello che ti spinge oltre i limiti, verso mete lontane.<\/strong><\/em><\/p>",
+        "button_label": "",
+        "button_link": "",
+        "image": "shopify:\/\/shop_images\/01-Hero-HP.jpg",
+        "focal_point": "center",
+        "color_border": "#000000",
+        "layout": "left",
+        "height": 750,
+        "framed": false,
+        "parallax": false
+      }
+    },
+    "81fd9031-4c4f-4bb6-9152-4c36341866c5": {
+      "type": "featured-content",
+      "settings": {
+        "title": "",
+        "text": "<p><strong>Vi raccontiamo la storia di chi, della bici, <br\/>ha fatto molto più di uno sport: di chi la ama oltre la fatica. <\/strong><\/p>",
+        "align_text": "center",
+        "narrow_column": false,
+        "enlarge_text": true,
+        "divider": false
+      }
+    },
+    "837eff25-8318-4f0f-b6c9-cbb0be57e602": {
+      "type": "text-and-image",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/02-img-1.jpg",
+        "image_width": 500,
+        "subtitle": "",
+        "title": "",
+        "text": "<p>Dietro i record, le medaglie e i numeri sulla maglia, c’è un mondo intero fatto di allenamenti estenuanti, sveglie irragionevoli, cibi poco appetitosi e tanta fatica. Un mondo che meriterebbe i riflettori e senza il quale non esisterebbero traguardi e finish line. Abbiamo ripercorso con Nico Valsesia (ultrabiker e ultratrailer) i mesi di avvicinamento ad alcune delle gare di ultracycling più dure al mondo. <\/p>",
+        "button_label": "",
+        "button_link": "",
+        "layout": "left",
+        "divider": false
+      }
+    },
+    "89202ec3-1769-4dfc-ab92-f4f92d0f7869": {
+      "type": "text-and-image",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/02-img-2_eba4aabc-2626-48be-bbc8-46d9e23c6c42.jpg",
+        "image_width": 500,
+        "subtitle": "",
+        "title": "",
+        "text": "<p>Dal casco con i piombi, per preparare il collo a giornate intere di pedalate, alle sedie di casa ingegnosamente sostituite da sellini per la bici. <br\/>Abbiamo rivissuto con lui i durissimi allenamenti in ogni condizione climatica, le diete e le sveglie prima dell’alba. <\/p>",
+        "button_label": "",
+        "button_link": "",
+        "layout": "right",
+        "divider": false
+      }
+    },
+    "591f5e9a-7ea5-4ba6-a70e-5aa3887d1819": {
+      "type": "background-image-text",
+      "settings": {
+        "subtitle": "",
+        "title": "",
+        "text": "",
+        "button_label": "",
+        "button_link": "",
+        "image": "shopify:\/\/shop_images\/02-img-3_a96c9abc-e883-429c-8a83-1c9ede195108.jpg",
+        "focal_point": "bottom",
+        "color_border": "#f4f4f4",
+        "layout": "left",
+        "height": 750,
+        "framed": false,
+        "parallax": true
+      }
+    },
+    "f56a4586-2671-457c-85a9-4cc3eaa5cbaa": {
+      "type": "featured-content",
+      "settings": {
+        "title": "",
+        "text": "<p>Abbiamo assistito a un amore a volte folle, dalle radici profondissime, senza il quale nulla sarebbe possibile. <br\/>La passione è preziosa e, come il base layer, è il vero primo strato verso ogni traguardo. <br\/><strong>Per questo ci impegniamo a custodirla. <\/strong><\/p><p><\/p><p><a href=\"https:\/\/www.silverskin.it\/collections\/donna\" title=\"https:\/\/www.silverskin.it\/collections\/donna\">SCOPRI BASE LAYER DONNA<\/a>   <a href=\"https:\/\/www.silverskin.it\/collections\/uomo\" title=\"https:\/\/www.silverskin.it\/collections\/uomo\">SCOPRI BASE LAYER UOMO<\/a><\/p>",
+        "align_text": "center",
+        "narrow_column": false,
+        "enlarge_text": true,
+        "divider": false
+      }
+    },
+    "e3bc315b-de9b-4e9c-b446-e0d28a4f36c1": {
+      "type": "featured-video",
+      "settings": {
+        "title": "",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=2nKZMNxmcD0",
+        "divider": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "39ea0bc7-54cd-4be6-86b6-f3e9f8d024ee",
+    "81fd9031-4c4f-4bb6-9152-4c36341866c5",
+    "837eff25-8318-4f0f-b6c9-cbb0be57e602",
+    "89202ec3-1769-4dfc-ab92-f4f92d0f7869",
+    "591f5e9a-7ea5-4ba6-a70e-5aa3887d1819",
+    "f56a4586-2671-457c-85a9-4cc3eaa5cbaa",
+    "e3bc315b-de9b-4e9c-b446-e0d28a4f36c1"
+  ]
+}

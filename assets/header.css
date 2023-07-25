@@ -1,0 +1,38 @@
+.btn-head.header-selector-localization.header-selector-localization--desk {
+    display: flex;
+    color: #fff;
+}
+.disclosure__button {
+    margin-right: 20px;
+    cursor: pointer;
+}
+.disclosure__item {
+    cursor: pointer;
+}
+li.disclosure__item img {
+    width: 19px;
+    vertical-align: top;
+}
+ul#CountryList,
+ul#LanguageList {
+    position: absolute;
+    list-style: none;
+    margin-left: 0;
+    margin-top: 10px;
+}
+li.disclosure__item a {
+    color: #fff;
+}
+
+.disclosure__button svg {
+    filter: invert(1);
+    width: 10px;
+    height: 10px;
+    vertical-align: middle;
+    transform: rotate(0deg);
+    transition-duration: 0.2s;
+}
+.disclosure__button[aria-expanded="true"] svg {
+    transform: rotate(180deg);
+    transition-duration: 0.2s;
+}

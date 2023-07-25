@@ -1,0 +1,42 @@
+.listicons {
+    background-color: #27292F;
+}
+
+.listicons .listicons__box {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 50px 0;
+}
+
+.listicons .listicons__box img {
+    width: 100%;
+    max-width: 77px;
+    margin: 0 auto;
+    display: block;
+}
+
+.listicons .listicons__box h3 {
+    margin: 15px 0;
+    color: #fff;
+    font-family: "barlow-bold-italic" !important;
+    font-size: 12px;
+    letter-spacing: 0.75px;
+    line-height: 14px;
+    text-align: center;
+    font-weight: 600;
+}
+
+
+@media screen and (max-width: 768px) {
+
+    .listicons__box__single {
+        width: 33%;
+        margin-bottom: 15px;
+    }
+
+    .listicons .listicons__box img {
+        max-width: 35px;
+    }
+
+}

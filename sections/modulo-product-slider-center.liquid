@@ -1,0 +1,79 @@
+<link rel="stylesheet" href="{{ 'modulo-product-slider-center.css' | asset_url }}" type="text/css">
+<script src="{{ 'modulo-product-slider-center.js' | asset_url }}" defer="defer"></script>
+
+<div class="section-bestsellers">
+  <div class="box-width section-bestsellers__content">
+    <h2>{{ section.settings.title }}</h2>
+
+    <div class="swiper-container technology-slider">
+        <div class="swiper-wrapper">
+            {% for product_block in section.blocks %}
+
+                {% assign p_id = product_block.settings.product_id %}
+                
+                <div class="swiper-slide">
+                    <img src="{{  all_products[p_id].featured_image | img_url: '1024x' }}" alt="best seller silverskin">
+                    <h4>{{ all_products[p_id].title }}</h4>    
+                    <h4 class="best-sellers-price">{{ all_products[p_id].price | money }}</h4>
+                    <div class="best-sellers-cta">
+                    <a class="best-sellers-cta__link" 
+                        attr-title="{{ all_products[p_id].title }}" 
+                        attr-price="{{ all_products[p_id].price | money | remove: '€ ' | replace: ',' , '.'  }}" 
+                        attr-handle="{{ all_products[p_id].handle }}" 
+                        attr-type="{{ all_products[p_id].type }}" 
+                        href="{{ all_products[p_id].url }}">{{ section.settings.cta_text }}</a>
+                    </div>
+                </div>
+            {% endfor %}
+
+        </div>
+        <div class="swiper-button-next"><i class="fas fa-angle-right"></i></div>
+        <div class="swiper-button-prev"><i class="fas fa-angle-left"></i></div>
+    </div>
+
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Product Slider Center",
+    "max_blocks": 99,
+    "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default": "SCOPRI I NOSTRI BEST SELLER"
+        },
+        {
+            "type": "text",
+            "id": "cta_text",
+            "label": "CTA text",
+            "default": "ACQUISTA"
+        }
+    ],
+    "blocks": [
+      {
+        "type": "product_block",
+        "name": "Product",
+        "settings": [
+            {
+                "type": "product",
+                "id": "product_id",
+                "label": "Product"
+            }
+        ]
+      }
+    ],
+    "presets": [
+        {
+            "name": "Product Slider Center",
+            "blocks": [
+                {
+                "type": "product_block"
+                }
+            ]
+        }
+    ]
+  }
+{% endschema %}

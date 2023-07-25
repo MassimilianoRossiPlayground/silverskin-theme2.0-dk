@@ -1,0 +1,545 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "180300a6-2f84-4cda-b590-06e2f7494ce9": {
+      "type": "modulo-hero-video-cta",
+      "settings": {
+        "trans_header": true,
+        "video_desk": "shopify:\/\/files\/videos\/silverskin2.mp4",
+        "image_mob": "shopify:\/\/shop_images\/Screenshot_2023-06-07_alle_16.34_1.png",
+        "title": "",
+        "sub_title": "",
+        "mob_title": "I base layer per il trekking estivo",
+        "mob_sub_title": "",
+        "cta_1_text": "Scopri i Base Layer per la montagna",
+        "cta_1_link": "\/collections\/summer-mountaneering",
+        "cta_2_text": "",
+        "cta_2_link": "",
+        "content_position": "bottom",
+        "show_arrow_down": "no"
+      }
+    },
+    "1cf481ed-804f-43aa-99e5-b39cac39cc4b": {
+      "type": "modulo-text-cta",
+      "settings": {
+        "title": "MONTAGNA, MAESTRA DI VITA",
+        "sub_title": "Esplora la sua dimensione più intima con i nostri base layer",
+        "text": "<p>Dietro il suo profilo austero, al di là dei suoi percorsi aspri, oltre la sua imponenza: è nella parte meno visibile della montagna che risiedono i suoi più preziosi insegnamenti. Vivi il viaggio verso la vetta in armonia, restando concentrato su ciò che conta davvero. <\/p>",
+        "cta_text": "SCOPRI DI PIÙ",
+        "cta_link_anchor": "product-slider-1"
+      }
+    },
+    "a596bdb9-73db-426d-bd29-a49764aede1b": {
+      "type": "modulo-slider-box-text",
+      "blocks": {
+        "template--19421578428729__a596bdb9-73db-426d-bd29-a49764aede1b-1686056530251074cf-0": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/1.png",
+            "sup_title": "SILVERSKIN",
+            "title": "Daniele Milesi, istruttore CAI",
+            "description": "<p>“La montagna? È un luogo dove mi sento molto più a casa rispetto a quella vera, in città. È un posto dell’anima. A Roncobello, dice qualcuno, c’è una sorta di campo magnetico che attrae tipi strani e spinge noi a tornare lì, per un nuovo incontro con lo stupore, la meraviglia e alcuni attimi di perfezione. Qualcosa che non ti basta mai, un’overdose di bellezza che vivi e progetti per tutta settimana”<\/p>",
+            "cta_1_text": "",
+            "cta_1_link": "",
+            "cta_2_text": "",
+            "cta_2_link": ""
+          }
+        },
+        "e2d2b7e3-761c-4371-b257-178e8f79d19d": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/4.png",
+            "sup_title": "SILVERSKIN",
+            "title": "Andrea Bormida, aspirante guida alpina - Collegio Lombardia",
+            "description": "<p>“Il mio primo ricordo, da bambino, parla del desiderio di raggiungere il punto più alto, per scoprire cosa ci fosse di là. La montagna è sempre riuscita ad assecondare il mio lato nomade e il rapporto con lei è onesto: anche se chiede qualcosa in cambio, ripaga sempre. Una passione forse egoistica, di cui a volte capisci di aver bisogno”<\/p>",
+            "cta_1_text": "",
+            "cta_1_link": "",
+            "cta_2_text": "",
+            "cta_2_link": ""
+          }
+        },
+        "4cdeceb1-c28d-490e-b56b-b0763e4a172f": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/2.png",
+            "sup_title": "SILVERSKIN",
+            "title": "Giacomo Regallo, aspirante guida alpina",
+            "description": "<p>“Scegliendo di vivere in montagna ho fatto una scelta di libertà, soprattutto dall’idea di vivere con meno, perché è tanto quello che ha da insegnarti. Il salire in cima ad una parete che non porta a nulla, in sé, è inutile per certi versi ma fondamentale per progredire come individuo, come società. E poi è terapeutica: non sarei davvero contento senza lo stato di tranquillità e distensione in cui mi pone”<\/p>",
+            "cta_1_text": "",
+            "cta_1_link": "",
+            "cta_2_text": "",
+            "cta_2_link": ""
+          }
+        },
+        "35fc76d5-09db-489c-bbb6-1fbd0facde88": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/3.png",
+            "sup_title": "SILVERSKIN",
+            "title": "Raffaele Tangari, aspirante guida alpina",
+            "description": "<p>“La mia casa è l’emozione che provo in montagna. Uno stato di calma, di concentrazione e di tensione positiva, che mi permette di staccare la testa e di condividere. Non posso farne a meno, è la mia espressione artistica. Mi ha insegnato ad esser paziente e motivato e soprattutto sincero con me stesso: ti mette a nudo, oltre che alla prova”<\/p>",
+            "cta_1_text": "",
+            "cta_1_link": "",
+            "cta_2_text": "",
+            "cta_2_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--19421578428729__a596bdb9-73db-426d-bd29-a49764aede1b-1686056530251074cf-0",
+        "e2d2b7e3-761c-4371-b257-178e8f79d19d",
+        "4cdeceb1-c28d-490e-b56b-b0763e4a172f",
+        "35fc76d5-09db-489c-bbb6-1fbd0facde88"
+      ],
+      "settings": {
+        "enable_text_slider": "yes",
+        "sup_title": "SILVERSKIN",
+        "title": "STAY FRESH 2023",
+        "description": "<p>La tua forza è preziosa. Per questo integriamo <strong>l'argento<\/strong> nel nostro rivoluzionario intimo termico. Il risultato è una linea di prodotti <strong>senza cuciture<\/strong> che portano <strong>comfort, traspirabilità e termoregolazione<\/strong> a un livello superiore.<\/p>",
+        "cta_1_text": "ACQUISTA UOMO",
+        "cta_1_link": "#",
+        "cta_2_text": "ACQUISTA DONNA",
+        "cta_2_link": "#"
+      }
+    },
+    "76462d61-d1ee-488f-9601-57a0b220fdf4": {
+      "type": "modulo-slider-cards",
+      "blocks": {
+        "template--19318380790073__76462d61-d1ee-488f-9601-57a0b220fdf4-1685460711ed79a508-0": {
+          "type": "cards",
+          "settings": {
+            "title": "Termoregolazione",
+            "text": "Mantiene la temperatura corporea costante, sempre",
+            "image_desk": "shopify:\/\/shop_images\/unnamed5.png",
+            "image_mob": "shopify:\/\/shop_images\/unnamed3.png"
+          }
+        },
+        "4e529420-3b47-4c6b-a851-1429b26ae7a0": {
+          "type": "cards",
+          "settings": {
+            "title": "Traspirabilità",
+            "text": "Rapida evaporazione del sudore per una pelle asciutta",
+            "image_desk": "shopify:\/\/shop_images\/unnamed3.png",
+            "image_mob": "shopify:\/\/shop_images\/unnamed3.png"
+          }
+        },
+        "41356f0e-49d9-4727-bf56-1d1fa9443015": {
+          "type": "cards",
+          "settings": {
+            "title": "Elasticità",
+            "text": "Asseconda ogni movimento senza costringere",
+            "image_desk": "shopify:\/\/shop_images\/unnamed1.png",
+            "image_mob": "shopify:\/\/shop_images\/unnamed1.png"
+          }
+        },
+        "7976f967-6c65-4f99-8571-5b4b80a0a1c2": {
+          "type": "cards",
+          "settings": {
+            "title": "Antiodore",
+            "text": "Le proprietà antibatteriche neutralizzano i cattivi odori",
+            "image_desk": "shopify:\/\/shop_images\/unnamed2.png",
+            "image_mob": "shopify:\/\/shop_images\/unnamed2.png"
+          }
+        },
+        "9494f34d-56e6-4a78-b31b-da938f859674": {
+          "type": "cards",
+          "settings": {
+            "title": "Comfort",
+            "text": "Morbido e avvolgente, come una seconda pelle",
+            "image_desk": "shopify:\/\/shop_images\/comfort.jpg",
+            "image_mob": "shopify:\/\/shop_images\/comfort.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "template--19318380790073__76462d61-d1ee-488f-9601-57a0b220fdf4-1685460711ed79a508-0",
+        "4e529420-3b47-4c6b-a851-1429b26ae7a0",
+        "41356f0e-49d9-4727-bf56-1d1fa9443015",
+        "7976f967-6c65-4f99-8571-5b4b80a0a1c2",
+        "9494f34d-56e6-4a78-b31b-da938f859674"
+      ],
+      "settings": {
+        "padding_top_bottom": 30
+      }
+    },
+    "1c40a134-9d83-4e92-820f-4c85f49b94c1": {
+      "type": "modulo-product-slider-gender",
+      "blocks": {
+        "9752cddd-7f55-4f31-a88b-ea0c726d1ac8": {
+          "type": "product_block",
+          "settings": {
+            "product_id_man": "manicotto-performance-anthracite-1",
+            "product_id_woman": "manicotto-performance-anthracite",
+            "image_man": "shopify:\/\/shop_images\/MANICOTTI.png",
+            "image_woman": "shopify:\/\/shop_images\/MANICOTTI.png",
+            "title": "Manicotti",
+            "description": "L’accessorio da avere sempre nello zaino, per affrontare repentine variazioni meteo. Elastici e leggeri, trasformano il base layer a mezza manica in manica lunga, offrendo una maggiore protezione."
+          }
+        },
+        "f6391d4b-8d69-4d38-a2df-5246523c8ffe": {
+          "type": "product_block",
+          "settings": {
+            "product_id_man": "stay-fresh-maglia-termica-manica-corta-girocollo-anthracite",
+            "product_id_woman": "stay-fresh-maglia-termica-manica-corta-girocollo-anthracite-1",
+            "image_man": "shopify:\/\/shop_images\/UOMO_GIROCOLLO_CORTA_Stay_Fresh-Maglia_termica_Manica_Corta_Girocollo.png",
+            "image_woman": "shopify:\/\/shop_images\/DONNA_GIROCOLLO_CORTA_Stay_Fresh-Maglia_termica_Manica_Corta_Girocollo.png",
+            "title": "Base Layer Manica Corta Girocollo",
+            "description": "Ideale per affrontare i dislivelli più impegnativi, senza avvertire la fastidiosa sensazione di bagnato sulla pelle quando ti fermi. Comoda e leggera, elimina i cattivi odori  grazie alla proprietà antibatteriche dell’argento."
+          }
+        },
+        "a07bf90b-1101-41fe-a500-25c10d1ba131": {
+          "type": "product_block",
+          "settings": {
+            "product_id_man": "base-layer-termico-girocollo-manica-lunga-grigio-perla-sk014vnf",
+            "product_id_woman": "base-layer-termico-girocollo-manica-corta-grigio-perla",
+            "image_man": "shopify:\/\/shop_images\/UOMO_COLLO_V_Stay_Fresh-Maglia_termica_Manica_Corta_Collo_V.png",
+            "image_woman": "shopify:\/\/shop_images\/DONNA_COLLO_V_Stay_Fresh-Maglia_termica_Manica_Corta_Collo_V.png",
+            "title": "Base Layer Manica Corta Collo Quadrato",
+            "description": "Studiata per chi non ama i capi accollati, è l’alleato perfetto per affrontare diverse  condizioni climatiche. Stabilizza la temperatura corporea, sia quando sei in movimento che quando fai una pausa."
+          }
+        },
+        "template--19421578428729__1c40a134-9d83-4e92-820f-4c85f49b94c1-1686129954ea758d32-0": {
+          "type": "product_block",
+          "settings": {
+            "product_id_man": "stay-fresh-canotta-termica-anthracite",
+            "product_id_woman": "copia-del-stay-fresh-canotta-termica-anthracite",
+            "image_man": "shopify:\/\/shop_images\/UOMO_CANOTTA_Stay_Fresh_-_Canotta_termica.png",
+            "image_woman": "shopify:\/\/shop_images\/DONNA_CANOTTA_Stay_Fresh_-_Canotta_termica.png",
+            "title": "Base Layer Canotta",
+            "description": "Pratico e leggero, il modello canotta mantiene la tua pelle asciutta durante le salite, le discese e le arrampicate più faticose. Il primo strato essenziale per proteggerti in caso di cambi di temperatura repentini."
+          }
+        },
+        "0d1f1b56-a074-4197-b35b-a65134736ea4": {
+          "type": "product_block",
+          "settings": {
+            "product_id_man": "base-layer-termico-smanicato-grigio-perla-sk005lnf",
+            "product_id_woman": "base-layer-termico-smanicato-pearlgrey",
+            "image_man": "shopify:\/\/shop_images\/UOMO_GIROCOLLO_SMANICATA_Stay_Fresh_Maglia_termica_Manica_Corta_png.png",
+            "image_woman": "shopify:\/\/shop_images\/DONNA_GIROCOLLO_SMANICATA_Stay_Fresh_Maglia_termica_Manica_Corta.png",
+            "title": "Base Layer Smanicato",
+            "description": "Versatile e adatto per tutte le attività in montagna, il modello smanicato aderisce al torace senza comprimere, assicurando comfort, libertà di movimento e massima traspirabilità."
+          }
+        },
+        "b33edf56-946d-408a-b4f0-2469a609c6ed": {
+          "type": "product_block",
+          "settings": {
+            "product_id_man": "stay-fresh-canotta-ciclismo-anthracite",
+            "product_id_woman": "stay-fresh-canotta-ciclismo-anthracite-1",
+            "image_man": "shopify:\/\/shop_images\/UOMO_CICLISMO_Stay_Fresh_-_Canotta_Ciclismo.png",
+            "image_woman": "shopify:\/\/shop_images\/DONNA_CICLISMO_Stay_Fresh_-_Canotta_Ciclismo.png",
+            "title": "Base Layer Canotta Light",
+            "description": "Perfetta per le attività più intense come il mountain biking, il trail e lo skyrunning, questa canotta accelera l’evaporazione del sudore grazie alle lavorazioni di alleggerimento in corrispondenza di petto, addome e schiena."
+          }
+        },
+        "8297179f-7ee8-45a8-8744-b313767bb291": {
+          "type": "product_block",
+          "settings": {
+            "product_id_man": "base-layer-termico-girocollo-manica-corta-pearlgrey",
+            "product_id_woman": "base-layer-termico-girocollo-manica-corta-pearlgrey-1",
+            "image_man": "shopify:\/\/shop_images\/UOMO_WARM_Stay_Warm_Manica_Corta_girocollo.png",
+            "image_woman": "shopify:\/\/shop_images\/DONNA_WARM_Stay_Warm_Manica_Corta_girocollo.png",
+            "title": "Stay Warm Manica Corta girocollo",
+            "description": "Ideale per l’alta quota, questo base layer preserva il calore corporeo, isolando dalle temperature più rigide dai 3.000 mt in su. Traspirante e confortevole, favorisce la dispersione del sudore per una pelle sempre asciutta."
+          }
+        }
+      },
+      "block_order": [
+        "9752cddd-7f55-4f31-a88b-ea0c726d1ac8",
+        "f6391d4b-8d69-4d38-a2df-5246523c8ffe",
+        "a07bf90b-1101-41fe-a500-25c10d1ba131",
+        "template--19421578428729__1c40a134-9d83-4e92-820f-4c85f49b94c1-1686129954ea758d32-0",
+        "0d1f1b56-a074-4197-b35b-a65134736ea4",
+        "b33edf56-946d-408a-b4f0-2469a609c6ed",
+        "8297179f-7ee8-45a8-8744-b313767bb291"
+      ],
+      "settings": {
+        "id_for_anchor": "product-slider-1",
+        "title": "i base layer per la montagna",
+        "image_man": "shopify:\/\/shop_images\/Polygon_Copy_10.png",
+        "button_man": "UOMO",
+        "image_woman": "shopify:\/\/shop_images\/Polygon_Copy_11_6e219ca2-9dbd-4545-b6e2-c0a0803b0068.png",
+        "button_woman": "DONNA",
+        "cta_text_man": "ACQUISTA UOMO",
+        "cta_text_woman": "ACQUISTA DONNA"
+      }
+    },
+    "ae38e237-8eff-4b67-9d79-b6f6299e16ee": {
+      "type": "modulo-custom-html",
+      "custom_css": [
+        ".trustpilot-widget {background: #000; padding: 50px 0;}"
+      ],
+      "settings": {
+        "html": "<!-- TrustBox widget - Mini -->\n<div class=\"trustpilot-widget\" data-locale=\"it-IT\" data-template-id=\"53aa8807dec7e10d38f59f32\" data-businessunit-id=\"5de514fbf25ac90001046fb1\" data-style-height=\"150px\" data-style-width=\"100%\" data-theme=\"dark\">\n  <a href=\"https:\/\/it.trustpilot.com\/review\/www.silverskin.it\" target=\"_blank\" rel=\"noopener\">Trustpilot<\/a>\n<\/div>\n<!-- End TrustBox widget -->"
+      }
+    },
+    "2b57f855-38a4-425f-bbff-a6b7552977df": {
+      "type": "modulo-masonry-gallery",
+      "blocks": {
+        "template--19421578428729__2b57f855-38a4-425f-bbff-a6b7552977df-1686216511496eb766-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/PHOTO-2023-05-21-22-59-37_1.jpg",
+            "direction_vertical_from": "top",
+            "direction_from": "left",
+            "cord_x": 0,
+            "cord_y": 0,
+            "direction_from_mob": "left",
+            "cord_x_mob": 0,
+            "cord_y_mob": 0,
+            "scale_image_mobile": 50
+          }
+        },
+        "7d068a2a-e6b1-4e33-8a8f-e53e069d5559": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image_6483441_1_1.jpg",
+            "direction_vertical_from": "top",
+            "direction_from": "left",
+            "cord_x": 20,
+            "cord_y": 500,
+            "direction_from_mob": "left",
+            "cord_x_mob": 30,
+            "cord_y_mob": 160,
+            "scale_image_mobile": 50
+          }
+        },
+        "3cac1968-bc2a-4529-a110-795b772b6bc4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/PHOTO-2023-05-21-22-59-39_1.jpg",
+            "direction_vertical_from": "top",
+            "direction_from": "right",
+            "cord_x": 0,
+            "cord_y": 120,
+            "direction_from_mob": "right",
+            "cord_x_mob": 0,
+            "cord_y_mob": 700,
+            "scale_image_mobile": 40
+          }
+        },
+        "2b113cb2-670c-4e11-93ba-22dc45f8972a": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Camilla_Pizzini_Ph-31_2.jpg",
+            "direction_vertical_from": "top",
+            "direction_from": "right",
+            "cord_x": 10,
+            "cord_y": 666,
+            "direction_from_mob": "right",
+            "cord_x_mob": 0,
+            "cord_y_mob": 0,
+            "scale_image_mobile": 30
+          }
+        },
+        "52fea3ce-e836-4334-a84b-3dd13826c989": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/PHOTO-2023-05-21-22-59-34_1.png",
+            "direction_vertical_from": "top",
+            "direction_from": "left",
+            "cord_x": 5,
+            "cord_y": 1040,
+            "direction_from_mob": "left",
+            "cord_x_mob": 10,
+            "cord_y_mob": 325,
+            "scale_image_mobile": 30
+          }
+        },
+        "8759048f-6fa2-4cc9-ae1f-4e975046ec85": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/PHOTO-2023-05-21-22-59-30_1.jpg",
+            "direction_vertical_from": "top",
+            "direction_from": "left",
+            "cord_x": 24,
+            "cord_y": 1280,
+            "direction_from_mob": "right",
+            "cord_x_mob": 0,
+            "cord_y_mob": 370,
+            "scale_image_mobile": 55
+          }
+        },
+        "36b86ce1-53ff-4d2b-88aa-a2afb26144f4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image_6483441_2_1.jpg",
+            "direction_vertical_from": "top",
+            "direction_from": "left",
+            "cord_x": 0,
+            "cord_y": 1640,
+            "direction_from_mob": "left",
+            "cord_x_mob": 0,
+            "cord_y_mob": 500,
+            "scale_image_mobile": 50
+          }
+        },
+        "2e7a8904-1164-41d2-b760-625ad3bff02d": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Camilla_Pizzini_Ph-37_1.jpg",
+            "direction_vertical_from": "top",
+            "direction_from": "left",
+            "cord_x": 0,
+            "cord_y": 2617,
+            "direction_from_mob": "left",
+            "cord_x_mob": 0,
+            "cord_y_mob": 1000,
+            "scale_image_mobile": 50
+          }
+        },
+        "b1c5a302-559b-4b83-b992-77961f29c8a4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image_6483441_1.jpg",
+            "direction_vertical_from": "top",
+            "direction_from": "left",
+            "cord_x": 20,
+            "cord_y": 2520,
+            "direction_from_mob": "left",
+            "cord_x_mob": 40,
+            "cord_y_mob": 950,
+            "scale_image_mobile": 30
+          }
+        },
+        "bea89176-69d7-4132-831f-9908f77ec202": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/PHOTO-2023-05-21-22-59-27_1.jpg",
+            "direction_vertical_from": "bottom",
+            "direction_from": "right",
+            "cord_x": 0,
+            "cord_y": 0,
+            "direction_from_mob": "left",
+            "cord_x_mob": 0,
+            "cord_y_mob": 30,
+            "scale_image_mobile": 75
+          }
+        },
+        "7004b69c-b0ed-4501-be85-508984dab9f5": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/PHOTO-2023-05-21-22-59-31_2_1.jpg",
+            "direction_vertical_from": "top",
+            "direction_from": "right",
+            "cord_x": 10,
+            "cord_y": 2360,
+            "direction_from_mob": "left",
+            "cord_x_mob": 0,
+            "cord_y_mob": 790,
+            "scale_image_mobile": 45
+          }
+        },
+        "1c14ee12-4dec-4995-8fc7-52ed4f4d1687": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/PHOTO-2023-05-21-22-59-58_3.jpg",
+            "direction_vertical_from": "bottom",
+            "direction_from": "right",
+            "cord_x": 0,
+            "cord_y": 1400,
+            "direction_from_mob": "right",
+            "cord_x_mob": 0,
+            "cord_y_mob": 130,
+            "scale_image_mobile": 35
+          }
+        }
+      },
+      "block_order": [
+        "template--19421578428729__2b57f855-38a4-425f-bbff-a6b7552977df-1686216511496eb766-0",
+        "7d068a2a-e6b1-4e33-8a8f-e53e069d5559",
+        "3cac1968-bc2a-4529-a110-795b772b6bc4",
+        "2b113cb2-670c-4e11-93ba-22dc45f8972a",
+        "52fea3ce-e836-4334-a84b-3dd13826c989",
+        "8759048f-6fa2-4cc9-ae1f-4e975046ec85",
+        "36b86ce1-53ff-4d2b-88aa-a2afb26144f4",
+        "2e7a8904-1164-41d2-b760-625ad3bff02d",
+        "b1c5a302-559b-4b83-b992-77961f29c8a4",
+        "bea89176-69d7-4132-831f-9908f77ec202",
+        "7004b69c-b0ed-4501-be85-508984dab9f5",
+        "1c14ee12-4dec-4995-8fc7-52ed4f4d1687"
+      ],
+      "settings": {
+        "gallery_height": 3327,
+        "gallery_height_mob": 1550
+      }
+    },
+    "65a04109-d795-42a5-8402-5f4e0525844a": {
+      "type": "modulo-newsletter-image",
+      "settings": {
+        "id_for_anchor": "Contact-Newsletter",
+        "sup_title": "SILVERSKIN",
+        "title": "10% DI SCONTO SE PARTECIPI ALLA COMMUNITY E TI REGISTRI ALLA NEWSLETTER",
+        "description": "",
+        "image": "shopify:\/\/shop_images\/4.jpg",
+        "mail_placeholder": "INSERISCI LA TUA MAIL",
+        "submit_text": "ISCRIVITI"
+      }
+    },
+    "39522a20-48c4-41dd-adaa-9cce63a50319": {
+      "type": "featured-content",
+      "custom_css": [
+        "h2 {margin-top: -40px;}"
+      ],
+      "settings": {
+        "title": "Seguici su Instagram",
+        "text": "",
+        "align_text": "center",
+        "narrow_column": false,
+        "enlarge_text": false,
+        "divider": false
+      }
+    },
+    "ee16903a-872d-48e1-8fa4-6536fa01874a": {
+      "type": "instafeed",
+      "custom_css": [
+        ".instafeed-container {margin-top: -60px;}"
+      ],
+      "settings": {
+        "heading_size": 20,
+        "feed_width": 100,
+        "html_area": ""
+      }
+    },
+    "b77925cd-2fef-4c38-8ebd-27a6bbada3b6": {
+      "type": "instagram",
+      "disabled": true,
+      "settings": {
+        "title": "OUR LATEST POST ON INSTAGRAM",
+        "username": "",
+        "client_id": "",
+        "count": "1",
+        "full_width": true,
+        "divider": false
+      }
+    },
+    "8ddddf7c-0171-475c-8bf8-b1645359ab54": {
+      "type": "modulo-contact",
+      "settings": {
+        "title": "SE HAI DOMANDE, CONTATTACI",
+        "form_title": "MESSAGGIO",
+        "privacy": "<p>Confermo di aver letto e compreso la dichiarazione sulla <a href=\"https:\/\/www.silverskin.it\/pages\/privacy\" target=\"_blank\" title=\"\/pages\/privacy\">privacy<\/a> e acconsento al trattamento dei miei dati personali a scopi di markewting.<\/p>",
+        "btn_submit": "INVIA"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "180300a6-2f84-4cda-b590-06e2f7494ce9",
+    "1cf481ed-804f-43aa-99e5-b39cac39cc4b",
+    "a596bdb9-73db-426d-bd29-a49764aede1b",
+    "76462d61-d1ee-488f-9601-57a0b220fdf4",
+    "1c40a134-9d83-4e92-820f-4c85f49b94c1",
+    "ae38e237-8eff-4b67-9d79-b6f6299e16ee",
+    "2b57f855-38a4-425f-bbff-a6b7552977df",
+    "65a04109-d795-42a5-8402-5f4e0525844a",
+    "39522a20-48c4-41dd-adaa-9cce63a50319",
+    "ee16903a-872d-48e1-8fa4-6536fa01874a",
+    "b77925cd-2fef-4c38-8ebd-27a6bbada3b6",
+    "8ddddf7c-0171-475c-8bf8-b1645359ab54"
+  ]
+}

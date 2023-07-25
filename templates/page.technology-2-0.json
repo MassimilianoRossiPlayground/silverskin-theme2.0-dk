@@ -1,0 +1,159 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "f8e5c285-f3da-45a3-bd22-e2eac59a2148": {
+      "type": "modulo-hero-banner",
+      "settings": {
+        "transparent_header": true,
+        "herotitle": "POWER IS PRECIOUS",
+        "herosubtitle": "PERFETTA TERMOREGOLAZIONE, MASSIMA PERFORMANCE",
+        "image": "shopify:\/\/shop_images\/01-HeroBanner_23abd022-a87e-4b3a-8c1d-ff940ee3f84e.jpg",
+        "cta1text": "ACQUISTA UOMO",
+        "cta1link": "\/collections\/uomo",
+        "cta2text": "ACQUISTA DONNA",
+        "cta2link": "\/collections\/donna"
+      }
+    },
+    "feec1890-27f3-41ba-9e2c-64c6e55fad71": {
+      "type": "modulo-interactive",
+      "settings": {
+        "top_text": "<p>Creiamo <strong>Advanced Base Layer<\/strong> a partire dalle fibre d'argento, per <strong>conservare la tua energia e aumentare la tua forza<\/strong>.<br\/>  <br\/><br\/>Le caratteristiche dell'<strong>argento<\/strong>, unite alla speciale struttura dei nostri capi, garantiscono il mantenimento di una <strong>temperatura corporea costante, in qualsiasi clima<\/strong>.<\/p>",
+        "inter_1_title": "SISTEMA DI THERMO-BUFFERING™",
+        "inter_1_text": "<p>Grazie all'innovativo sistema di Thermo-buffering<strong>i nostri capi si adattano ai bisogni del tuo corpo<\/strong>. Nella fase di riscaldamento, quando inizi a sudare, <strong>il tessuto ti aiuta a disperdere rapidamente il calore <\/strong>e a trasferire il sudore all'esterno, <strong>per mantenerti fresco e asciutto<\/strong>. Quando ti raffreddi, invece, <strong>riduce l'esposizione alle  temperature esterne e ti mantiene al caldo<\/strong>.<\/p>",
+        "inter_2_title": "STRUTTURA OTTIMIZZATA DEL FILATO",
+        "inter_2_text": "<p>L'<strong>innovativa struttura del tessuto <\/strong>accelera l'evaporazione del sudore. Allo stesso tempo, l'anima cava del filato multicanale permette di trasferire immediatamente l'umidità all'esterno e <strong>mantenere il corpo perfettamente termoregolato e asciutto<\/strong>.<\/p>",
+        "inter_3_title": "ENHANCED SILVER-FIBRE TECHNOLOGY",
+        "inter_3_text": "<p>Il segreto dei capi Silverskin sta nel<strong> tessuto EST™<\/strong>. Un filato innovativo caratterizzato da un'anima a sezione cava e composto da <strong>fibre multicanale ricoperte di argento<\/strong>, elastane e poliammide. Questo tessuto high-tech è capace di assicurare <strong>protezione sia dal caldo che dal freddo<\/strong>. Inoltre, grazie alle <strong>proprietà antibatteriche dell'argento<\/strong>, contrasta la proliferazione dei batteri e i cattivi odori.<\/p>",
+        "cta1text": "ACQUISTA UOMO",
+        "cta1link": "\/collections\/uomo",
+        "cta2text": "ACQUISTA DONNA",
+        "cta2link": "\/collections\/donna"
+      }
+    },
+    "6adc4084-20a8-4634-965c-c88d75956ef0": {
+      "type": "modulo-hero-video-text",
+      "settings": {
+        "video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/9777ddcf1e604e45aa1332747af6755e.mp4",
+        "background_image": "shopify:\/\/shop_images\/03-2x_9922d439-1691-4a27-a3c2-ee0c5536d241.jpg",
+        "icon": "shopify:\/\/shop_images\/tech-icon-banner3_2x_b0bfb8ba-532f-4190-b92b-9636cc58ca64.png",
+        "title": "TERMOREGOLAZIONE AVANZATA",
+        "description": "<p>La speciale struttura del nostro tessuto, unita alle capacità dell'argento, permette di <strong>mantenere costante la temperatura del tuo corpo in qualunque condizione climatica. Le proprietà conduttive dei nostri capi distribuiscono uniformemente il calore del corpo e stabilizzano la tua temperatura mentre ti alleni. Così puoi dare il meglio e ridurre il rischio di infortuni muscolari causati dagli improvvisi sbalzi di temperatura.<\/strong><\/p>"
+      }
+    },
+    "1a8618aa-23df-42ee-8883-21b7333b2b33": {
+      "type": "modulo-hero-video-text",
+      "settings": {
+        "video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/5aaa110311a0417f8724995bc8348aa9.mp4",
+        "background_image": "shopify:\/\/shop_images\/01-2x_b0487cb4-2abe-4043-a0d2-8e2997f2d174.jpg",
+        "icon": "shopify:\/\/shop_images\/tech-icon-banner1_2x_19617738-07e1-4ffb-ab05-2addd2fa7f10.png",
+        "title": "TRASPIRABILITÀ ESTREMA E  TESSUTO AD ASCIUGATURA RAPIDA",
+        "description": "<p><strong>L'eccezionale traspirabilità dei nostri capi è data dalla combinazione delle speciali fibre e da un processo di filatura 3D, che sfrutta l'uso di macchine a capo completo. Il risultato è un tessuto in grado di espellere il sudore e mantenere la tua pelle asciuttaper aiutarti a superare i tuoi limiti.<\/strong><\/p>"
+      }
+    },
+    "68a5c792-bc70-4f8e-ba99-cba5b2fd31db": {
+      "type": "modulo-hero-video-text",
+      "settings": {
+        "video": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/9c0a38929cda47b7866a9ba01bc00f0b.mp4",
+        "background_image": "shopify:\/\/shop_images\/02-2x_80d7080a-7c86-4e50-abc6-0946cfd161ed.jpg",
+        "icon": "shopify:\/\/shop_images\/tech-icon-banner2_2x_39fa5cc4-0abc-4751-a9e1-ac3a97e54181.png",
+        "title": "ASSENZA DI CUCITURE, MASSIMA ELASTICITÀ",
+        "description": "<p>Quando stai dando il massimo, l'ultima cosa di cui hai bisogno è una distrazione. I nostri <strong>capi senza cuciture <\/strong>sono studiati per garantire la <strong>massima libertà di movimento <\/strong>e un <strong>fit super avvolgente<\/strong>.<\/p>"
+      }
+    },
+    "9e0e77fe-c098-4d66-bfd5-e83e0448c9c9": {
+      "type": "modulo-two-boxes",
+      "settings": {
+        "sup_title": "THERMIC TEST",
+        "title": "SIAMO ALL’ALTEZZADELLE ASPETTATIVE?",
+        "text": "<p><strong>Silverskin rappresenta un fondamentale passo avanti nel regno dei Base Layer. Non fidarti alla cieca. Abbiamo le prove. AMA <\/strong>(Advanced Measurement Applications) SRL, partner accademico dell’Università Politecnico delle Marche, Ancona, <strong>ha svolto degli studi termografici comparativi tra i base layer Silverskin <\/strong>e <strong>prodotti concorrenti della stessa categoria <\/strong>disponibili sul mercato.<br\/><br\/>Le condizioni iniziali erano le medesime in entrambe i casi. Dopo 10 minuti di corsa, l'atleta che indossa un prodotto concorrente, mostra una leggera zona blu sul petto. Colore che segnala la presenza di sudore.<br\/><br\/>Dopo venti minuti, a fine test, la differenza è inequivocabile. L'area blu dell'atleta che indossa un'altra marca si è estesa fino alla zona addominale, mentre <strong>l'atleta che indossa Silverskin è rimasto asciutto in maniera uniforme<\/strong>.<\/p>",
+        "image_frame": "shopify:\/\/shop_images\/thermic_frame_tech_141d07a6-3ba6-4b34-b927-368a528346a5.jpg",
+        "yt_id": "p08AZnjauFQ"
+      }
+    },
+    "468fb297-701f-4d9f-ae65-6ccb9375f788": {
+      "type": "modulo-product-slider-center",
+      "blocks": {
+        "ebb75e41-a55c-422d-aa3f-7ee4057dcbc8": {
+          "type": "product_block",
+          "disabled": true,
+          "settings": {
+            "product_id": "stay-fresh-bike-socks-anthracite"
+          }
+        },
+        "c394007d-5df9-4ecb-98e5-72a14e44d16d": {
+          "type": "product_block",
+          "disabled": true,
+          "settings": {
+            "product_id": "stay-fresh-canotta-termica-anthracite"
+          }
+        },
+        "4f328a64-57d4-4a03-8f75-9abb3447605c": {
+          "type": "product_block",
+          "disabled": true,
+          "settings": {
+            "product_id": "base-layer-termico-manica-lunga-girocollo-anthracite"
+          }
+        },
+        "4179cf65-0be1-4392-84b3-f726961534b7": {
+          "type": "product_block",
+          "settings": {
+            "product_id": "stay-fresh-maglia-termica-manica-corta-girocollo-anthracite-1"
+          }
+        },
+        "d027ed55-4284-4ab8-a235-76282df77930": {
+          "type": "product_block",
+          "settings": {
+            "product_id": "base-layer-termico-smanicato-grigio-perla-sk005lnf"
+          }
+        },
+        "7e853273-4252-4d0c-b84a-7ae77475de12": {
+          "type": "product_block",
+          "settings": {
+            "product_id": "base-layer-termico-girocollo-manica-corta-anthracite"
+          }
+        },
+        "dd445770-34b8-40dc-aa3c-e34d7ae4557b": {
+          "type": "product_block",
+          "settings": {
+            "product_id": "copia-del-stay-fresh-maglia-termica-manica-corta-collo-a-v-pearlgrey"
+          }
+        },
+        "2a2b74bb-09ab-4867-a6d2-f4aeb154e80a": {
+          "type": "product_block",
+          "settings": {
+            "product_id": "stay-fresh-endurance-run-socks-anthracite"
+          }
+        }
+      },
+      "block_order": [
+        "ebb75e41-a55c-422d-aa3f-7ee4057dcbc8",
+        "c394007d-5df9-4ecb-98e5-72a14e44d16d",
+        "4f328a64-57d4-4a03-8f75-9abb3447605c",
+        "4179cf65-0be1-4392-84b3-f726961534b7",
+        "d027ed55-4284-4ab8-a235-76282df77930",
+        "7e853273-4252-4d0c-b84a-7ae77475de12",
+        "dd445770-34b8-40dc-aa3c-e34d7ae4557b",
+        "2a2b74bb-09ab-4867-a6d2-f4aeb154e80a"
+      ],
+      "settings": {
+        "title": "SCOPRI I NOSTRI BEST SELLER",
+        "cta_text": "ACQUISTA"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "f8e5c285-f3da-45a3-bd22-e2eac59a2148",
+    "feec1890-27f3-41ba-9e2c-64c6e55fad71",
+    "6adc4084-20a8-4634-965c-c88d75956ef0",
+    "1a8618aa-23df-42ee-8883-21b7333b2b33",
+    "68a5c792-bc70-4f8e-ba99-cba5b2fd31db",
+    "9e0e77fe-c098-4d66-bfd5-e83e0448c9c9",
+    "468fb297-701f-4d9f-ae65-6ccb9375f788"
+  ]
+}
