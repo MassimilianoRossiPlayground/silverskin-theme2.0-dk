@@ -30,7 +30,7 @@
 
       <div class="nav-blog hidden">
         <span class="nav-blog__title">{{ blog.title }}</span>
-        <nav class="nav-blog__list">
+        {% comment %} <nav class="nav-blog__list">
           {% for blog_handle in my_blogs %}
               {% assign this_blog = blogs[blog_handle] %}
               {% if blog_handle == blog.handle %}
@@ -40,7 +40,7 @@
               {% endif %}
           {% endfor %}
           <span class="single-nav"><a href="/pages/blog">View all</a></span>
-        </nav>
+        </nav> {% endcomment %}
       </div>
       {% comment %} END -  NAV SCROLL {% endcomment %}
 
