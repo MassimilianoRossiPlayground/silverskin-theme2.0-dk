@@ -8,7 +8,7 @@
 
     {% comment %} {% include 'breadcrumbs' %} {% endcomment %}
 
-    <div class="blog-breadcrumb"><a href="/pages/blog">Blog</a> » <span>{{ blog.title }}</a></span></div>
+    <div class="blog-breadcrumb"><a href="/pages/blog">Journal</a> » <span>{{ blog.title }}</a></span></div>
     <header class="section-header{% if section.settings.blog_show_tag_filter and blog.tags.size > 0 %}{% unless settings.type_headers_align_text %} section-header--with-link{% endunless %}{% endif %}">
       <h1 class="section-header__title">
         {{ blog.title }}
