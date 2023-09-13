@@ -26,8 +26,8 @@ h2,
 }
 
 .sold-out-btn {
-    background-color: #dc0000 !important;
-    border-color: #dc0000 !important;
+    background-color: #949494 !important;
+    border-color: #949494 !important;
 }
 
 .rte .enlarge-text {
@@ -1845,13 +1845,13 @@ span.product__price {
 }
 
 .add-to-cart.btn--secondary.disabled {
-    background-color: #dc0000;
-    border-color: #dc0000;
+    background-color: #949494;
+    border-color: #949494;
 }
 
 .add-to-cart.btn--secondary.disabled:hover {
-    background-color: #dc0000;
-    border-color: #dc0000;
+    background-color: #949494;
+    border-color: #949494;
 }
 
 h1.h2.product-single__title {

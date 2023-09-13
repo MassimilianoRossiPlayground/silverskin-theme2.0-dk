@@ -2104,7 +2104,7 @@ function deferBisProductPageButton (callback) {
       "generic_trigger_handler": true,
       "quantity_field_enabled": false,
       "labels": {
-                "headline": "AVVISAMI QUANDO TORNA DISPONIBILE",
+                "headline": "AVVISAMI QUANDO DISPONIBILE",
                 "email_address_label": "Inserisci la tua Email ",
                 "product_field_label": "Select product",
                 "button_label": "Avvisami",
@@ -2189,7 +2189,7 @@ function deferBisProductPageButton (callback) {
                 "countdown_timer_products": "[]"
       },
       "main_button": {
-            "main_caption": "AVVISAMI QUANDO TORNA DISPONIBILE",
+            "main_caption": "AVVISAMI QUANDO DISPONIBILE",
             "main_css_classes": "",
             "main_button_width": "",
             "main_button_height": "",
