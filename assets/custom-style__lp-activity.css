@@ -235,7 +235,9 @@
     z-index: 1;
     margin: 0 auto;
 }
-
+.activity-page__pane-selector.primo::after {
+    background-color: #c0c0c0;
+}
 .activity-page__pane-selector.fresh::after {
     background-color: #1D89FF;
 }
