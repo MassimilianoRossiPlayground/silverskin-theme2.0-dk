@@ -1,0 +1,12 @@
+
+                {% capture bss_b2b_featured_product_vat_styles_content %}{% include 'bss-b2b-featured-product-vat-styles' %}{% endcapture %}{% unless bss_b2b_featured_product_vat_styles_content contains "Liquid error" %}{{ bss_b2b_featured_product_vat_styles_content }}{% endunless %}
+                <script id="bss-b2b-td-config-data">
+                    if (typeof BSS_B2B == 'undefined') {
+                        var BSS_B2B = {};
+                    }
+                    BSS_B2B.taxDisplayRules = [];
+	                BSS_B2B.taxDisplayTranslations = {"excluded_vat_text":"exc. VAT | ","included_vat_text":"inc. VAT"};
+                    BSS_B2B.allVatCountries = [];
+	                BSS_B2B.taxOverrides = [];
+                </script>
+            
