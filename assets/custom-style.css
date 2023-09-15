@@ -668,6 +668,11 @@ image-banner
     font-size: 42px;
     color: white;
   }
+  @media screen and (max-width:768px) {
+    .snippet_collection_banner .title {
+        font-size: 22px;
+      }
+  }
   .snippet_collection_banner .subtitle {
 
     color: white;
