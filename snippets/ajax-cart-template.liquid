@@ -148,17 +148,6 @@
       <button type="submit" class="btn btn--full cart__checkout{% endraw %}{% if settings.cart_terms_conditions_enable %}{% raw %} cart__checkout--ajax{% endraw %}{% endif %}{% raw %}" name="checkout">
         {% endraw %}{{ 'cart.general.checkout' | t }}{% raw %}
       </button>
-
-<div>
-    {% if customer.tags contains "wpdnet" %}
-        {% if shop.metafields.wcp_net.isNetEnabled == "true" or shop.metafields.wcp_net.isNetEnabled == "1" %}
-            <div style="margin-top:30px;float: right;">
-                <p>{{shop.metafields.wcp_net.netCartMsg}}</p>
-                <a id="wcp-30-open" class="btn">{{shop.metafields.wcp_net.netBtnMsg}}</a>
-            </div>
-        {% endif %}
-    {% endif %}
-</div>
       
       
     </div>
