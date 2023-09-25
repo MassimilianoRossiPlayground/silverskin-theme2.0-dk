@@ -774,7 +774,7 @@
               "color_accent": "#ffffff",
               "boxed": false,
               "framed": false,
-              "boxclass": "promo-left"
+              "boxclass": "promo-left warm"
             }
           },
           "ca8bd397-bd39-49ef-a5aa-d911e692bc8e": {
@@ -799,7 +799,7 @@
               "color_accent": "#ffffff",
               "boxed": false,
               "framed": false,
-              "boxclass": "promo-right"
+              "boxclass": "promo-right x-warm"
             }
           }
         },
