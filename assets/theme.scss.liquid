@@ -11897,7 +11897,7 @@ div.wpd-signup-field label {
 .fresh .promo-grid__bg:after {
    background: #1D89FF;
 }
-.gradient-effect:after {
+.gradient-effect .promo-grid__bg:after {
   content:'';
     display: block;
     width: 100%;
@@ -11905,9 +11905,16 @@ div.wpd-signup-field label {
     z-index: 3;
     top: 0;
     height: 100%;
-    background: rgb(29,137,252);
-    background: -moz-linear-gradient(0deg, rgba(29,137,252,1) 0%, rgba(29,137,252,0) 100%);
-    background: -webkit-linear-gradient(0deg, rgba(29,137,252,1) 0%, rgba(29,137,252,0) 100%);
-    background: linear-gradient(0deg, rgba(29,137,252,1) 0%, rgba(29,137,252,0) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1d89fc",endColorstr="#1d89fc",GradientType=1);
+}
+.gradient-effect .warm .promo-grid__bg:after {
+   background: rgb(236,131,18);
+   background: linear-gradient(0deg, rgba(236,131,18,1) 0%, rgba(236,131,18,0) 100%);
+}
+.gradient-effect .x-warm .promo-grid__bg:after {
+   background: rgb(255,0,31);
+   background: linear-gradient(0deg, rgba(255,0,31,1) 0%, rgba(255,0,31,0) 100%);
+}
+.gradient-effect .fresh .promo-grid__bg:after {
+   background: rgb(29,137,252);
+   background: linear-gradient(0deg, rgba(29,137,252,1) 0%, rgba(29,137,252,0) 100%);
 }
