@@ -448,13 +448,12 @@
               "link_text_2": "Acquista Donna",
               "color_accent": "#ffffff",
               "text_align": "vertical-center horizontal-left",
-              "image": "shopify:\/\/shop_images\/79b175ce-a8c4-4a85-9475-9773cc96d026.jpg",
+              "image": "shopify:\/\/shop_images\/hero1.jpg",
               "focal_point": "80% 50%"
             }
           },
           "1578407199975": {
             "type": "image",
-            "disabled": true,
             "settings": {
               "top_subheading": "",
               "title": "La tua temperatura<br> sempre",
