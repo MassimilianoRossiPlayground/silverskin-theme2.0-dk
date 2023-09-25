@@ -746,7 +746,7 @@
               "text_size": 100,
               "text_align": "vertical-center horizontal-center",
               "focal_point": "center",
-              "color_accent": "#ffffff",
+              "color_accent": "#1d89fc",
               "boxed": false,
               "framed": false,
               "boxclass": ""
