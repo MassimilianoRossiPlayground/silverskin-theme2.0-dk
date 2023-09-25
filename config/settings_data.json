@@ -1203,7 +1203,7 @@
               "color_accent": "rgba(0,0,0,0)",
               "boxed": false,
               "framed": false,
-              "boxclass": ""
+              "boxclass": "gradient-effect"
             }
           },
           "2a07fafe-14ff-414d-b9e8-cbaddee00fa0": {
