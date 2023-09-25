@@ -11867,10 +11867,16 @@ div.wpd-signup-field label {
 /* End shop signup and form style */
 
 /* Home COlors */
-.promo-left {
+.promo-left,.promo-right {
     position: relative;
 }
 .promo-left .promo-grid__bg:after {
+    left: 0;
+}
+.promo-right .promo-grid__bg:after {
+    right: 0;
+}
+.promo-grid__bg:after {
     content:'';
     display: block;
     -webkit-transform: skew(-20deg);
@@ -11878,9 +11884,8 @@ div.wpd-signup-field label {
     -o-transform: skew(-20deg);
     width: 36%;
     position: absolute;
-    left: 0;
-    top: 0;
     z-index: 3;
+    top: 0;
     height: 100%;
 } 
 .warm .promo-grid__bg:after {
