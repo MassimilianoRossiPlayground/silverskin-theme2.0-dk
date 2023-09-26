@@ -448,13 +448,12 @@
               "link_text_2": "Acquista Donna",
               "color_accent": "#ffffff",
               "text_align": "vertical-center horizontal-left",
-              "image": "shopify:\/\/shop_images\/79b175ce-a8c4-4a85-9475-9773cc96d026.jpg",
+              "image": "shopify:\/\/shop_images\/hero1.jpg",
               "focal_point": "80% 50%"
             }
           },
           "1578407199975": {
             "type": "image",
-            "disabled": true,
             "settings": {
               "top_subheading": "",
               "title": "La tua temperatura<br> sempre",
@@ -466,13 +465,12 @@
               "link_text_2": "",
               "color_accent": "#ffffff",
               "text_align": "vertical-center horizontal-left",
-              "image": "shopify:\/\/shop_images\/02-Homepage-Hero-Banner-Temperatura.jpg",
+              "image": "shopify:\/\/shop_images\/hero2.jpg",
               "focal_point": "center center"
             }
           },
           "1578064016256": {
             "type": "image",
-            "disabled": true,
             "settings": {
               "top_subheading": "",
               "title": "Comfort,<br>Traspirabilità<br>e Termoregolazione",
@@ -484,6 +482,7 @@
               "link_text_2": "",
               "color_accent": "#ffffff",
               "text_align": "vertical-center horizontal-left",
+              "image": "shopify:\/\/shop_images\/hero4-1.jpg",
               "focal_point": "80% 50%"
             }
           },
@@ -747,9 +746,10 @@
               "text_size": 100,
               "text_align": "vertical-center horizontal-center",
               "focal_point": "center",
-              "color_accent": "#ffffff",
+              "color_accent": "#1d89fc",
               "boxed": false,
-              "framed": false
+              "framed": false,
+              "boxclass": ""
             }
           },
           "370735d6-5393-441e-9741-006508fa2b76": {
@@ -773,7 +773,8 @@
               "focal_point": "center",
               "color_accent": "#ffffff",
               "boxed": false,
-              "framed": false
+              "framed": false,
+              "boxclass": "promo-left warm"
             }
           },
           "ca8bd397-bd39-49ef-a5aa-d911e692bc8e": {
@@ -797,7 +798,8 @@
               "focal_point": "center",
               "color_accent": "#ffffff",
               "boxed": false,
-              "framed": false
+              "framed": false,
+              "boxclass": "promo-right x-warm"
             }
           }
         },
@@ -1139,7 +1141,6 @@
       },
       "1586f3e6-8b23-4c14-b513-ab776b94b9fe": {
         "type": "promo-grid",
-        "disabled": true,
         "blocks": {
           "33f3ed3b-c9cc-47b9-96c3-3740592d939f": {
             "type": "advanced",
@@ -1161,13 +1162,15 @@
               "focal_point": "center",
               "color_accent": "rgba(0,0,0,0)",
               "boxed": false,
-              "framed": false
+              "framed": false,
+              "boxclass": ""
             }
           }
         },
         "block_order": [
           "33f3ed3b-c9cc-47b9-96c3-3740592d939f"
         ],
+        "disabled": true,
         "settings": {
           "full_width": true,
           "gutter_size": 0,
@@ -1199,7 +1202,8 @@
               "focal_point": "center",
               "color_accent": "rgba(0,0,0,0)",
               "boxed": false,
-              "framed": false
+              "framed": false,
+              "boxclass": "gradient-effect fresh"
             }
           },
           "2a07fafe-14ff-414d-b9e8-cbaddee00fa0": {
@@ -1223,7 +1227,8 @@
               "focal_point": "center",
               "color_accent": "rgba(0,0,0,0)",
               "boxed": false,
-              "framed": false
+              "framed": false,
+              "boxclass": ""
             }
           }
         },
@@ -1583,7 +1588,22 @@
       "34fe17a8-3051-4639-9c8a-4b3bde3a7445",
       "1594645290306",
       "1594644909912"
-    ]
+    ],
+    "blocks": {
+      "9776720720251544092": {
+        "type": "shopify:\/\/apps\/helium-customer-fields\/blocks\/app-embed\/bab58598-3e6a-4377-aaaa-97189b15f131",
+        "disabled": false,
+        "settings": {
+          "registration_form_id": "4Qt5yL",
+          "edit_account_form_id": "4Qt5yL",
+          "edit_account_link_text": "Edit account",
+          "edit_account_heading": "Edit account",
+          "edit_account_back_link_text": "Back to account",
+          "enable_js_api": false,
+          "js_api_version": ""
+        }
+      }
+    }
   },
   "presets": {
     "Modern": {

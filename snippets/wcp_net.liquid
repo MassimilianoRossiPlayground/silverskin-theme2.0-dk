@@ -314,7 +314,7 @@
     min-width:700px;
   }
 }
-.wcp-hero-wcpModal input, .wcp-hero-wcpModal input select,.wcp-hero-wcpModal textarea{
+.wcp-hero-wcpModal input, .wcp-hero-wcpModal input select,.wcp-hero-wcpModal select,.wcp-hero-wcpModal textarea {
   border: 1px solid #ccc;
   margin-bottom: 10px;
   height:40px
@@ -396,7 +396,49 @@
     grid-gap: 10px;
   }
   
-  
+  .wpd-loader-wrapper {
+    display: none;
+    position: absolute;
+    left: 50%;
+  }
+  .wpd-show-loader-spinner {
+    display: block !important;
+    border: 4px solid black;
+    border-top-color: rgba(0, 0, 0, 0);
+    border-left-color: rgba(0, 0, 0, 0);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    animation: wpdLoadingSpinner 0.7s infinite linear;
+    -webkit-animation: wpdLoadingSpinner 0.7s infinite linear;
+    position: relative;
+    left: -50%;
+  }
+  .wpd-button-loading .wpd-loader-wrapper {
+    display: block !important;
+  }
+  .wpd-button-loading .wpd-button-text {
+    opacity: 0;
+  }
+  @keyframes wpdLoadingSpinner {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+  }
+  @-webkit-keyframes wpdLoadingSpinner {
+    from {-webkit-transform: rotate(0deg);}
+    to {-webkit-transform: rotate(360deg);}
+  }
+  #wpdShippingRateContainer{
+    display:flex;
+    gap:16px;
+    margin-bottom:10px;
+  }
+  #wpdFetchShippingRates{
+    min-width:180px;
+  }
+  #wpdShippingRates{
+    margin:0 !important;
+  }
 </style>
   <div id='wcp-wcpModal-container' style='display:none;' class='wcp-wrap wcp-hero-wcpModal'>
   <h3 style="font-weight:bold;font-size:22px;">{{shop.metafields.wcp_net.netConfMsg}}</h3>
@@ -407,6 +449,16 @@
         {% include 'wcp_discount' with item.product %} 
         {% include 'wcp_variant' with item.variant %}
         {% include 'wcp_vd_discount' with item %}
+        
+          {% if set_price or wcp_discount_value < 1 or p_discount_value == 0 %}		
+        {% if wcp_v_price > item.final_price %}
+           {% assign wcp_v_price = item.final_price %}
+        {% endif %}
+        {% if wcp_v_price > item.discounted_price %}
+           	{% assign wcp_v_price = item.discounted_price %}
+        {% endif %}
+                {% endif %}
+        
         {% assign wcp_line_price = item.quantity | times: wcp_v_price  %} 
       <tr>
           <td><img class="images" src="{{ item | img_url: 'small' }}"></td>
@@ -547,7 +599,7 @@ function billingAddressManager()
        	<p class="wpd-available-shipping-msg">Available Shipping address</p>
       	<select id='AddressSelector' onchange="ChangeAddress()">
         {% paginate customer.addresses by 200 %} {% for address in customer.addresses %}
-              <option value="{{address.id}}">Address : {{address.city}} : {{address.address1 | truncate:40}}</option>
+              <option {% if address.id == customer.default_address.id %} selected {% endif %} value="{{address.id}}">Address : {{address.city}} : {{address.address1 | truncate:40}}</option>
           {% endfor %}	  
           {% endpaginate %}
       	</select>
@@ -613,7 +665,17 @@ function billingAddressManager()
     </div>
       
     </div>
-          <button id="wpd-net-place-order" type="submit">Place Order</button>
+          {% if shop.metafields.wcp_net.isNetShippingsCost == "2" %} 
+            <div class='wcp_extraFied' id="wpdShippingRateContainer">
+              <select id="wpdShippingRates"><option value="-1">Fetch shipping rates</option></select>
+              <button id="wpdFetchShippingRates" type="button">Fetch shipping rates</button>
+            </div>
+          {% endif %}
+  
+          <button id="wpd-net-place-order" type="submit">
+          <div class="wpd-loader-wrapper"><div class="wpd-show-loader-spinner"></div></div>                
+          <span class="wpd-button-text"><span class="wpd-loader-button-label">Place Order</span></span>  
+          </button>
     </form>
   	
  </div>    
@@ -623,6 +685,127 @@ function billingAddressManager()
   <script>
     new Shopify.CountryProvinceSelector('billingAddressCountry', 'billingAddressProvince',{ hideElement: 'billingAddressProvinceContainer' });
     new Shopify.CountryProvinceSelector('AddressCountry', 'AddressProvince',{ hideElement: 'AddressProvinceContainer' });
+    
+    {% if shop.metafields.wcp_net.isNetShippingsCost == "2" %} 
+      window.WPDFormValid = false;
+      window.WPDRatesFound = false;
+      window.wpdMoneyFormat = '{{ shop.money_format }}';
+      document.getElementById("wpdFetchShippingRates").addEventListener("click", function(event) {
+        this.disabled = true;
+        wpdPrepareShippingRates();
+        let asyncCallCounter = 0;
+        fetchRatesInterval = setInterval(() => {
+          if (window.WPDFormValid && !window.WPDRatesFound) {
+            if(asyncCallCounter > 5 && (window.fetchRateCallCount == undefined ||  window.fetchRateCallCount < 5) ){
+              if(window.fetchRateCallCount == undefined){
+                window.fetchRateCallCount = 0;
+              }else{
+                window.fetchRateCallCount++;
+              }
+              clearInterval( fetchRatesInterval );
+              this.click();
+              return;
+            }
+            wpdAsyncShippingRates();
+            asyncCallCounter++;
+          }
+        }, 500);
+      });
+      function wpdGetNetOrderAddress() {
+        const formElement = document.querySelector("#net-order-form");
+        const formData = new FormData(formElement);
+        const shippingFormData = Array.from(formData).filter(
+          (data) => data[0].includes("wcpaddress")
+        );
+    
+        return new URLSearchParams(shippingFormData).toString();
+      }
+  
+      function wpdGetShippingAddress() {
+        const wcpAddress = wpdGetNetOrderAddress();
+        return wcpAddress.replaceAll("wcpaddress", "shipping_address");
+      }
+      
+      function wpdPrepareShippingRates() {
+        const shippingAddress = wpdGetShippingAddress();
+        fetch(`/cart/prepare_shipping_rates.json?${shippingAddress}`, {
+          method: "POST",
+        }).then(async (r) => {
+          document.getElementById("wpdFetchShippingRates").disabled = false;
+          if (r.status === 422) {
+            const json = await r.json();
+              document.getElementById("wpdShippingRates").innerHTML = `<option>${Object.values(
+              json
+            )
+              .map((err) => err[0])
+              .join("</option><option>")}</option>`;
+          }
+    
+          if (r.status === 202) {
+            window.WPDFormValid = true;
+            window.WPDRatesFound = false;
+          }
+        });
+      }
+  
+      function wpdAsyncShippingRates() {
+        const shippingAddress = wpdGetShippingAddress();
+        fetch(`/cart/async_shipping_rates.json?${shippingAddress}`).then(
+          async (r) => {
+            if (r.status === 200) {
+              window.WPDRatesFound = true;
+              const json = await r.json();
+              if (!json || !json.shipping_rates.length) {
+                document.getElementById("wpdShippingRates").innerHTML = `<option>-- No eligible shipping methods found --</option>`;
+                return;
+              }
+    
+              document.getElementById("wpdShippingRates").innerHTML = `<option>-- Select a shipping --</option>`;
+    
+              json.shipping_rates.map((rate) => {
+                const option = document.createElement("option");
+                option.value = `${rate.presentment_name}:${rate.price}`;
+                option.innerHTML = `${rate.presentment_name} @${wpdFormatAmount(
+                  rate.price
+                )}`;
+                document.getElementById("wpdShippingRates").appendChild(option);
+              });
+            }else if( r.status !== 202){
+              document.getElementById("wpdShippingRates").innerHTML = `<option>-- No eligible shipping methods found --</option>`;
+            }
+          }
+        );
+      }
+      function wcpAddShippingToWcpData(event) {
+        const selectedShipping = event.target.value;
+        if (!selectedShipping) {
+          wcpClearIntegrationShipping();
+          return;
+        }
+    
+        const selectedShippingParts = selectedShipping.split(":");
+        if (selectedShippingParts.length !== 2) {
+          wcpClearIntegrationShipping();
+          return;
+        }
+        const title = selectedShippingParts[0];
+        const price = selectedShippingParts[1];
+    
+        if (!window.wcp_data) {
+          return;
+        }
+        window.wcp_data.integrationShipping = {title,price};
+      }
+      function wcpClearIntegrationShipping() {
+        try {
+          delete window.wcp_data.integrationShipping;
+        } catch (e) {}
+      }
+      function wpdFormatAmount(amount){
+        return window.wpdMoneyFormat.replace("{% raw %}{{amount}}{% endraw %}",amount);
+      }
+      document.getElementById("wpdShippingRates").addEventListener("change",wcpAddShippingToWcpData);
+    {% endif %}
   </script>
 {% if shop.metafields.wcp_net.isdisplayDate == 'true' or shop.metafields.wcp_net.isdisplayDate == '1' %}
 <script>

@@ -174,7 +174,7 @@
 {%- include 'analyzify-gtm-body' -%}
 {%- comment -%}ly_dir_styles_begin{%- endcomment -%}{%- assign language_code = '_' | append: request.locale.iso_code -%}{%- if '_ar_ha_he_fa_ks_ku_ps_ur_yi' contains language_code -%}{{- 'ly-rtl.css' | asset_url | stylesheet_tag -}}{%- endif -%}{%- comment -%}ly_dir_styles_end{%- endcomment -%}{% comment %}ly_dir_styles_begin{% endcomment %}{%- assign language_code = '_' | append: request.locale.iso_code -%}{%- if '_ar_ha_he_fa_ks_ku_ps_ur_yi' contains language_code -%}{{- 'ly-rtl.css' | asset_url | stylesheet_tag -}}{%- endif -%}{% comment %}ly_dir_styles_end{% endcomment %}
 
-{% if content_for_header contains 'bss-b2b-cp' %}{% include 'bss-b2b-header' %}{% endif %}</head>
+</head>
 
 
 <body class="template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }} template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}--{{ handle }} {%- if settings.enable_currencies -%} currencies-enabled{%- endif -%}" data-transitions="false">
@@ -283,18 +283,15 @@
   {%- include 'js-translations' -%}
   
 <link rel="preload" as="script" href="https://consent.cookiebot.com/uc.js">
-<script id="Cookiebot" rel="preconnect" src="https://consent.cookiebot.com/uc.js" data-cbid="5b6e39bd-2ece-46dc-9463-ccfb70627bb8" data-blockingmode="auto" type="text/javascript" defer="defer"></script>
+<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="4b6fc3eb-de7d-4e82-9754-942de69960c5" type="text/javascript" async></script>
 <script type="text/javascript" src="{{ 'hoculus.js' | asset_url }}" defer="defer"></script>
 
-  {%- include 'subscribe-it-helper' -%}{%- comment -%}ly_liquid_scripts_begin{%- endcomment -%}{%- endcapture -%}{%- render 'ly-liquid-scripts' content: ly_liquid_content -%}{%- comment -%}ly_liquid_scripts_end{%- endcomment -%}{%- comment -%}ly_core_scripts_begin{%- endcomment -%}{%- render 'ly-core-scripts' -%}{%- comment -%}ly_core_scripts_end{%- endcomment -%}{%- comment -%}ly_switcher_factory_begin{%- endcomment -%}{%- render 'ly-switcher-factory' -%}{%- comment -%}ly_switcher_factory_end{%- endcomment -%}<!-- langify-v2-scripts-begin -->{% comment %}ly_liquid_scripts_begin{% endcomment %}{% endcapture %}{% render 'ly-liquid-scripts' content: ly_liquid_content %}{% comment %}ly_liquid_scripts_end{% endcomment %}{% comment %}ly_core_scripts_begin{% endcomment %}{% render 'ly-core-scripts' %}{% comment %}ly_core_scripts_end{% endcomment %}{% comment %}ly_switcher_factory_begin{% endcomment %}{% render 'ly-switcher-factory' %}{% comment %}ly_switcher_factory_end{% endcomment %}<!-- langify-v2-scripts-end -->
+{%- include 'subscribe-it-helper' -%}{%- comment -%}ly_liquid_scripts_begin{%- endcomment -%}{%- endcapture -%}{%- render 'ly-liquid-scripts' content: ly_liquid_content -%}{%- comment -%}ly_liquid_scripts_end{%- endcomment -%}{%- comment -%}ly_core_scripts_begin{%- endcomment -%}{%- render 'ly-core-scripts' -%}{%- comment -%}ly_core_scripts_end{%- endcomment -%}{%- comment -%}ly_switcher_factory_begin{%- endcomment -%}{%- render 'ly-switcher-factory' -%}{%- comment -%}ly_switcher_factory_end{%- endcomment -%}<!-- langify-v2-scripts-begin -->{% comment %}ly_liquid_scripts_begin{% endcomment %}{% endcapture %}{% render 'ly-liquid-scripts' content: ly_liquid_content %}{% comment %}ly_liquid_scripts_end{% endcomment %}{% comment %}ly_core_scripts_begin{% endcomment %}{% render 'ly-core-scripts' %}{% comment %}ly_core_scripts_end{% endcomment %}{% comment %}ly_switcher_factory_begin{% endcomment %}{% render 'ly-switcher-factory' %}{% comment %}ly_switcher_factory_end{% endcomment %}<!-- langify-v2-scripts-end -->
 
 {% if settings.script_before_body_close != blank %}
   {{ settings.script_before_body_close }}
 {% endif %}
 
-{% if content_for_header contains 'bss-b2b-cp' %}{% include 'bss-b2b-jquery-341-js' %}{% include 'bss-b2b-js' %}{% endif %}</body>
 
- 
-
-
+</body>
 </html>
