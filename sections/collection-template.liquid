@@ -13,17 +13,20 @@
 {% if current_tags contains "Light Warm" %}
   {%- assign class_rte ="light-warm"-%}
 {%endif%}
+{% if current_tags contains "PRIMO" %}
+  {%- assign class_rte ="primo"-%}
+{%endif%}
 
 {%- assign collection_tag = collection.title -%}
 {% assign current_month = 'now' | date: "%m" %}
 
 {% case current_month %}
   {% when "12" or "01" or "02" or "11" %}
-  {% assign collection_array = "warm,xwarm,fresh" | split: ',' %}
+  {% assign collection_array = "primo,warm,xwarm,fresh" | split: ',' %}
   {% when "03" or "10" %}
-  {% assign collection_array = "warm,fresh,xwarm" | split: ',' %}
+  {% assign collection_array = "primo,warm,fresh,xwarm" | split: ',' %}
   {% when "04" or "05" or "06" or "07" or "08" or "09" %}
-  {% assign collection_array = "fresh,warm,xwarm" | split: ',' %}
+  {% assign collection_array = "primo,fresh,warm,xwarm" | split: ',' %}
 {% endcase %}
 
 {% include 'breadcrumbs-collection' %}
@@ -115,7 +118,7 @@
     {% endcase %}
 
 
-    {% if current_tags contains "Stay Fresh" or current_tags contains "Stay Warm" or current_tags contains "Stay X-Warm" or current_tags contains "Light Warm" %}
+    {% if current_tags contains "Stay Fresh" or current_tags contains "Stay Warm" or current_tags contains "Stay X-Warm" or current_tags contains "Light Warm" or current_tags contains "PRIMO" %}
        
       {%- for product in collection.products -%}
         {%- include 'product-grid-item' -%}
@@ -128,6 +131,24 @@
     {% else %}
 
       {% for current_collection in collection_array %}
+
+        {% if current_collection == "primo" %}
+          {%- for product in collection.products -%}
+            {% if product.tags contains 'PRIMO' %}
+              
+              {% if current_tags != blank %}
+                {% for current_tag in current_tags %}
+                  {% if product.tags contains current_tag %}
+                    {%- include 'product-grid-item' -%}
+                  {% endif %}
+                {%- endfor -%}
+              {% else %}
+                {%- include 'product-grid-item' -%}
+              {% endif %}
+
+            {% endif %}
+          {%- endfor -%}
+        {% endif %}
 
         {% if current_collection == "fresh" %}
           {%- for product in collection.products -%}
