@@ -12004,7 +12004,21 @@ div.activity-page__pane-selector.x-warm:before {
 #section-warm-collection .container-sliders_markers .container-right {
     position:relative;
     overflow: hidden;
-  }
+}
+#section-fresh-collection .container-sliders_markers .container-right:before {
+    content:'';
+    display: block;
+    -webkit-transform: skew(-20deg);
+    -moz-transform: skew(-20deg);
+    -o-transform: skew(-20deg);
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 20%;
+    height: 100%;
+    background: rgb(29,137,252);
+}
 #section-warm-collection .container-sliders_markers .container-right:before {
     content:'';
     display: block;
@@ -12012,12 +12026,25 @@ div.activity-page__pane-selector.x-warm:before {
     -moz-transform: skew(-20deg);
     -o-transform: skew(-20deg);
     position: absolute;
-    z-index: 0;
+    z-index: 2;
     top: 0;
     left: 0;
-    width: 30%;
+    width: 20%;
     height: 100%;
     background: rgb(236,131,18);
 }
-
+#section-xwarm-collection .container-sliders_markers .container-left:before {
+    content:'';
+    display: block;
+    -webkit-transform: skew(-20deg);
+    -moz-transform: skew(-20deg);
+    -o-transform: skew(-20deg);
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    width: 20%;
+    height: 100%;
+     background: rgb(255,0,31); 
+}
 
