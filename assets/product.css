@@ -37,8 +37,10 @@
 }
 
 .pdp-two-box__title{
-    font-family: "barlow-bold" !important;
+    font-family: barlow-bold!important;
     font-size: 32px;
+    margin-bottom: 10px;
+    line-height: 32px;
 }
 
 .pdp-two-box__image{
