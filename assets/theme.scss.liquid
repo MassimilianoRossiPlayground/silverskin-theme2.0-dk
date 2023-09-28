@@ -11957,7 +11957,8 @@ div.wpd-signup-field label {
     background: linear-gradient(0deg, rgba(255,0,31,1) 0%, rgba(255,0,31,0) 100%);
    opacity: .5;
 }
-div.activity-page__pane-selector.fresh {
+div.activity-page__pane-selector.fresh,div.activity-page__pane-selector.warm,div.activity-page__pane-selector.x-warm {position:relative;}
+div.activity-page__pane-selector.fresh:after {
   content:'';
     display: block;
     -webkit-transform: skew(-20deg);
@@ -11971,7 +11972,7 @@ div.activity-page__pane-selector.fresh {
     height: 100%;
     background: rgb(29,137,252);
 }
-div.activity-page__pane-selector.warm {
+div.activity-page__pane-selector.warm:after{
   content:'';
     display: block;
     -webkit-transform: skew(-20deg);
@@ -11985,7 +11986,7 @@ div.activity-page__pane-selector.warm {
     height: 100%;
    background: rgb(236,131,18);
 }
-div.activity-page__pane-selector.x-warm {
+div.activity-page__pane-selector.x-warm:after {
   content:'';
     display: block;
     -webkit-transform: skew(-20deg);
