@@ -1965,15 +1965,15 @@ h1.h2.product-single__title {
     -o-transform: skew(-20deg);
 }
 
-.stay-fresh-collection__banner h2:before {
+.stay-fresh-collection__banner h2:before,.stay-fresh__banner h2:before {
     background: #1D89FF;
 }
 
-.stay-warm-collection__banner h2:before {
+.stay-warm-collection__banner h2:before,.stay-warm__banner h2:before {
     background: #EC8312;
 }
 
-.stay-x-warm-collection__banner h2:before {
+.stay-x-warm-collection__banner h2:before,.stay-x-warm__banner h2:before {
     background: #FF001F;
 }
 
