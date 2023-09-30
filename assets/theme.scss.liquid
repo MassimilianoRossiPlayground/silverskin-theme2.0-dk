@@ -12061,7 +12061,54 @@ div.activity-page__pane-selector.x-warm:before {
 #section-xwarm-collection .cta-collection,#section-xwarm-collection .best-sellers-cta__link {
   background: rgb(255,0,31); border: 0;
 }
+.secondary-banner__box {
+  position:relative;
+    overflow: hidden;
+}
 
+.secondary-banner__box.stay-fresh__banner:before {
+    content:'';
+    display: block;
+    -webkit-transform: skew(-20deg);
+    -moz-transform: skew(-20deg);
+    -o-transform: skew(-20deg);
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 20%;
+    height: 100%;
+    background: rgb(29,137,252);
+}
+.secondary-banner__box.stay-warm__banner:before {
+    content:'';
+    display: block;
+    -webkit-transform: skew(-20deg);
+    -moz-transform: skew(-20deg);
+    -o-transform: skew(-20deg);
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 20%;
+    height: 100%;
+    background: rgb(236,131,18);
+}
+.secondary-banner__box.stay-x-warm__banner:before {
+    content:'';
+    display: block;
+    -webkit-transform: skew(-20deg);
+    -moz-transform: skew(-20deg);
+    -o-transform: skew(-20deg);
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    width: 20%;
+    height: 100%;
+     background: rgb(255,0,31); 
+}
+  
 /* Theme change color */
 div.listicons,div.footer__top,div.container-sliders_markers .swiper-button-next {
     background-color: #45519c;
