@@ -24,38 +24,38 @@
 
   {% for c in product.collections %}
 
-    {% if c.handle == "stay-fresh-collection" %}
+    {% if c.handle == "stay-fresh" %}
 
       {% assign title_banner = "STAY FRESH" %}
       {% assign collection_banner = c.handle %}
 
-      {% assign secondary_handle_banner_1 = "stay-warm-collection" %}
-      {% assign secondary_handle_banner_2 = "stay-x-warm-collection" %}
+      {% assign secondary_handle_banner_1 = "stay-warm" %}
+      {% assign secondary_handle_banner_2 = "stay-x-warm" %}
 
       {% assign secondary_title_banner_1 = "STAY WARM" %}
       {% assign secondary_title_banner_2 = "STAY X-WARM" %}
 
-      {% assign secondary_link_banner_1 = "/collections/stay-warm-collection" %}
-      {% assign secondary_link_banner_2 = "/collections/stay-x-warm-collection" %}
+      {% assign secondary_link_banner_1 = "/collections/stay-warm" %}
+      {% assign secondary_link_banner_2 = "/collections/stay-x-warm" %}
 
       {% assign secondary_img_banner_1 = "https://cdn.shopify.com/s/files/1/0285/3706/1424/files/hp-banner-fresh-small-desk.jpg?v=1610553665" %}
       {% assign secondary_img_banner_2 = "https://cdn.shopify.com/s/files/1/0285/3706/1424/files/hp-banner-x-warm-desk.jpg?v=1610553697" %}
 
       {% assign background_banner = "https://cdn.shopify.com/s/files/1/0285/3706/1424/files/pdp-banner-fresh-desk_1dd5cb2b-4d6e-4916-9103-cf7f3c81280d.jpg?v=1610546347" %}
 
-    {% elsif c.handle == "stay-warm-collection" %}
+    {% elsif c.handle == "stay-warm" %}
 
       {% assign title_banner = "STAY WARM" %}
       {% assign collection_banner = c.handle %}
 
-      {% assign secondary_handle_banner_1 = "stay-fresh-collection" %}
-      {% assign secondary_handle_banner_2 = "stay-x-warm-collection" %}
+      {% assign secondary_handle_banner_1 = "stay-fresh" %}
+      {% assign secondary_handle_banner_2 = "stay-x-warm" %}
 
       {% assign secondary_title_banner_1 = "STAY FRESH" %}
       {% assign secondary_title_banner_2 = "STAY X-WARM" %}
 
-      {% assign secondary_link_banner_1 = "/collections/stay-fresh-collection" %}
-      {% assign secondary_link_banner_2 = "/collections/stay-x-warm-collection" %}
+      {% assign secondary_link_banner_1 = "/collections/stay-fresh" %}
+      {% assign secondary_link_banner_2 = "/collections/stay-x-warm" %}
 
       {% assign secondary_img_banner_1 = "https://cdn.shopify.com/s/files/1/0285/3706/1424/files/stayfresh_2x_a2e2624a-473a-4222-88b1-ba8a6dc6d935.jpg?v=1620392461" %}
       {% assign secondary_img_banner_2 = "https://cdn.shopify.com/s/files/1/0285/3706/1424/files/hp-banner-x-warm-desk.jpg?v=1610553697" %}
@@ -63,19 +63,19 @@
       {% assign background_banner = "https://cdn.shopify.com/s/files/1/0285/3706/1424/files/pdp-banner-warm-desk.jpg?v=1617984602" %}
 
 
-    {% elsif c.handle == "stay-x-warm-collection" %}
+    {% elsif c.handle == "stay-x-warm" %}
 
       {% assign title_banner = "STAY X-WARM" %}
       {% assign collection_banner = c.handle %}
 
-      {% assign secondary_handle_banner_1 = "stay-fresh-collection" %}
-      {% assign secondary_handle_banner_2 = "stay-warm-collection" %}
+      {% assign secondary_handle_banner_1 = "stay-fresh" %}
+      {% assign secondary_handle_banner_2 = "stay-warm" %}
 
       {% assign secondary_title_banner_1 = "STAY FRESH" %}
       {% assign secondary_title_banner_2 = "STAY WARM" %}
 
-      {% assign secondary_link_banner_1 = "/collections/stay-fresh-collection" %}
-      {% assign secondary_link_banner_2 = "/collections/stay-warm-collection" %}
+      {% assign secondary_link_banner_1 = "/collections/stay-fresh" %}
+      {% assign secondary_link_banner_2 = "/collections/stay-warm" %}
 
       {% assign secondary_img_banner_1 = "https://cdn.shopify.com/s/files/1/0285/3706/1424/files/stayfresh_2x_a2e2624a-473a-4222-88b1-ba8a6dc6d935.jpg?v=1620392461" %}
       {% assign secondary_img_banner_2 = "https://cdn.shopify.com/s/files/1/0285/3706/1424/files/hp-banner-fresh-small-desk.jpg?v=1610553665" %}
@@ -188,8 +188,8 @@
           {{ collections[collection_banner].metafields.custom_fields["banner_description"] }}
         </div>
 
-        {% assign cta_link = collections[collection_banner].metafields.custom_fields["cta_link"] %}
-        <a class="pdp-banner__cta pdp-banner__cta-desk" href="{{cta_link}}">{{ collections[collection_banner].metafields.custom_fields["cta_text"] }}</a>
+        {% assign cta_link_1 = collections[collection_banner].metafields.custom_fields["cta_link_1"] %}
+        <a class="pdp-banner__cta pdp-banner__cta-desk" href="{{cta_link_1}}">{{ collections[collection_banner].metafields.custom_fields["cta_text_1"] }}</a>
 
         {% assign cta_link_2 = collections[collection_banner].metafields.custom_fields["cta_link_2"] %}
         <a class="pdp-banner__cta pdp-banner__cta-desk" href="{{cta_link_2}}">{{ collections[collection_banner].metafields.custom_fields["cta_text_2"] }}</a>

@@ -257,7 +257,7 @@ reqJquery(function($){
           method: "GET",
           credentials: "same-origin",
       }).then((response) => {
-          if(response.status != 200 && tryCount < 10){
+          if(response.status != 200 && tryCount < 15){
               setTimeout(function(){tryCount++; checkInvoiceAvailability(url,tryCount)},1000);
           }else{
               draftAPIRequestProcessing = false;
@@ -861,6 +861,34 @@ var fnCalled = false;
       }
       window.wcp_data.wcp_cart.note=note;      
       window.wcp_data.note_data=note_data; 
+      
+      let noteAttributes = [];
+      $("[name^='attributes']").each(function() {
+        var attribute = $(this);
+        var name = $(this).attr("name");
+        name = name.replace(/^attributes\[/i, "").replace(/\]$/i, "");
+        var v = {
+          name: name,
+          value: attribute.val()
+        };
+        if (v.value == "") {
+          return
+        }
+        switch (attribute[0].tagName.toLowerCase()) {
+          case "input":
+            if (attribute.attr("type") == "checkbox") {
+              if (attribute.is(":checked")) {
+                noteAttributes.push(v)
+              }
+            } else {
+              noteAttributes.push(v)
+            }
+            break;
+          default:
+            noteAttributes.push(v)
+        }
+      });
+      window.wcp_data.wcp_cart.note_attributes = noteAttributes;
       
       var address = {};
       address.first_name = $("input[name='wcpaddress[first_name]']").val();
