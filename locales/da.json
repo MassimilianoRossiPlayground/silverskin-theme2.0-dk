@@ -156,7 +156,11 @@
       "tax": "Moms",
       "product": "Produkt",
       "sku": "SKU",
-      "price": "Pris"
+      "price": "Pris",
+      "quantity": "Antal",
+      "total": "Total",
+      "fulfilled_at_html": "Udført {{ date }}",
+      "subtotal": "I alt"
     }
   }
 }
