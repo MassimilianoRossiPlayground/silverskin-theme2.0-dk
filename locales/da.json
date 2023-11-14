@@ -161,6 +161,28 @@
       "total": "Total",
       "fulfilled_at_html": "Udført {{ date }}",
       "subtotal": "I alt"
+    },
+    "recover_password": {
+      "title": "Nulstil dit kodeord",
+      "email": "Email",
+      "submit": "Send",
+      "cancel": "Afbryd",
+      "subtext": "Vi sender dig en e-mail for at nulstille din adgangskode.",
+      "success": "Vi har sendt dig en e-mail med et link til at opdatere din adgangskode."
+    },
+    "reset_password": {
+      "title": "Nulstil kontoens kodeord",
+      "subtext": "Indtast en ny adgangskode til {{ email }}",
+      "password": "Kodeord",
+      "password_confirm": "Bekræft kodeord",
+      "submit": "Nulstil kodeord"
+    },
+    "register": {
+      "title": "Opret konto",
+      "first_name": "Fornavn",
+      "last_name": "Efternavn",
+      "email": "Email",
+      "password": "Kodeord"
     }
   }
 }
