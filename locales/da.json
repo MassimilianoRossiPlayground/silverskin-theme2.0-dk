@@ -216,5 +216,8 @@
         "many": "Der er {{count}} fejl"
       }
     }
+  },
+  "date_formats": {
+    "month_day_year": "%d %b %Y"
   }
 }
