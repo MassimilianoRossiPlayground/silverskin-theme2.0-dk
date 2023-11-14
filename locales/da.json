@@ -44,5 +44,13 @@
       "quantity": "Antal",
       "total": "Total"
     }
+  },
+  "shopify": {
+    "checkout": {
+      "general": {
+        "print_policies_link_label": "Udskriv",
+        "expand_notice_label": "Se mere"
+      }
+    }
   }
 }
