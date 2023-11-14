@@ -74,5 +74,15 @@
       "all_tags": "Alle produkter",
       "categories_title": "Kategorier"
     }
+  },
+  "contact": {
+    "form": {
+      "name": "Fornavn",
+      "email": "Email",
+      "phone": "Telefon",
+      "message": "Besked",
+      "send": "Send",
+      "post_success": "Tak fordi du kontakter os. Vi vender tilbage hurtigst muligt."
+    }
   }
 }
