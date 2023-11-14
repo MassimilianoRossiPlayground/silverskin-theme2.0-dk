@@ -139,7 +139,7 @@
       "date": "Dato",
       "payment_status": "Status på betaling",
       "fulfillment_status": "Status for gennemførelse",
-      "total": "I alt",
+      "total": "Total",
       "none": "Du har ikke afgivet nogen ordre endnu."
     },
     "order": {
