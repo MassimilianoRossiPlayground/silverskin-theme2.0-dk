@@ -186,5 +186,33 @@
       "submit": "Opret",
       "cancel": "Returner til butikken"
     }
+  },
+  "customer_accounts": {
+    "settings": {
+      "title": "Indstillinger",
+      "log_out_everywhere": {
+        "title": "Log ud overalt",
+        "description": "Hvis du har mistet en enhed eller har sikkerhedsproblemer, skal du logge ud overalt for at sikre din kontos sikkerhed."
+      }
+    },
+    "B2B": {
+      "draft_order_details": {
+        "payment_status": {
+          "pending": {
+            "banner_overdue": {
+              "many": "Log ud overalt"
+            },
+            "banner_due": {
+              "many": "Din betaling forfalder om {{count}} dage"
+            }
+          }
+        }
+      }
+    },
+    "errors": {
+      "banner_title": {
+        "many": "Der er {{count}} fejl"
+      }
+    }
   }
 }
