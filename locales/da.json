@@ -52,5 +52,27 @@
         "expand_notice_label": "Se mere"
       }
     }
+  },
+  "collections": {
+    "general": {
+      "catalog_title": "Katalog",
+      "all_of_collection": "Vis alle",
+      "view_all_products_html": "Vis alle<br>{{ count }} produkter",
+      "see_more": "Vis mere",
+      "see_less": "Vis mindre",
+      "no_matches": "Beklager, der er ingen produkter i denne kollektion.",
+      "items_with_count": {
+        "one": "{{ count }} produkt",
+        "other": "{{ count }} produkter"
+      }
+    },
+    "sorting": {
+      "title": "Sorter"
+    },
+    "filters": {
+      "title_tags": "Filter",
+      "all_tags": "Alle produkter",
+      "categories_title": "Kategorier"
+    }
   }
 }
