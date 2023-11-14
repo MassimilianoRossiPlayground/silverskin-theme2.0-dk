@@ -134,7 +134,29 @@
       "guest_continue": "Fortsæt"
     },
     "orders": {
-      "title": "Ordrehistorik"
+      "title": "Ordrehistorik",
+      "order_number": "Ordre",
+      "date": "Dato",
+      "payment_status": "Status på betaling",
+      "fulfillment_status": "Status for gennemførelse",
+      "total": "I alt",
+      "none": "Du har ikke afgivet nogen ordre endnu."
+    },
+    "order": {
+      "title": "Ordre {{ name }}",
+      "date_html": "Placeret den {{ date }}",
+      "cancelled_html": "Ordren blev annulleret den {{ date }}",
+      "cancelled_reason": "Årsag: {{ reason }}",
+      "billing_address": "Faktureringsadresse",
+      "payment_status": "Status på betaling",
+      "shipping_address": "Forsendelsesadresse",
+      "fulfillment_status": "Status for gennemførelse",
+      "discount": "Rabat",
+      "shipping": "Forsendelse",
+      "tax": "Moms",
+      "product": "Produkt",
+      "sku": "SKU",
+      "price": "Pris"
     }
   }
 }
