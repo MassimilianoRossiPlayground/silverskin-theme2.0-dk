@@ -1,0 +1,24 @@
+{
+  "blogs": {
+    "article": {
+      "view_all": "Læs mere",
+      "tags": "Tags",
+      "read_more": "Læs mere",
+      "back_to_blog": "Tilbage til startsiden"
+    },
+    "comments": {
+      "title": "Efterlad en kommentar",
+      "name": "Fornavn",
+      "email": "Email",
+      "message": "Besked",
+      "post": "Skriv kommentar",
+      "moderated": "Bemærk venligst, at kommentarer skal godkendes, før de offentliggøres",
+      "success_moderated": "Din kommentar blev sendt. Vi udgiver den senere, da vores blog er modereret.",
+      "success": "Din kommentar blev sendt. Vi udgiver den senere, da vores blog er modereret.",
+      "with_count": {
+        "one": "{{ count }} kommentar",
+        "other": "{{ count }} kommentarer"
+      }
+    }
+  }
+}
