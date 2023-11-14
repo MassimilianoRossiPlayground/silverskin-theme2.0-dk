@@ -182,7 +182,9 @@
       "first_name": "Fornavn",
       "last_name": "Efternavn",
       "email": "Email",
-      "password": "Kodeord"
+      "password": "Kodeord",
+      "submit": "Opret",
+      "cancel": "Returner til butikken"
     }
   }
 }
