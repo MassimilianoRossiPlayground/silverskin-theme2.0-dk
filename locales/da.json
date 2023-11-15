@@ -222,7 +222,8 @@
   },
   "general": {
     "password_page": {
-      "login_form_heading": "Gå ind i butikken med adgangskode"
+      "login_form_heading": "Gå ind i butikken med adgangskode",
+      "password_link": "Gå ind i butikken med adgangskode"
     }
   }
 }
