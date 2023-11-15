@@ -219,5 +219,10 @@
   },
   "date_formats": {
     "month_day_year": "%d %b %Y"
+  },
+  "general": {
+    "password_page": {
+      "login_form_heading": "Gå ind i butikken med adgangskode"
+    }
   }
 }
