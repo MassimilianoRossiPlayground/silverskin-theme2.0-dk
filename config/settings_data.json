@@ -215,7 +215,7 @@
             "type": "menu",
             "settings": {
               "show_footer_title": true,
-              "menu": "footer",
+              "menu": "uomo",
               "container_width": 15
             }
           },
