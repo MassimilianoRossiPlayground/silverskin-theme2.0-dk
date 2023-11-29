@@ -281,6 +281,11 @@
         "share_on_twitter": "Tweet på Twitter (X)",
         "share_on_pinterest": "Pin på Pinterest"
       }
+    },
+    "drawers": {
+      "close_menu": "Luk",
+      "expand_submenu": "Udvid undermenu",
+      "collapse_submenu": "Luk undermenu"
     }
   }
 }
