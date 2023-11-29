@@ -300,5 +300,13 @@
       "print": "Udskriv",
       "add_to_apple_wallet": "Føj til Apple Wallet"
     }
+  },
+  "home_page": {
+    "onboarding": {
+      "product_title": "Eksempel produkt",
+      "product_description": "Dette område bruges til at beskrive dit produkts detaljer. Fortæl kunderne om dit produkts udseende, feel og stil. Tilføj detaljer om farve, anvendte materialer, størrelse og hvor det blev lavet.",
+      "collection_title": "Eksempel kollektion",
+      "no_content": "Denne sektion indeholder i øjeblikket ikke noget indhold. Tilføj indhold til denne sektion ved hjælp af sidemenuen."
+    }
   }
 }
