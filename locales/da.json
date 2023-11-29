@@ -292,7 +292,13 @@
     "issued": {
       "title_html": "Her er dit {{ value }} gavekort til {{ shop }}!",
       "subtext": "Her er dit gavekort!",
-      "disabled": "Deaktiveret"
+      "disabled": "Deaktiveret",
+      "expired": "Udløb den {{ expiry }}",
+      "active": "Udløber den {{ expiry }}",
+      "redeem": "Brug denne kode ved kassen for at indløse dit gavekort",
+      "shop_link": "Begynd at shoppe",
+      "print": "Udskriv",
+      "add_to_apple_wallet": "Føj til Apple Wallet"
     }
   }
 }
