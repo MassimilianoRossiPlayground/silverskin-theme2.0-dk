@@ -212,7 +212,9 @@
 
             <div class="klarna-widget-desk"></div>
 
-
+            <div class="section-lowest-price">
+            {% render "lowest-price", product: product %}
+            </div>
 
             {% if shop.taxes_included or shop.shipping_policy.body != blank %}
               <div class="product__policies product__policies-desk rte">
@@ -603,7 +605,7 @@
                     <br/> <br/>
                     <b>Piede</b>
                     <br/> <br/>
-                    {{ _dacron }}% PL
+                    {{ _dacron }}% PL {% if product.tags contains "Stay Fresh" %}(100% ricycled) <img width="20px" src="https://cdn.shopify.com/s/files/1/0285/3706/1424/files/32442313.jpg?v=1701255919" alt="silver">{% endif %}
                     <br/> <br/>
 
                     {{ _elastan }}% Elastan
@@ -619,7 +621,7 @@
 
 
                     {{ _dacron }}
-                    % PL
+                    % PL {% if product.tags contains "Stay Fresh" %}(100% ricycled) <img width="20px" src="https://cdn.shopify.com/s/files/1/0285/3706/1424/files/32442313.jpg?v=1701255919" alt="silver">{% endif %}
                     <br/>
                     <br/>
                     {{ _elastan }}
