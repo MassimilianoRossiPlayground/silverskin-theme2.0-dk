@@ -207,7 +207,7 @@
             "type": "menu",
             "settings": {
               "show_footer_title": false,
-              "menu": "",
+              "menu": "footer-1",
               "container_width": 15
             }
           },
@@ -215,7 +215,7 @@
             "type": "menu",
             "settings": {
               "show_footer_title": true,
-              "menu": "footer",
+              "menu": "uomo",
               "container_width": 15
             }
           },
@@ -430,6 +430,8 @@
               "link_text": "Scopri PRIMO",
               "link_2": "",
               "link_text_2": "",
+              "link_3": "",
+              "link_text_3": "",
               "color_accent": "#ffffff",
               "text_align": "vertical-center horizontal-left",
               "focal_point": "80% 50%"
@@ -446,6 +448,8 @@
               "link_text": "Acquista Uomo",
               "link_2": "https:\/\/www.silverskin.it\/collections\/stay-fresh-collection\/Donna+Stay-Fresh",
               "link_text_2": "Acquista Donna",
+              "link_3": "",
+              "link_text_3": "",
               "color_accent": "#ffffff",
               "text_align": "vertical-center horizontal-left",
               "image": "shopify:\/\/shop_images\/hero1.jpg",
@@ -463,6 +467,8 @@
               "link_text": "Scopri le collezioni",
               "link_2": "",
               "link_text_2": "",
+              "link_3": "",
+              "link_text_3": "",
               "color_accent": "#ffffff",
               "text_align": "vertical-center horizontal-left",
               "image": "shopify:\/\/shop_images\/hero2.jpg",
@@ -480,6 +486,8 @@
               "link_text": "Scopri la tecnologia",
               "link_2": "",
               "link_text_2": "",
+              "link_3": "",
+              "link_text_3": "",
               "color_accent": "#ffffff",
               "text_align": "vertical-center horizontal-left",
               "image": "shopify:\/\/shop_images\/hero4-1.jpg",
@@ -498,6 +506,8 @@
               "link_text": "Scopri di più",
               "link_2": "",
               "link_text_2": "",
+              "link_3": "",
+              "link_text_3": "",
               "color_accent": "#ffffff",
               "text_align": "vertical-center horizontal-left",
               "focal_point": "center center"

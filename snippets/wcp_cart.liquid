@@ -249,6 +249,10 @@ reqJquery(function($){
               window.location.href = "/checkout";               
             }
           }       
+        },
+        error: function (jqXHR, exception) {
+          draftAPIRequestProcessing = false;
+          alert("Something went wrong while placing this order!");
         }
       });
     } else {
