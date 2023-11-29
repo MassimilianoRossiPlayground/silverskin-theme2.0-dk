@@ -250,7 +250,37 @@
       "home": "Hjem"
     },
     "newsletter_form": {
-      "newsletter_email": "Skriv din email"
+      "newsletter_email": "Skriv din email",
+      "newsletter_confirmation": "Tak, fordi du abonnerer",
+      "submit": "Abonner"
+    },
+    "search": {
+      "title": "Søg",
+      "placeholder": "Søg",
+      "submit": "Søg",
+      "view_more": "Søg",
+      "pages": "Sider",
+      "articles": "Enheder",
+      "no_results_html": "Din søgning efter \"{{ terms }}\" gav ingen resultater.",
+      "results_for_html": "Din søgning efter \"{{ terms }}\" gav følgende resultat:",
+      "result_count": {
+        "one": "{{ count }} resultat",
+        "other": "{{ count }} resultater"
+      }
+    },
+    "meta": {
+      "tags": "Tagget \"{{ tags }}\"",
+      "page": "Side {{ page }}"
+    },
+    "social": {
+      "share_on_facebook": "Del",
+      "share_on_twitter": "Tweet",
+      "share_on_pinterest": "Pin",
+      "alt_text": {
+        "share_on_facebook": "Del på Facebook",
+        "share_on_twitter": "Tweet på Twitter (X)",
+        "share_on_pinterest": "Pin på Pinterest"
+      }
     }
   }
 }
