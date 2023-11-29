@@ -222,8 +222,35 @@
   },
   "general": {
     "password_page": {
-      "login_form_heading": "Gå ind i butikken med adgangskode",
-      "password_link": "Gå ind i butikken med adgangskode"
+      "login_form_heading": "Gå til shoppen med adgangskode",
+      "password_link": "Gå videre med adgangskode",
+      "login_form_password_placeholder": "Din adgangskode",
+      "login_form_submit": "Send",
+      "signup_form_success": "Vi sender dig en e-mail lige før vi åbner!",
+      "login_form_password_label": "Adgangskode",
+      "signup_form_email_label": "Email",
+      "admin_link_html": "Butiksejer? <a href=\"\/admin\" class=\"text-link\">Log ind her<\/a>",
+      "powered_by_shopify_html": "Denne butik bliver drevet af {{ shopify }}"
+    },
+    "404": {
+      "subtext_html": "<p>Den side, du ledte efter, eksisterer ikke. <\/p><p><a href=\"\/\">Fortsæt med at handle<\/a><\/p>"
+    },
+    "accessibility": {
+      "skip_to_content": "Gå til indhold",
+      "close_modal": "Luk",
+      "close": "Luk",
+      "learn_more": "Læs mere"
+    },
+    "pagination": {
+      "previous": "Forrige",
+      "next": "Næste"
+    },
+    "breadcrumbs": {
+      "home_link_title": "Tilbage til forsiden",
+      "home": "Hjem"
+    },
+    "newsletter_form": {
+      "newsletter_email": "Skriv din email"
     }
   }
 }
