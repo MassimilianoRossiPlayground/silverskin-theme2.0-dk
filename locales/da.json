@@ -287,5 +287,12 @@
       "expand_submenu": "Udvid undermenu",
       "collapse_submenu": "Luk undermenu"
     }
+  },
+  "gift_cards": {
+    "issued": {
+      "title_html": "Her er dit {{ value }} gavekort til {{ shop }}!",
+      "subtext": "Her er dit gavekort!",
+      "disabled": "Deaktiveret"
+    }
   }
 }
