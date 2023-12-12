@@ -308,5 +308,10 @@
       "collection_title": "Eksempel kollektion",
       "no_content": "Denne sektion indeholder i øjeblikket ikke noget indhold. Tilføj indhold til denne sektion ved hjælp af sidemenuen."
     }
+  },
+  "layout": {
+    "cart": {
+      "title": "Kurv"
+    }
   }
 }
