@@ -347,5 +347,14 @@
       "will_be_in_stock_after": "Vil være på lager efter {{ date }}",
       "waiting_for_stock": "Lageropgørelse på vej"
     }
+  },
+  "sections": {
+    "map": {
+      "get_directions": "Vis vej",
+      "address_error": "Fejl ifm. opslag af adressen",
+      "address_no_results": "Kan ikke finde adressen",
+      "address_query_limit_html": "Du har overskredet grænsen for Google API-brug. Overvej at opgradere til et <a href=\"https:\/\/developers.google.com\/maps\/premium\/usage-limits\">Premium-abonnement<\/a>.",
+      "auth_error_html": "Der opstod et problem med at godkende din Google Maps-konto. Opret og aktiver <a href=\"https:\/\/developers.google.com\/maps\/documentation\/javascript\/get-api-key\">JavaScript API<\/a> og <a href=\"https:\/\/developers. google.com\/maps\/documentation\/geocoding\/get-api-key\">Geocoding API<\/a>-tilladelser for din app."
+    }
   }
 }
