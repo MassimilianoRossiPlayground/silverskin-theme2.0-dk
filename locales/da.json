@@ -322,5 +322,30 @@
     "footer": {
       "social_platform": "{{ name }} på {{ platform }}"
     }
+  },
+  "products": {
+    "general": {
+      "save_html": "Spar {{ saved_amount }}",
+      "collection_return": "Tilbage til {{ collection }}",
+      "next_product": "Næste: {{ title }}",
+      "sale": "Udsalg",
+      "sale_price": "Udsalgspris",
+      "regular_price": "Pris",
+      "from_text_html": "fra {{ price }}",
+      "recent_products": "Senest viste"
+    },
+    "product": {
+      "stock_label": "Kun {{ count }} stk. på lager!",
+      "sold_out": "Udsolgt",
+      "unavailable": "Ikke tilgængelig",
+      "quantity": "Antal",
+      "add_to_cart": "Tilføj til kurv",
+      "preorder": "Forudbestil",
+      "include_taxes": "Inklusiv moms",
+      "shipping_policy_html": "<a href=\"{{ link }}\">Forsendelse<\/a> beregnes ved kassen.",
+      "will_not_ship_until": "Sendes ikke før {{ date }}",
+      "will_be_in_stock_after": "Vil være på lager efter {{ date }}",
+      "waiting_for_stock": "Lageropgørelse på vej"
+    }
   }
 }
