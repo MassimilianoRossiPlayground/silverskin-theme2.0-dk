@@ -312,6 +312,15 @@
   "layout": {
     "cart": {
       "title": "Kurv"
+    },
+    "customer": {
+      "account": "Konto",
+      "log_out": "Log ud",
+      "log_in": "Log ind",
+      "create_account": "Opret konto"
+    },
+    "footer": {
+      "social_platform": "{{ name }} på {{ platform }}"
     }
   }
 }
