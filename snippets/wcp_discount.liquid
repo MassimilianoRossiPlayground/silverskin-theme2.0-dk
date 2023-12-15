@@ -251,7 +251,7 @@
 {% endfor %}
 {% endif %}
 {% if wcp_discount_value < 1 or set_price %}
-    {% if wcp_compare_at_price == blank  or wcp_compare_at_price == 0 or wcp_compare_at_price < wcp_price_min or shop.metafields.wcp_net.DiscountPriceRule  == '1' %}
+    {% if wcp_compare_at_price == blank  or wcp_compare_at_price == 0 or shop.metafields.wcp_net.DiscountPriceRule  == '1' %}
         {% assign wcp_compare_at_price = wcp_discount.price %}
     {% endif %}
     {% if wcp_compare_at_price_max == blank or wcp_compare_at_price_max == 0 %}
