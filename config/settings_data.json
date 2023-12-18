@@ -246,7 +246,7 @@
           "1494292487693"
         ],
         "settings": {
-          "show_payment_icons": true,
+          "show_payment_icons": false,
           "show_copyright": true,
           "copyright_text": "",
           "first_top_f": "30 GIORNI PER RESO E CAMBIO",
