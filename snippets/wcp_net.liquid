@@ -765,6 +765,8 @@ function billingAddressManager()
               json.shipping_rates.map((rate) => {
                 const option = document.createElement("option");
                 option.value = `${rate.presentment_name}:${rate.price}`;
+                option.setAttribute("data-rate",`${rate.price}`);
+                option.setAttribute("data-name",`${rate.presentment_name}`);
                 option.innerHTML = `${rate.presentment_name} @${wpdFormatAmount(
                   rate.price
                 )}`;
@@ -782,15 +784,13 @@ function billingAddressManager()
           wcpClearIntegrationShipping();
           return;
         }
-    
-        const selectedShippingParts = selectedShipping.split(":");
-        if (selectedShippingParts.length !== 2) {
+        let selectedOption = event.target.options[event.target.selectedIndex];        
+        const title = selectedOption.getAttribute("data-name");
+        const price = selectedOption.getAttribute("data-rate");
+        if (title == null || price == null) {
           wcpClearIntegrationShipping();
           return;
         }
-        const title = selectedShippingParts[0];
-        const price = selectedShippingParts[1];
-    
         if (!window.wcp_data) {
           return;
         }
