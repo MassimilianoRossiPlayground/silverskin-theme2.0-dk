@@ -98,7 +98,7 @@
     "enable_currencies": false,
     "currency_format": "money_format",
     "supported_currencies": "USD CAD INR GBP AUD EUR JPY",
-    "social_facebook_link": "https:\/\/www.facebook.com\/silverskin.it\/",
+    "social_facebook_link": "https:\/\/www.facebook.com\/silverskin.it1\/",
     "social_twitter_link": "",
     "social_pinterest_link": "",
     "social_instagram_link": "https:\/\/www.instagram.com\/silverskin.it\/",
@@ -1609,8 +1609,7 @@
           "edit_account_link_text": "Edit account",
           "edit_account_heading": "Edit account",
           "edit_account_back_link_text": "Back to account",
-          "enable_js_api": false,
-          "js_api_version": ""
+          "enable_js_api": false
         }
       }
     }
