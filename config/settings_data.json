@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "current": {
     "color_body_bg": "#ffffff",
@@ -426,7 +435,7 @@
               "title": "Il nuovo <br>Base Layer per <br>l'alta intensità",
               "title_size": 70,
               "subheading": "And optional subtext",
-              "link": "https:\/\/www.silverskin.it\/collections\/uomo",
+              "link": "https:\/\/www.silverskin.dk\/collections\/uomo",
               "link_text": "Scopri PRIMO",
               "link_2": "",
               "link_text_2": "",
@@ -444,9 +453,9 @@
               "title": "I base layer <br>per la montagna",
               "title_size": 70,
               "subheading": "",
-              "link": "https:\/\/www.silverskin.it\/collections\/stay-fresh-collection\/Uomo+Stay-Fresh",
+              "link": "https:\/\/www.silverskin.dk\/collections\/stay-fresh-collection\/Uomo+Stay-Fresh",
               "link_text": "Acquista Uomo",
-              "link_2": "https:\/\/www.silverskin.it\/collections\/stay-fresh-collection\/Donna+Stay-Fresh",
+              "link_2": "https:\/\/www.silverskin.dk\/collections\/stay-fresh-collection\/Donna+Stay-Fresh",
               "link_text_2": "Acquista Donna",
               "link_3": "",
               "link_text_3": "",
@@ -463,7 +472,7 @@
               "title": "La tua temperatura<br> sempre",
               "title_size": 70,
               "subheading": "",
-              "link": "https:\/\/www.silverskin.it\/pages\/collezioni",
+              "link": "https:\/\/www.silverskin.dk\/pages\/collezioni",
               "link_text": "Scopri le collezioni",
               "link_2": "",
               "link_text_2": "",
@@ -482,7 +491,7 @@
               "title": "Comfort,<br>Traspirabilità<br>e Termoregolazione",
               "title_size": 70,
               "subheading": "",
-              "link": "https:\/\/www.silverskin.it\/pages\/technology",
+              "link": "https:\/\/www.silverskin.dk\/pages\/technology",
               "link_text": "Scopri la tecnologia",
               "link_2": "",
               "link_text_2": "",
@@ -502,7 +511,7 @@
               "title": "Amare oltre la fatica",
               "title_size": 70,
               "subheading": "And optional subtext",
-              "link": "https:\/\/www.silverskin.it\/pages\/nico-valsesia-per-silverskin",
+              "link": "https:\/\/www.silverskin.dk\/pages\/nico-valsesia-per-silverskin",
               "link_text": "Scopri di più",
               "link_2": "",
               "link_text_2": "",
@@ -745,10 +754,10 @@
               "textarea": "Mantiene la tua temperatura corporea durante attività ad alta intensità o quando fa caldo.<br> <a href=\"\/pages\/collezioni#section-fresh-collection\">Scopri di più.<\/a>",
               "cta_text1": "Acquista Uomo",
               "cta_text1_color": "",
-              "cta_link1": "https:\/\/www.silverskin.it\/collections\/stay-fresh-collection\/Uomo",
+              "cta_link1": "https:\/\/www.silverskin.dk\/collections\/stay-fresh-collection\/Uomo",
               "cta_text2": "Acquista Donna",
               "cta_text2_color": "",
-              "cta_link2": "https:\/\/www.silverskin.it\/collections\/stay-fresh-collection\/Donna",
+              "cta_link2": "https:\/\/www.silverskin.dk\/collections\/stay-fresh-collection\/Donna",
               "image": "shopify:\/\/shop_images\/08-Homepage-Banner-Collezione-Stay-Fresh.jpg",
               "video_url": "",
               "width": "100",
@@ -770,10 +779,10 @@
               "textarea": "Una collezione versatile, creata per mantenere la tua temperatura ottimale durante le attività praticate in climi freddi.<br> <a href=\"\/pages\/collezioni#section-warm-collection\">Scopri di più.<\/a>",
               "cta_text1": "Acquista UOMO",
               "cta_text1_color": "#ffffff",
-              "cta_link1": "https:\/\/www.silverskin.it\/collections\/stay-warm-collection\/Uomo",
+              "cta_link1": "https:\/\/www.silverskin.dk\/collections\/stay-warm-collection\/Uomo",
               "cta_text2": "Acquista Donna",
               "cta_text2_color": "",
-              "cta_link2": "https:\/\/www.silverskin.it\/collections\/stay-warm-collection\/Donna",
+              "cta_link2": "https:\/\/www.silverskin.dk\/collections\/stay-warm-collection\/Donna",
               "image": "shopify:\/\/shop_images\/hp-banner-warm-desk_f479220a-cf5a-4dca-be01-b5dec608a761.jpg",
               "video_url": "",
               "width": "50",
@@ -795,10 +804,10 @@
               "textarea": "Preserva il tuo calore corporeo in condizioni climatiche estreme.<br> <a href=\"\/pages\/collezioni#section-xwarm-collection\">Scopri di più.<\/a>",
               "cta_text1": "Acquista Uomo",
               "cta_text1_color": "",
-              "cta_link1": "https:\/\/www.silverskin.it\/collections\/stay-x-warm-collection\/Uomo",
+              "cta_link1": "https:\/\/www.silverskin.dk\/collections\/stay-x-warm-collection\/Uomo",
               "cta_text2": "Acquista Donna",
               "cta_text2_color": "",
-              "cta_link2": "https:\/\/www.silverskin.it\/collections\/stay-x-warm-collection\/Donna",
+              "cta_link2": "https:\/\/www.silverskin.dk\/collections\/stay-x-warm-collection\/Donna",
               "image": "shopify:\/\/shop_images\/Stay_X-Warm_Collection.jpg",
               "video_url": "",
               "width": "50",
