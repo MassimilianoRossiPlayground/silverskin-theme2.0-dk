@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin language editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "blogs": {
     "article": {
@@ -37,7 +46,8 @@
       "increase_quantity": "Forøg antal med en",
       "orders_processed_in_currency_html": "Ordrer vil blive afregnet i {{ currency }}.",
       "terms": "Jeg accepterer vilkårene og betingelserne",
-      "terms_html": "Jeg accepterer <a href='{{ url }}' target='_blank'>vilkår og betingelser<\/a>"
+      "terms_html": "Jeg accepterer <a href='{{ url }}' target='_blank'>vilkår og betingelser<\/a>",
+      "terms_confirm": "Du skal acceptere salgsbetingelserne for at tjekke ud"
     },
     "label": {
       "price": "Pris",
@@ -49,7 +59,253 @@
     "checkout": {
       "general": {
         "print_policies_link_label": "Udskriv",
-        "expand_notice_label": "Se mere"
+        "expand_notice_label": "Se mere",
+        "map": {
+          "cluster_title": {
+            "many": "Gruppering {{number}} highlightere"
+          }
+        }
+      },
+      "customer_account": {
+        "saved_address_option_description": {
+          "many": "Du har gemt {{count}} adresser."
+        }
+      },
+      "stock": {
+        "unshippable_product": {
+          "header": {
+            "many": "Ingen levering tilgængelig for %{count} varer"
+          },
+          "message": {
+            "many": "Disse varer vil blive fjernet fra din indkøbskurv, da der ikke er nogen leveringsmetoder tilgængelige for din adresse."
+          }
+        },
+        "item_label": {
+          "many": "{{count}} artikler"
+        },
+        "unfulfillable_product": {
+          "message": {
+            "many": "%{delivery_method} er ikke længere tilgængelig for disse varer."
+          },
+          "default_message": {
+            "many": "Den leveringsmetode, du har valgt, er ikke længere tilgængelig for disse varer."
+          }
+        }
+      },
+      "order_summary": {
+        "expand_component_information": {
+          "many": "Vis %{count} elementer"
+        },
+        "collapse_component_information": {
+          "many": "Skjul %{count} artikler"
+        },
+        "discount_discovery": {
+          "merchandise_quantity_label": {
+            "many": "%{count} artikler"
+          }
+        },
+        "discount_title_stacking": {
+          "many": "Rabatter"
+        },
+        "discount_order_stacking": {
+          "many": "Rabatter på ordren"
+        }
+      },
+      "shipping": {
+        "estimated_delivery_date": {
+          "many": "%{count} arbejdsdage"
+        },
+        "other_method": {
+          "many": "%{count} andre tilgængelige metoder fra"
+        },
+        "subscription_delivery_description": {
+          "prepaid_delivery_frequency": {
+            "many": "for %{count} leverancer"
+          },
+          "subscription_delivery_frequency": {
+            "day": {
+              "many": "hver %{count} dag"
+            },
+            "week": {
+              "many": "hver %{count} uge"
+            },
+            "month": {
+              "many": "hver %{count} måned"
+            },
+            "year": {
+              "many": "hvert %{count} år"
+            }
+          },
+          "first_n_order_free": {
+            "many": "Første %{count} ordrer er gratis"
+          },
+          "free_for_first_n_order": {
+            "many": "For de første %{count} ordrer"
+          }
+        },
+        "shipping_method_first_shipment_group_title": {
+          "many": "Første forsendelser"
+        },
+        "shipping_method_recurring_shipments_group_title": {
+          "many": "Tilbagevendende forsendelser"
+        }
+      },
+      "payment": {
+        "order_covered_by_gift_cards_notice": {
+          "many": "Din ordre er dækket af dine gavekort."
+        },
+        "card_fields_unavailable_html": {
+          "many": "Kredit- og betalingskortbetalinger er ikke tilgængelige i øjeblikket.<br> <a href=\"%{current_url}\">Opdater denne side<\/a> , eller prøv en anden betalingsmetode."
+        },
+        "expired_cards_info": {
+          "many": "Der er %{count} udløbne kort, som du kan se og redigere på din konto."
+        },
+        "order_edit_banner_items_added": {
+          "many": "%{count} tilføjet"
+        }
+      },
+      "shipping_errors": {
+        "shipping_method_not_available_generic": {
+          "many": "Nogle varer i din indkøbskurv kan ikke sendes til den adresse, du har indtastet. Tjek venligst adressen for at sikre, at den er korrekt, og prøv igen, eller vælg en anden adresse."
+        },
+        "shipping_method_not_available_updated": {
+          "many": "En eller flere tilføjede varer sendes ikke til din placering. Fjern dem for at tjekke ud eller kontakt butikken."
+        }
+      },
+      "processing": {
+        "wait": {
+          "medium": {
+            "many": "Din ordre behandles. Estimeret ventetid: %{count} minutter."
+          }
+        }
+      },
+      "thank_you": {
+        "login_reorder_link_text": {
+          "many": "også købe disse produkter"
+        },
+        "gift_card_confirmation_by_text_typ": {
+          "many": "Du modtager en sms med gavekortene i løbet af få minutter."
+        },
+        "gift_card_confirmation_by_email_typ": {
+          "many": "Du modtager en mail med gavekortene i løbet af få minutter."
+        },
+        "gift_card_email_title": {
+          "many": "Gavekort sendes via e-mail"
+        },
+        "gift_card_text_title": {
+          "many": "Gavekort sendes på SMS"
+        },
+        "gift_card_resent_confirmation": {
+          "many": "Gavekortene blev sendt igen."
+        },
+        "gift_card_resend_failure": {
+          "many": "Der opstod et problem med at sende gavekort igen. Prøv venligst igen eller kontakt os."
+        }
+      },
+      "order_payment_collection": {
+        "changes_summary": {
+          "added": {
+            "many": "%{count} tilføjet"
+          }
+        }
+      },
+      "open_graph_meta_tag": {
+        "title_with_products": {
+          "many": "Køb %{product_name} og %{count} andre varer"
+        }
+      },
+      "subscriptions": {
+        "recurring_totals_with_policies": {
+          "first_cycles": {
+            "many": "Første %{count} betalinger: %{total_price} hver"
+          }
+        },
+        "recurring_total_intervals": {
+          "day": {
+            "many": "%{count} dage"
+          },
+          "week": {
+            "many": "%{count} uger"
+          },
+          "month": {
+            "many": "%{count} måneder"
+          },
+          "year": {
+            "many": "%{count} år"
+          }
+        },
+        "recurring_totals_with_initial_order_shipping_discount_with_policies": {
+          "first_cycles": {
+            "many": "efterfølgende %{count} betalinger, hver til en pris af %{total_price}"
+          }
+        }
+      },
+      "contextual_availability": {
+        "title": {
+          "many": "Produkter ikke tilgængelige"
+        },
+        "products_not_available": {
+          "many": "Disse produkter vil blive fjernet fra din indkøbskurv, da de ikke er tilgængelige i dit land\/område."
+        },
+        "all_products_in_cart_unavailable": {
+          "many": "Disse produkter er ikke tilgængelige i dit land\/område."
+        }
+      },
+      "throttle": {
+        "estimated_wait_time": {
+          "many": "Estimeret ventetid: {{count}} minutter"
+        }
+      },
+      "deliverability": {
+        "not_deliverable": {
+          "title": {
+            "many": "Ingen levering tilgængelig for %{count} varer"
+          },
+          "message": {
+            "many": "Disse varer vil blive fjernet fra din indkøbskurv, da der ikke er nogen leveringsmetoder tilgængelige for din adresse."
+          }
+        }
+      },
+      "pickup_point": {
+        "paginator": {
+          "header": {
+            "many": "%{first} - %{last} af %{count} point vises"
+          },
+          "selected_pickup_point_label": {
+            "many": "%{pickup_point_index} af %{count} point"
+          },
+          "selected_page": {
+            "many": "%{first} - %{last} af %{count} point"
+          }
+        },
+        "number_of_pickup_points_near_location": {
+          "many": "%{count} af indsamlingssteder i nærheden af ​​dig"
+        }
+      },
+      "local_pickup": {
+        "location_information": {
+          "many": "Der er %{count} butikker med lager tilgængelig i nærheden af ​​%{address}"
+        },
+        "paginator": {
+          "label": {
+            "many": "%{first} - %{last} af %{count} butikker"
+          }
+        },
+        "reveal_more_label": {
+          "many": "Vis flere %{count} steder"
+        }
+      }
+    },
+    "notices": {
+      "order": {
+        "cancel_reason": {
+          "many": "Andre"
+        }
+      }
+    },
+    "page_titles": {
+      "search_results": {
+        "many": "Søgning: %{count} resultater fundet for \"%{terms}\""
       }
     }
   },
@@ -209,11 +465,86 @@
             }
           }
         }
+      },
+      "orders": {
+        "draft_order_list": {
+          "pending_tab_accessibility_label": {
+            "pending_orders": {
+              "many": "Du har {{count}} ordrer i vente"
+            }
+          }
+        }
       }
     },
     "errors": {
       "banner_title": {
         "many": "Der er {{count}} fejl"
+      }
+    },
+    "orders": {
+      "order_list": {
+        "items": {
+          "many": "{{count}} artikler"
+        }
+      },
+      "order_status": {
+        "delivered_description_gift_card": {
+          "many": "Gavekort sendes via e-mail."
+        },
+        "gift_card_label": {
+          "many": "Gavekort"
+        },
+        "gift_card_resend": {
+          "many": "Gentag afsendelse af e-mail"
+        },
+        "gift_card_resend_description": {
+          "many": "Hvis de ikke blev modtaget, så send e-mails igen eller"
+        },
+        "confirmed_gift_card_additional_description": {
+          "many": "Hvert gavekort vil blive sendt i en separat e-mail."
+        },
+        "delivered_description_gift_card_text": {
+          "many": "Gavekort blev sendt via besked."
+        },
+        "gift_card_resend_text": {
+          "many": "Gentag afsendelse af beskeder"
+        },
+        "gift_card_resend_description_text": {
+          "many": "Hvis de ikke blev modtaget, skal du sende beskederne igen eller"
+        },
+        "confirmed_gift_card_additional_description_text": {
+          "many": "Hvert gavekort sendes i en separat besked."
+        },
+        "gift_resend_success": {
+          "many": "Gavekort sendes igen"
+        },
+        "gift_resend_failure": {
+          "many": "Der opstod et problem med at sende gavekort igen. Prøv venligst igen eller kontakt os."
+        },
+        "delivered_description_digital": {
+          "many": "Disse punkter er afsluttet."
+        }
+      },
+      "if_not_received": {
+        "many": "Hvis de ikke er modtaget,"
+      }
+    },
+    "ui_components": {
+      "autocompleteOptionsAvailable": {
+        "many": "{{count}} tilgængelige varer"
+      },
+      "month": {
+        "many": "måneder"
+      },
+      "mapClusterTitle": {
+        "many": "Gruppering af {{number}} indikatorer"
+      }
+    },
+    "date": {
+      "humanize": {
+        "lessThanOneHourAgo": {
+          "many": "{{count}} minutter siden"
+        }
       }
     }
   },
@@ -233,7 +564,8 @@
       "powered_by_shopify_html": "Denne butik bliver drevet af {{ shopify }}"
     },
     "404": {
-      "subtext_html": "<p>Den side, du ledte efter, eksisterer ikke. <\/p><p><a href=\"\/\">Fortsæt med at handle<\/a><\/p>"
+      "subtext_html": "<p>Den side, du ledte efter, eksisterer ikke. <\/p><p><a href=\"\/\">Fortsæt med at handle<\/a><\/p>",
+      "title": "404 Side ikke fundet"
     },
     "accessibility": {
       "skip_to_content": "Gå til indhold",
