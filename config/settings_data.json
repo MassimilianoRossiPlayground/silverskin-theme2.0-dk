@@ -189,8 +189,8 @@
           "toolbar_social": false,
           "announcement_compact": true,
           "announcement_above_header": true,
-          "header_text_primary": "SPESE DI SPEDIZIONE GRATUITE PER ORDINI SUPERIORI A 39€",
-          "header_text_secondary": "30 GIORNI PER RESO E CAMBIO"
+          "header_text_primary": "GRATIS FORSENDELSE PÅ ORDRE OVER DKK 1.000,-",
+          "header_text_secondary": "30 DAGES RETURRET OG OMBYTNING"
         }
       },
       "footer": {
@@ -258,7 +258,7 @@
           "show_payment_icons": false,
           "show_copyright": true,
           "copyright_text": "",
-          "first_top_f": "30 GIORNI PER RESO E CAMBIO",
+          "first_top_f": "30 DAGES RETURRET OG OMBYTNING",
           "second_top_f": "PAGAMENTI SICURI",
           "third_top_f": "TESTATO DAGLI ATLETI",
           "fourth_top_f": "CUSTOMER CARE",
