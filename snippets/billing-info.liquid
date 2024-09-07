@@ -1,38 +1,30 @@
 
 <div class="billing-data hide">
     <div class="cart-attribute__field">
-        <label>Nome Azienda</label>
+        <label>Firmanavn</label>
         <input id="billing-data__azienda" type="text" name="attributes[azienda]" value="{{ cart.attributes['azienda'] }}">
     </div>
     <div class="cart-attribute__fields-group">
         <div class="cart-attribute__field">
-            <label>Indirizzo</label>
+            <label>Adresse</label>
             <input id="billing-data__indirizzo" type="text" name="attributes[indirizzo]" value="{{ cart.attributes['indirizzo'] }}">
         </div>
         <div class="cart-attribute__field">
-            <label>Città</label>
+            <label>By</label>
             <input id="billing-data__città" type="text" name="attributes[città]" value="{{ cart.attributes['città'] }}">
         </div>
         <div class="cart-attribute__field">
-            <label>Provincia</label>
+            <label>Provins</label>
             <input id="billing-data__provincia" type="text" name="attributes[provincia]" value="{{ cart.attributes['provincia'] }}">
         </div>
     </div>
     <div class="cart-attribute__fields-group">
         <div class="cart-attribute__field">
-            <label>P.iva</label>
+            <label>CVR</label>
             <input id="billing-data__piva" type="text" name="attributes[piva]" value="{{ cart.attributes['piva'] }}">
         </div>
-        <div class="cart-attribute__field">
-            <label>C.F. se diverso da P.Iva</label>
-            <input id="billing-data__cf" type="text" name="attributes[cf]" value="{{ cart.attributes['cf'] }}">
-        </div>
-        <div class="cart-attribute__field">
-            <label>Codice SDI</label>
-            <input id="billing-data__sdi" type="text" name="attributes[sdi]" value="{{ cart.attributes['sdi'] }}">
-        </div>
     </div>
-    <span style="display:block; font-size: 12px; color: #53382d;" class="instructions">NB: è obbligatorio compilare tutti i dati per poter ricevere la fattura.</span>
+    <span style="display:block; font-size: 12px; color: #53382d;" class="instructions">NB: det er obligatorisk at udfylde alle data for at modtage fakturaen.</span>
 </div>
 
 <script>
