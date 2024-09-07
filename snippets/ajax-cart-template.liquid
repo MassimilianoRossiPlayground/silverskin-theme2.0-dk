@@ -121,7 +121,7 @@
         </div>
       </div>
       <p class="ajaxcart__note">
-        <span>Se faktura? <a href="/cart?openbilling=true"><strong>klik her</strong></a></span><br/><br/>
+        <span>Har du brug for en faktura? <a href="/cart?openbilling=true"><strong>klik her</strong></a></span><br/><br/>
         {% endraw %}{{ 'cart.general.shipping_at_checkout' | t }}{% raw %}
         {% endraw %}{% if settings.enable_currencies %}{%- unless shop.enabled_currencies.size > 1 -%}{% raw %}
           {% endraw %}{{ 'cart.general.orders_processed_in_currency_html' | t: currency: shop.currency }}{% raw %}
