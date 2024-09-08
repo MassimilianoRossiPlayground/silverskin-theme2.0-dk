@@ -1202,6 +1202,7 @@
         "blocks": {
           "be827a98-9d0e-43eb-bc7d-ff710a5983b2": {
             "type": "advanced",
+            "disabled": true,
             "settings": {
               "subheading": "",
               "heading": "MONTAGNA, MAESTRA DI VITA",
