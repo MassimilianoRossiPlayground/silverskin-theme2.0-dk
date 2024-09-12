@@ -57,6 +57,9 @@
   },
   "shopify": {
     "checkout": {
+      "shop_policies": {
+        "privacy": "privatliv"
+      },
       "general": {
         "print_policies_link_label": "Udskriv",
         "expand_notice_label": "Se mere",
@@ -679,9 +682,6 @@
       "will_be_in_stock_after": "Vil være på lager efter {{ date }}",
       "waiting_for_stock": "Lageropgørelse på vej"
     }
-  },
-  "shop_policies": {
-    "privacy": "privatliv"
   },
   "sections": {
     "map": {
