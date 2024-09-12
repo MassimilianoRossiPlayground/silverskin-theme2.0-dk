@@ -680,6 +680,9 @@
       "waiting_for_stock": "Lageropgørelse på vej"
     }
   },
+  "shop_policies": {
+    "privacy": "privatliv"
+  },
   "sections": {
     "map": {
       "get_directions": "Vis vej",
