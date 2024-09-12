@@ -820,7 +820,6 @@
       "shop_policies": {
         "refund_policy": "Refund policy",
         "privacy_policy": "Privacy policy",
-        "privacy": "privacy",
         "terms_of_service": "Terms of service",
         "legal_notice": "Legal notice",
         "shipping_policy": "Shipping policy",
@@ -1544,6 +1543,7 @@
       "create_account": "Create account"
     },
     "footer": {
+      "privacy": "privacy",
       "social_platform": "{{ name }} on {{ platform }}"
     }
   },
