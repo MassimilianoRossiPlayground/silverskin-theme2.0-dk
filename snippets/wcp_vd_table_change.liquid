@@ -122,8 +122,7 @@
 	                                {% when '0' %}                      
     		                            {% assign wcp_discount_group_price = wcp_v_price %}                      
             		                    {%- assign wcp_vd_percentage = wcp_price_for_calculation | minus: wcp_discount_group_price | times: 100.0 | divided_by: wcp_price_for_calculation  -%}                      
-                    		            {% assign wcp_vd_percentage = 100.0 | minus:wcp_vd_percentage %}                     
-                            		    {% assign Discount_Price = wcp_v_price %}                                                                
+                    		            {% assign Discount_Price = wcp_v_price %}                                                                
                                 	{% when '1' %}                          
                                 		{% assign wcp_vd_percentage = 100.00  %}                     
                                 		{% assign Discount_Price = 0.0 %}                      
@@ -133,7 +132,6 @@
                                 	{% else %}
                                 		{% assign wcp_discount_group_price = wcp_v_price %}                      
                                 		{%- assign wcp_vd_percentage = wcp_price_for_calculation | minus: wcp_discount_group_price | times: 100.0 | divided_by: wcp_price_for_calculation  -%}                      
-                                		{% assign wcp_vd_percentage = 100.0 | minus:wcp_vd_percentage %}                     
                                 		{% assign Discount_Price = wcp_v_price %}                                                                
                                 {% endcase %}
 							{% else %}

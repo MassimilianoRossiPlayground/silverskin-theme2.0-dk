@@ -242,7 +242,7 @@ reqJquery(function($){
               }
               setTimeout(function(){
                 wcpClearCart();
-                checkInvoiceAvailability(orderRedirectUrl,1);                    
+                window.location.href = orderRedirectUrl;
               },window.wpd_checkout_redirect_delay);
             } else {
               wcpClearCart();
@@ -268,7 +268,7 @@ reqJquery(function($){
           method: "GET",
           credentials: "same-origin",
       }).then((response) => {
-          if(response.status != 200 && tryCount < 15){
+          if(response.status != 200 && tryCount < 5){
               setTimeout(function(){tryCount++; checkInvoiceAvailability(url,tryCount)},1000);
           }else{
               draftAPIRequestProcessing = false;
@@ -584,7 +584,7 @@ var fnCalled = false;
    	  {% include 'wcp_vd_discount' with item %}
         window.wcp_data.wcp_cart.active_tags.push("{{p_discount_tag}}")
                                                   
-       {% unless p_discount_tag == blank  %}                                                        
+       {% if p_discount_tag != blank or v_discount_tag != blank %}                                                        
          if(!isWPDTagValueAvailableInArray(window.wcp_data.wcp_cart.ApplyDiscountDetails,"{{p_discount_tag}}","{{p_discount_value}}","{{v_discount_tag}}")){         
          window.wcp_data.wcp_cart.ApplyDiscountDetails.push({
             "value":"{% if v_discount_tag %}{{ wcp_v_price | divided_by: 100.0 }}{% else %}{{p_discount_value}}{% endif %}",
@@ -592,7 +592,7 @@ var fnCalled = false;
             "is_individual_price":"{% if v_discount_tag %}true{% else %}false{% endif %}",                        
          });       
        }
-      {% endunless %}
+      {% endif %}
       {% if set_price or wcp_discount_value < 1 or p_discount_value == 0 %}		
 
         {% if wcp_v_price > item.final_price %}
@@ -885,7 +885,7 @@ var fnCalled = false;
       var note='';
       var note_data={};
       if($(".net-notes").val() !=''){
-        note="\\r\\n\\r\\n Notes: "+ $(".net-notes").val();
+        note="Notes: "+ $(".net-notes").val();
         note_data['Notes']=$('.net-notes').val();
       }
       var wcp_required=false;
@@ -906,7 +906,7 @@ var fnCalled = false;
                
     	    }
           if(window.wpdNetremoveAttributes == undefined || !window.wpdNetremoveAttributes.includes('Billing_Email')){
-            note=note+ '\\r\\n\\r\\n Billing Email:  '+wcpbillingEmail.val();
+            note=note+ '\nBilling Email:  '+wcpbillingEmail.val();
             note_data['Billing_Email']=wcpbillingEmail.val();
           }
         }else{
@@ -929,7 +929,7 @@ var fnCalled = false;
       	  wcp_required=true;        
       }else{
         if(window.wpdNetremoveAttributes == undefined || !window.wpdNetremoveAttributes.includes('delivery_date')){
-           note=note +'\\r\\n\\r\\n Delivery Date: '+datepicker.val();
+           note=note +'\nDelivery Date: '+datepicker.val();
            note_data['delivery_date']=datepicker.val();
         }
       }
@@ -946,7 +946,7 @@ var fnCalled = false;
          payment.css("border-color","red");
       }else{        
         if(window.wpdNetremoveAttributes == undefined || !window.wpdNetremoveAttributes.includes('Payment_Option')){
-          note=note +'\\r\\n\\r\\n Payment Option: '+payment.val();
+          note=note +'\nPayment Option: '+payment.val();
           note_data['Payment_Option']=payment.val();
         }
       }
@@ -960,7 +960,7 @@ var fnCalled = false;
         }
         if(wcpPONo.val()!=''){
           if(window.wpdNetremoveAttributes == undefined || !window.wpdNetremoveAttributes.includes('Purchase_Order_Number')){
-           note=note+ '\\r\\n\\r\\n Purchase Order Number: '+wcpPONo.val();
+           note=note+ '\nPurchase Order Number: '+wcpPONo.val();
            note_data['Purchase_Order_Number']=wcpPONo.val();
           }
         }
@@ -973,7 +973,7 @@ var fnCalled = false;
         }
         if(wcpUPSNo.val()!=''){
          if(window.wpdNetremoveAttributes == undefined || !window.wpdNetremoveAttributes.includes('UPS_Shipping_Account_Number')){
-          note=note+ '\\r\\n\\r\\n UPS Shipping Account Number: '+wcpUPSNo.val();
+          note=note+ '\nUPS Shipping Account Number: '+wcpUPSNo.val();
           note_data['UPS_Shipping_Account_Number']=wcpUPSNo.val();
          }
         }
@@ -986,7 +986,7 @@ var fnCalled = false;
         }
         if(wcpShippingInst.val()!=''){
          if(window.wpdNetremoveAttributes == undefined || !window.wpdNetremoveAttributes.includes('Shipping_Instructions')){
-          note=note+ '\\r\\n\\r\\n Shipping Instructions:  '+wcpShippingInst.val();
+          note=note+ '\nShipping Instructions:  '+wcpShippingInst.val();
           note_data['Shipping_Instructions']=wcpShippingInst.val();
          }
         }
