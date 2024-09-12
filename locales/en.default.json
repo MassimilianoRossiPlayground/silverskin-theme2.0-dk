@@ -1616,6 +1616,7 @@
     },
     "shop_policies": {
       "privacy_policy": "Privacy Policy",
+      "privacy": "privacy",
       "terms_of_service": "Terms of Service"
     },
     "payment_methods": {
